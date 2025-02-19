@@ -1,3 +1,32 @@
+-- Patterns
+
+-- Напишите запрос, который возвращает САМЫЙ ДОРОГОЙ ПРОДУКТ В КАЖДОЙ КАТЕГОРИИ.
+with d_rank as (
+select
+	c.category_name,
+	p.product_name,
+	p.unit_price ,
+	dense_rank() over(partition by p.category_id order by p.unit_price DESC) as dns_rank
+from
+	products p
+join
+	categories c
+	on p.category_id = c.category_id
+	)
+select
+	category_name,
+	product_name,
+	unit_price
+from
+	d_rank
+where
+	dns_rank = 1
+order by
+	unit_price DESC
+
+
+
+
 -- postgres admin
 
 -- Таблица employees
