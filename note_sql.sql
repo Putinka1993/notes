@@ -25,6 +25,36 @@ where
 order by
 	unit_price DESC
 
+-- Этот запрос рассчитывает ПРОЦЕНТНОЕ СООТНОШЕНИЯ КОЛ-ВА ТОВАРА для каждого продукта в рамках его категории.
+select
+	p.product_name ,
+	p.category_id,
+	p.units_in_stock,
+	sum(p.units_in_stock) over(partition by p.category_id) as Total_Category_sum,
+	round(p.units_in_stock * 100.0 / sum(p.units_in_stock) over(partition by p.category_id)) as per
+from
+	products p
+order by
+	p.category_id ,
+	per DESC
+
+-- 1.Сколько всего продуктов входит в категорию(cnt_product);
+-- 2.Средняя цена продукта по его категории(avg_units_stock);
+-- 3.Какое отклонение в цене каждого продукта относительно средней по категории(diff).
+select
+	p.product_name ,
+	p.category_id,
+	p.units_in_stock,
+	count(p.product_name ) over(partition by p.category_id) as cnt_product,
+	round(avg(p.unit_price) over(partition by p.category_id)) as average,
+	round(p.unit_price - avg(p.unit_price) over(partition by p.category_id)) * 100.0
+		/ avg(p.unit_price) over(partition by p.category_id) as DIFF
+from
+	products p
+order by
+	p.category_id ,
+	p.unit_price ,
+	p.product_name
 
 
 
