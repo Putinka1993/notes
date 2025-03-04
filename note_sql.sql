@@ -1,5 +1,34 @@
 -- Patterns
 
+-- Накопительная выручка
+-- Рассчитаем выручку компании накопительным итогом по месяцам в совокупности за все годы
+-- (без разделения на отдельные годы)
+WITH data_sum AS (
+    SELECT
+        EXTRACT(YEAR FROM o.order_date) AS year_order,
+        EXTRACT(MONTH FROM o.order_date) AS year_month_num,
+        TO_CHAR(o.order_date, 'Month') AS month_order,
+        ROUND(SUM(od.unit_price * od.quantity)) AS revenue
+    FROM orders o
+    JOIN order_details od ON o.order_id = od.order_id
+    GROUP BY
+        EXTRACT(YEAR FROM o.order_date),
+        EXTRACT(MONTH FROM o.order_date),
+        TO_CHAR(o.order_date, 'Month')
+    ORDER BY
+        EXTRACT(YEAR FROM o.order_date),
+        EXTRACT(MONTH FROM o.order_date),
+        TO_CHAR(o.order_date, 'Month')
+)
+SELECT
+    year_order,
+    year_month_num,
+    month_order,
+    revenue,
+    SUM(revenue) OVER (ORDER BY year_order, year_month_num ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS cum_revenue
+FROM data_sum
+ORDER BY year_order, year_month_num
+
 -- Напишите запрос, который возвращает САМЫЙ ДОРОГОЙ ПРОДУКТ В КАЖДОЙ КАТЕГОРИИ.
 -- если был самый дешевый то в оконной функции в order by мы бы оставили обычную сортировку
 with d_rank as (
@@ -55,6 +84,36 @@ order by
 	p.category_id ,
 	p.unit_price ,
 	p.product_name
+
+-- FRAMES
+Определение фрейма:
+ROWS|RANGE|GROUPS BETWEEN X AND Y
+
+ROWS — определение фрейма относительно текущей строки, ROWS оперирует индивидуальными записями.
+
+Начало фрейма (X) может быть:
+
+CURRENT ROW — фрейм начинается с текущей строки;
+N PRECEDING— фрейм начинается с N-й строки перед текущей;
+N FOLLOWING — фрейм начинается с N-й строки после текущей;
+UNBOUNDED FOLLOWING — фрейм начинается с границы секции.
+Конец фрейма (Y) может быть:
+
+CURRENT ROW — фрейм до текущей строки;
+N PRECEDING — фрейм до N-й строки перед текущей;
+N FOLLOWING — фрейм до N-й строки после текущей;
+UNBOUNDED FOLLOWING — фрейм до границы секции.
+Пример (1): фрейм включает только две предыдущие записи и текущую строку
+
+ROWS BETWEEN 2 PRECEDING AND CURRENT ROW
+Пример (2): фрейм включает текущую строку и все последующие
+
+ROWS BETWEEN CURRENT ROW AND UNBOUNDED FOLLOWING
+Функции, поддерживающие фреймы:
+
+функции смещения FIRST_VALUE(), LAST_VALUE(), NTH_VALUE();
+все функции агрегации;
+Остальные функции работают со всей партицией (PARTITION BY) либо со всеми выбранными записями.
 
 
 
