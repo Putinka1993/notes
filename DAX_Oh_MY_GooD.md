@@ -16,3 +16,6 @@
 CALCULATE изменяет контекст вычисления, применяя фильтры или альтернативные отношения.
 Здесь он заставляет COUNTROWS('NW_orders_total') считать только те заказы, у которых shipped_date совпадает с Calendar[Date].**
 
+IF/OR
+
+**is_weekend = IF(or('Calendar'[День недели] = 5, 'Calendar'[День недели] = 6), "Weekend", "Work day")**
