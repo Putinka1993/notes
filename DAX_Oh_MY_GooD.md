@@ -19,3 +19,4 @@ CALCULATE изменяет контекст вычисления, применя
 IF/OR
 
 **is_weekend = IF(or('Calendar'[День недели] = 5, 'Calendar'[День недели] = 6), "Weekend", "Work day")**
+**IF('Calendar'[День недели] = 5 || 'Calendar'[День недели] = 6, "Weekend", "Work day")**
