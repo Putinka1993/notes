@@ -17,6 +17,30 @@ CALCULATE изменяет контекст вычисления, применя
 ### посчетать количество заказов отправленных в каждый день из таблицы календаря
 CALCULATE(COUNTROWS('NW_orders_total'), USERELATIONSHIP('Calendar'[Date], 'NW_orders_total'[shipped_date]))
 
+### вычисляет накопленную выручку с начала года до текущей даты — то есть "Year-to-Date" (YTD)
+Revenue_YTD = CALCULATE(
+    [Revenue],
+    DATESYTD('Calendar'[Date]))
+
+### считает выручку за предыдущий месяц относительно текущей даты на визуале
+Revenue_previous_month = CALCULATE(
+    [Revenue], 
+    DATEADD('Calendar'[Date], 
+    -1,
+    MONTH)
+    )
+
+### вычисляет выручку за последние 10 дней, считая от максимальной даты в текущем контексте
+Revenue_prev_10_days = 
+CALCULATE(
+    [Revenue], 
+    DATESINPERIOD('Calendar'[Date], 
+        MAX('Calendar'[Date]), 
+        -10,
+        DAY
+    )
+)
+
 
 # FILTER() 
 this is mesuare, считает количество заказов (dist_cnt_orders), но только для тех товаров, 
