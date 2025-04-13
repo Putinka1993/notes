@@ -20,3 +20,7 @@ IF/OR
 
 **is_weekend = IF(or('Calendar'[День недели] = 5, 'Calendar'[День недели] = 6), "Weekend", "Work day")**
 **IF('Calendar'[День недели] = 5 || 'Calendar'[День недели] = 6, "Weekend", "Work day")**
+
+CONCATENATE
+
+FullName = employees_dir[title_of_courtesy] & " " & employees_dir[first_name] & " " & employees_dir[last_name]
