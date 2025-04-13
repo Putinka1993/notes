@@ -85,6 +85,53 @@ order by
 	p.unit_price ,
 	p.product_name
 
+
+-- вывести таблицу с ОТСОРТИРОВАННЫМ столбцом ЗАРПЛАТЫ по ДЕПОРТАМЕНТУ ,
+-- вывести минимальную и максимальную зарплату в депортаменте
+select
+	name ,
+	department ,
+	salary ,
+	first_value(salary) over(partition by department order by salary rows between unbounded preceding and unbounded following) as low ,
+	last_value(salary) over(partition by department order by salary rows between unbounded preceding and unbounded following) as high
+from
+	employees
+order by
+	department ,
+	salary ,
+	id
+
+
+--  вывести столбец ЗАРПЛАТЫ отсортированный по всем ДПЕОРТАМЕНТАМ ,
+-- вывести предыдущую и следующую по величине зарплату , имя и депортамент
+with t_sal as (
+	select
+		name ,
+		department ,
+		salary ,
+		lag(salary, 1) over() as prev_salary ,
+		lag(name, 1) over() as prev_name ,
+		lag(department, 1) over() as prev_department
+	FROM
+		employees e
+	order by
+		salary ,
+		id
+)
+select
+	name ,
+	department ,
+	salary ,
+	prev_name ,
+	prev_department ,
+	prev_salary ,
+	round((salary - prev_salary) * 100.0 / prev_salary) as diff_percent
+from
+	t_sal
+
+
+
+
 -- FRAMES
 Определение фрейма:
 ROWS|RANGE|GROUPS BETWEEN X AND Y
