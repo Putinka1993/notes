@@ -85,6 +85,27 @@ order by
 	p.unit_price ,
 	p.product_name
 
+-- вывести зарплаты разбитые по городам сколько процентов составляет его зарплата от максимальной в городе
+with t_salary as (
+	SELECT
+		name ,
+		city ,
+		salary ,
+		last_value(salary) over(partition by city order by salary rows between unbounded preceding and unbounded following) as max_salary_city
+	from
+		employees
+	order by
+		city ,
+		salary
+)
+select
+	name ,
+	city ,
+	salary ,
+	round((salary / max_salary_city) * 100.0) as percent
+from
+	t_salary
+
 
 -- вывести таблицу с ОТСОРТИРОВАННЫМ столбцом ЗАРПЛАТЫ по ДЕПОРТАМЕНТУ ,
 -- вывести минимальную и максимальную зарплату в депортаменте
@@ -102,8 +123,8 @@ order by
 	id
 
 
---  вывести столбец ЗАРПЛАТЫ отсортированный по всем ДПЕОРТАМЕНТАМ ,
--- вывести предыдущую и следующую по величине зарплату , имя и депортамент
+--  вывести столбец ЗАРПЛАТЫ отсортированный по всем ДЕПОРТАМЕНТАМ ,
+-- вывести предыдущую и следующую по величине зарплату в процентах (на сколько больше), имя и депортамент
 with t_sal as (
 	select
 		name ,
