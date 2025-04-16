@@ -35,6 +35,11 @@ employees.query('salary > 5500 and hire_date == "2020-01-15"')
 employees.query('department_id == 2')
 # фильтрация с пробелами
 df.query('`Exchange Index` == "NASDAQ Composite"')
+# фильтрация с использованием списка list
+selected_list = ['1105042d-9197-4bcd-9668-bb5ab2a76221',
+                 '2487e34e-728d-4d0b-818b-45f8f111f853',
+                 'b5355c21-48ad-42e7-9ee6-ebe9085881a3']
+od.query('product_uuid in @selected_list').head()
 
 # 3. sort_values()
 # Сортировка данных по указанным столбцам.
