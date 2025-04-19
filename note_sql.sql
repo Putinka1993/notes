@@ -1,5 +1,21 @@
 -- Patterns
 
+-- Посчитаем доходы и расходы по месяцам нарастающим итогом (кумулятивно):
+SELECT
+	"year" ,
+	"month" ,
+	income ,
+	expense ,
+	sum(income) over(order by "year" , "month" rows between unbounded preceding and current row) as t_income ,
+	sum(expense) over(order by "year" , "month" rows between unbounded preceding and current row) as t_expense ,
+	round(
+		sum(income) over(order by "year" , "month" rows between unbounded preceding and current row)
+		-
+		sum(expense) over(order by "year" , "month" rows between unbounded preceding and current row)
+		) as t_profit
+from
+	expenses
+
 -- Накопительная выручка
 -- Рассчитаем выручку компании накопительным итогом по месяцам в совокупности за все годы
 -- (без разделения на отдельные годы)
