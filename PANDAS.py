@@ -67,6 +67,8 @@ employees.loc[:, ['name', 'salary']]
 employees.groupby('department_id')['salary'].mean()
 # Количество сотрудников в каждом департаменте
 employees.groupby('department_id').size()
+# Скольких уникальных клиентов обслужил каждый сотрудник магазина? (таблица orders).
+orders.groupby('salesman_id')['customer_id'].nunique()
 
 # 6. agg()
 # Применение нескольких агрегатных функций.
