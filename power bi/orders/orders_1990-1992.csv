@@ -1,0 +1,831 @@
+order_id;customer_id;employee_id;order_date;required_date;shipped_date;ship_via;freight;ship_name;ship_address;ship_city;ship_region;ship_postal_code;ship_country
+1;VINET;5;04.07.1990;01.08.1990;16.07.1990;3;32,38;Vins et alcools Chevalier;59 rue de l'Abbaye;Reims;;51100;France
+2;TOMSP;6;05.07.1990;16.08.1990;10.07.1990;1;11,61;Toms Spezialitäten;Luisenstr. 48;Münster;;44087;Germany
+3;HANAR;4;08.07.1990;05.08.1990;12.07.1990;2;65,83;Hanari Carnes;Rua do Paço, 67;Rio de Janeiro;RJ;05454-876;Brazil
+4;VICTE;3;08.07.1990;05.08.1990;15.07.1990;1;41,34;Victuailles en stock;2, rue du Commerce;Lyon;;69004;France
+5;SUPRD;4;09.07.1990;06.08.1990;11.07.1990;2;51,3;Suprêmes délices;Boulevard Tirou, 255;Charleroi;;B-6000;Belgium
+6;HANAR;3;10.07.1990;24.07.1990;16.07.1990;2;58,17;Hanari Carnes;Rua do Paço, 67;Rio de Janeiro;RJ;05454-876;Brazil
+7;CHOPS;5;11.07.1990;08.08.1990;23.07.1990;2;22,98;Chop-suey Chinese;Hauptstr. 31;Bern;;3012;Switzerland
+8;RICSU;9;12.07.1990;09.08.1990;15.07.1990;3;148,33;Richter Supermarkt;Starenweg 5;Genève;;1204;Switzerland
+9;WELLI;3;15.07.1990;12.08.1990;17.07.1990;2;13,97;Wellington Importadora;Rua do Mercado, 12;Resende;SP;08737-363;Brazil
+10;HILAA;4;16.07.1990;13.08.1990;22.07.1990;3;81,91;HILARION-Abastos;Carrera 22 con Ave. Carlos Soublette #8-35;San Cristóbal;Táchira;5022;Venezuela
+11;ERNSH;1;17.07.1990;14.08.1990;23.07.1990;1;140,51;Ernst Handel;Kirchgasse 6;Graz;;8010;Austria
+12;CENTC;4;18.07.1990;15.08.1990;25.07.1990;3;3,25;Centro comercial Moctezuma;Sierras de Granada 9993;México D.F.;;5022;Mexico
+13;OTTIK;4;19.07.1990;16.08.1990;29.07.1990;1;55,09;Ottilies Käseladen;Mehrheimerstr. 369;Köln;;50739;Germany
+14;QUEDE;4;19.07.1990;16.08.1990;30.07.1990;2;3,05;Que Delícia;Rua da Panificadora, 12;Rio de Janeiro;RJ;02389-673;Brazil
+15;RATTC;8;22.07.1990;19.08.1990;25.07.1990;3;48,29;Rattlesnake Canyon Grocery;2817 Milton Dr.;Albuquerque;NM;87110;USA
+16;ERNSH;9;23.07.1990;20.08.1990;31.07.1990;3;146,06;Ernst Handel;Kirchgasse 6;Graz;;8010;Austria
+17;FOLKO;6;24.07.1990;21.08.1990;23.08.1990;3;3,67;Folk och fä HB;Åkergatan 24;Bräcke;;S-844 67;Sweden
+18;BLONP;2;25.07.1990;22.08.1990;12.08.1990;1;55,28;Blondel père et fils;24, place Kléber;Strasbourg;;67000;France
+19;WARTH;3;26.07.1990;06.09.1990;31.07.1990;3;25,73;Wartian Herkku;Torikatu 38;Oulu;;90110;Finland
+20;FRANK;4;29.07.1990;26.08.1990;06.08.1990;1;208,58;Frankenversand;Berliner Platz 43;München;;80805;Germany
+21;GROSR;8;30.07.1990;27.08.1990;02.08.1990;3;66,29;GROSELLA-Restaurante;5ª Ave. Los Palos Grandes;Caracas;DF;1081;Venezuela
+22;WHITC;5;31.07.1990;14.08.1990;09.08.1990;1;4,56;White Clover Markets;1029 - 12th Ave. S.;Seattle;WA;98124;USA
+23;WARTH;1;01.08.1990;29.08.1990;02.08.1990;1;136,54;Wartian Herkku;Torikatu 38;Oulu;;90110;Finland
+24;SPLIR;6;01.08.1990;29.08.1990;30.08.1990;2;4,54;Split Rail Beer & Ale;P.O. Box 555;Lander;WY;82520;USA
+25;RATTC;6;02.08.1990;30.08.1990;06.08.1990;2;98,03;Rattlesnake Canyon Grocery;2817 Milton Dr.;Albuquerque;NM;87110;USA
+26;QUICK;3;05.08.1990;02.09.1990;12.08.1990;3;76,07;QUICK-Stop;Taucherstraße 10;Cunewalde;;1307;Germany
+27;VINET;6;06.08.1990;03.09.1990;16.08.1990;1;6,01;Vins et alcools Chevalier;59 rue de l'Abbaye;Reims;;51100;France
+28;MAGAA;1;07.08.1990;04.09.1990;09.08.1990;1;26,93;Magazzini Alimentari Riuniti;Via Ludovico il Moro 22;Bergamo;;24100;Italy
+29;TORTU;8;08.08.1990;22.08.1990;14.08.1990;3;13,84;Tortuga Restaurante;Avda. Azteca 123;México D.F.;;5033;Mexico
+30;MORGK;2;09.08.1990;06.09.1990;13.08.1990;3;125,77;Morgenstern Gesundkost;Heerstr. 22;Leipzig;;4179;Germany
+31;BERGS;8;12.08.1990;09.09.1990;16.08.1990;2;92,69;Berglunds snabbköp;Berguvsvägen  8;Luleå;;S-958 22;Sweden
+32;LEHMS;8;13.08.1990;10.09.1990;16.08.1990;2;25,83;Lehmanns Marktstand;Magazinweg 7;Frankfurt a.M.;;60528;Germany
+33;BERGS;2;14.08.1990;11.09.1990;12.09.1990;1;8,98;Berglunds snabbköp;Berguvsvägen  8;Luleå;;S-958 22;Sweden
+34;ROMEY;4;14.08.1990;28.08.1990;21.08.1990;1;2,94;Romero y tomillo;Gran Vía, 1;Madrid;;28001;Spain
+35;ROMEY;4;15.08.1990;12.09.1990;21.08.1990;1;12,69;Romero y tomillo;Gran Vía, 1;Madrid;;28001;Spain
+36;LILAS;3;16.08.1990;13.09.1990;23.08.1990;3;84,81;LILA-Supermercado;Carrera 52 con Ave. Bolívar #65-98 Llano Largo;Barquisimeto;Lara;3508;Venezuela
+37;LEHMS;4;19.08.1990;16.09.1990;27.08.1990;1;76,56;Lehmanns Marktstand;Magazinweg 7;Frankfurt a.M.;;60528;Germany
+38;QUICK;1;20.08.1990;17.09.1990;26.08.1990;2;76,83;QUICK-Stop;Taucherstraße 10;Cunewalde;;1307;Germany
+39;QUICK;8;21.08.1990;18.09.1990;30.08.1990;3;229,24;QUICK-Stop;Taucherstraße 10;Cunewalde;;1307;Germany
+40;RICAR;8;22.08.1990;19.09.1990;28.08.1990;3;12,76;Ricardo Adocicados;Av. Copacabana, 267;Rio de Janeiro;RJ;02389-890;Brazil
+41;REGGC;4;23.08.1990;20.09.1990;03.09.1990;1;7,45;Reggiani Caseifici;Strada Provinciale 124;Reggio Emilia;;42100;Italy
+42;BSBEV;7;26.08.1990;23.09.1990;28.08.1990;3;22,77;B's Beverages;Fauntleroy Circus;London;;EC2 5NT;UK
+43;COMMI;8;27.08.1990;24.09.1990;03.09.1990;1;79,7;Comércio Mineiro;Av. dos Lusíadas, 23;Sao Paulo;SP;05432-043;Brazil
+44;QUEDE;6;27.08.1990;24.09.1990;04.09.1990;2;6,4;Que Delícia;Rua da Panificadora, 12;Rio de Janeiro;RJ;02389-673;Brazil
+45;TRADH;1;28.08.1990;25.09.1990;02.09.1990;2;1,35;Tradiçao Hipermercados;Av. Inês de Castro, 414;Sao Paulo;SP;05634-030;Brazil
+46;TORTU;1;29.08.1990;26.09.1990;11.09.1990;3;21,18;Tortuga Restaurante;Avda. Azteca 123;México D.F.;;5033;Mexico
+47;RATTC;4;30.08.1990;27.09.1990;05.09.1990;2;147,26;Rattlesnake Canyon Grocery;2817 Milton Dr.;Albuquerque;NM;87110;USA
+48;VINET;2;02.09.1990;30.09.1990;10.09.1990;2;1,15;Vins et alcools Chevalier;59 rue de l'Abbaye;Reims;;51100;France
+49;LILAS;6;03.09.1990;01.10.1990;11.09.1990;1;0,12;LILA-Supermercado;Carrera 52 con Ave. Bolívar #65-98 Llano Largo;Barquisimeto;Lara;3508;Venezuela
+50;BLONP;5;04.09.1990;16.10.1990;10.09.1990;2;5,74;Blondel père et fils;24, place Kléber;Strasbourg;;67000;France
+51;HUNGO;6;05.09.1990;03.10.1990;11.09.1990;2;168,22;Hungry Owl All-Night Grocers;8 Johnstown Road;Cork;Co. Cork;;Ireland
+52;RICAR;4;06.09.1990;04.10.1990;13.09.1990;2;29,76;Ricardo Adocicados;Av. Copacabana, 267;Rio de Janeiro;RJ;02389-890;Brazil
+53;MAGAA;2;09.09.1990;07.10.1990;18.09.1990;2;17,68;Magazzini Alimentari Riuniti;Via Ludovico il Moro 22;Bergamo;;24100;Italy
+54;WANDK;8;09.09.1990;07.10.1990;17.09.1990;2;45,08;Die Wandernde Kuh;Adenauerallee 900;Stuttgart;;70563;Germany
+55;SUPRD;4;10.09.1990;08.10.1990;09.10.1990;2;6,27;Suprêmes délices;Boulevard Tirou, 255;Charleroi;;B-6000;Belgium
+56;GODOS;7;11.09.1990;09.10.1990;18.09.1990;2;107,83;Godos Cocina Típica;C/ Romero, 33;Sevilla;;41101;Spain
+57;TORTU;1;12.09.1990;10.10.1990;17.09.1990;2;63,79;Tortuga Restaurante;Avda. Azteca 123;México D.F.;;5033;Mexico
+58;OLDWO;8;13.09.1990;11.10.1990;09.10.1990;3;257,62;Old World Delicatessen;2743 Bering St.;Anchorage;AK;99508;USA
+59;ROMEY;1;16.09.1990;14.10.1990;23.09.1990;3;7,56;Romero y tomillo;Gran Vía, 1;Madrid;;28001;Spain
+60;LONEP;2;17.09.1990;15.10.1990;25.09.1990;2;0,56;Lonesome Pine Restaurant;89 Chiaroscuro Rd.;Portland;OR;97219;USA
+61;ANATR;7;18.09.1990;16.10.1990;24.09.1990;3;1,61;Ana Trujillo Emparedados y helados;Avda. de la Constitución 2222;México D.F.;;5021;Mexico
+62;HUNGO;3;19.09.1990;17.10.1990;23.10.1990;1;47,3;Hungry Owl All-Night Grocers;8 Johnstown Road;Cork;Co. Cork;;Ireland
+63;THEBI;8;20.09.1990;18.10.1990;27.09.1990;2;17,52;The Big Cheese;89 Jefferson Way Suite 2;Portland;OR;97201;USA
+64;DUMON;1;20.09.1990;04.10.1990;26.09.1990;3;24,69;Du monde entier;67, rue des Cinquante Otages;Nantes;;44000;France
+65;WANDK;2;23.09.1990;21.10.1990;03.10.1990;2;40,26;Die Wandernde Kuh;Adenauerallee 900;Stuttgart;;70563;Germany
+66;QUICK;2;24.09.1990;22.10.1990;04.10.1990;2;1,96;QUICK-Stop;Taucherstraße 10;Cunewalde;;1307;Germany
+67;RATTC;1;25.09.1990;23.10.1990;04.10.1990;2;74,16;Rattlesnake Canyon Grocery;2817 Milton Dr.;Albuquerque;NM;87110;USA
+68;ISLAT;4;26.09.1990;24.10.1990;03.10.1990;2;41,76;Island Trading;Garden House Crowther Way;Cowes;Isle of Wight;PO31 7PJ;UK
+69;RATTC;1;27.09.1990;25.10.1990;08.10.1990;3;150,15;Rattlesnake Canyon Grocery;2817 Milton Dr.;Albuquerque;NM;87110;USA
+70;LONEP;6;30.09.1990;28.10.1990;10.10.1990;1;12,69;Lonesome Pine Restaurant;89 Chiaroscuro Rd.;Portland;OR;97219;USA
+71;ISLAT;8;01.10.1990;29.10.1990;04.10.1990;2;4,73;Island Trading;Garden House Crowther Way;Cowes;Isle of Wight;PO31 7PJ;UK
+72;TORTU;7;02.10.1990;30.10.1990;11.10.1990;3;64,5;Tortuga Restaurante;Avda. Azteca 123;México D.F.;;5033;Mexico
+73;WARTH;5;03.10.1990;17.10.1990;18.10.1990;3;34,57;Wartian Herkku;Torikatu 38;Oulu;;90110;Finland
+74;ISLAT;3;03.10.1990;31.10.1990;11.10.1990;2;3,43;Island Trading;Garden House Crowther Way;Cowes;Isle of Wight;PO31 7PJ;UK
+75;PERIC;7;04.10.1990;01.11.1990;23.10.1990;3;0,4;Pericles Comidas clásicas;Calle Dr. Jorge Cash 321;México D.F.;;5033;Mexico
+76;KOENE;4;07.10.1990;04.11.1990;14.10.1990;1;4,88;Königlich Essen;Maubelstr. 90;Brandenburg;;14776;Germany
+77;SAVEA;9;08.10.1990;05.11.1990;10.10.1990;1;214,27;Save-a-lot Markets;187 Suffolk Ln.;Boise;ID;83720;USA
+78;KOENE;1;09.10.1990;23.10.1990;14.10.1990;3;64,86;Königlich Essen;Maubelstr. 90;Brandenburg;;14776;Germany
+79;BOLID;4;10.10.1990;07.11.1990;14.10.1990;2;77,92;Bólido Comidas preparadas;C/ Araquil, 67;Madrid;;28023;Spain
+80;FOLKO;2;11.10.1990;08.11.1990;14.10.1990;1;63,36;Folk och fä HB;Åkergatan 24;Bräcke;;S-844 67;Sweden
+81;FURIB;4;14.10.1990;11.11.1990;17.10.1990;3;87,03;Furia Bacalhau e Frutos do Mar;Jardim das rosas n. 32;Lisboa;;1675;Portugal
+82;SPLIR;4;15.10.1990;26.11.1990;23.10.1990;2;191,67;Split Rail Beer & Ale;P.O. Box 555;Lander;WY;82520;USA
+83;LILAS;3;16.10.1990;13.11.1990;28.10.1990;1;12,75;LILA-Supermercado;Carrera 52 con Ave. Bolívar #65-98 Llano Largo;Barquisimeto;Lara;3508;Venezuela
+84;BONAP;9;16.10.1990;27.11.1990;21.10.1990;1;10,19;Bon app';12, rue des Bouchers;Marseille;;13008;France
+85;MEREP;3;17.10.1990;28.11.1990;21.10.1990;2;52,84;Mère Paillarde;43 rue St. Laurent;Montréal;Québec;H1J 1C3;Canada
+86;WARTH;5;18.10.1990;15.11.1990;25.10.1990;3;0,59;Wartian Herkku;Torikatu 38;Oulu;;90110;Finland
+87;VICTE;8;21.10.1990;18.11.1990;28.10.1990;2;8,56;Victuailles en stock;2, rue du Commerce;Lyon;;69004;France
+88;HUNGO;7;22.10.1990;19.11.1990;24.10.1990;2;42,11;Hungry Owl All-Night Grocers;8 Johnstown Road;Cork;Co. Cork;;Ireland
+89;PRINI;7;23.10.1990;20.11.1990;25.10.1990;2;15,51;Princesa Isabel Vinhos;Estrada da saúde n. 58;Lisboa;;1756;Portugal
+90;FRANK;4;24.10.1990;21.11.1990;29.10.1990;3;108,26;Frankenversand;Berliner Platz 43;München;;80805;Germany
+91;OLDWO;4;25.10.1990;22.11.1990;29.10.1990;3;84,21;Old World Delicatessen;2743 Bering St.;Anchorage;AK;99508;USA
+92;MEREP;2;28.10.1990;25.11.1990;04.11.1990;2;15,66;Mère Paillarde;43 rue St. Laurent;Montréal;Québec;H1J 1C3;Canada
+93;BONAP;1;29.10.1990;26.11.1990;08.11.1990;3;166,31;Bon app';12, rue des Bouchers;Marseille;;13008;France
+94;SIMOB;7;29.10.1990;26.11.1990;05.11.1990;3;26,78;Simons bistro;Vinbæltet 34;Kobenhavn;;1734;Denmark
+95;FRANK;4;30.10.1990;13.11.1990;04.11.1990;2;54,83;Frankenversand;Berliner Platz 43;München;;80805;Germany
+96;LEHMS;4;31.10.1990;28.11.1990;06.11.1990;1;110,37;Lehmanns Marktstand;Magazinweg 7;Frankfurt a.M.;;60528;Germany
+97;WHITC;4;01.11.1990;29.11.1990;05.11.1990;2;23,29;White Clover Markets;1029 - 12th Ave. S.;Seattle;WA;98124;USA
+98;QUICK;2;04.11.1990;02.12.1990;11.11.1990;2;249,06;QUICK-Stop;Taucherstraße 10;Cunewalde;;1307;Germany
+99;RATTC;3;05.11.1990;17.12.1990;08.11.1990;3;142,08;Rattlesnake Canyon Grocery;2817 Milton Dr.;Albuquerque;NM;87110;USA
+100;FAMIA;4;06.11.1990;04.12.1990;08.11.1990;3;3,1;Familia Arquibaldo;Rua Orós, 92;Sao Paulo;SP;05442-030;Brazil
+101;WANDK;4;07.11.1990;05.12.1990;15.11.1990;2;0,78;Die Wandernde Kuh;Adenauerallee 900;Stuttgart;;70563;Germany
+102;SPLIR;7;08.11.1990;06.12.1990;15.11.1990;1;8,63;Split Rail Beer & Ale;P.O. Box 555;Lander;WY;82520;USA
+103;LAMAI;6;11.11.1990;09.12.1990;03.12.1990;2;64,19;La maison d'Asie;1 rue Alsace-Lorraine;Toulouse;;31000;France
+104;ERNSH;1;11.11.1990;09.12.1990;20.11.1990;1;162,33;Ernst Handel;Kirchgasse 6;Graz;;8010;Austria
+105;FURIB;3;12.11.1990;26.11.1990;18.11.1990;3;1,3;Furia Bacalhau e Frutos do Mar;Jardim das rosas n. 32;Lisboa;;1675;Portugal
+106;PICCO;7;13.11.1990;11.12.1990;25.11.1990;3;360,63;Piccolo und mehr;Geislweg 14;Salzburg;;5020;Austria
+107;PERIC;8;14.11.1990;12.12.1990;20.11.1990;3;53,8;Pericles Comidas clásicas;Calle Dr. Jorge Cash 321;México D.F.;;5033;Mexico
+108;AROUT;6;15.11.1990;13.12.1990;20.11.1990;1;41,95;Around the Horn;Brook Farm Stratford St. Mary;Colchester;Essex;CO7 6JX;UK
+109;WANDK;6;18.11.1990;16.12.1990;27.11.1990;2;36,71;Die Wandernde Kuh;Adenauerallee 900;Stuttgart;;70563;Germany
+110;LILAS;1;19.11.1990;17.12.1990;02.12.1990;3;34,88;LILA-Supermercado;Carrera 52 con Ave. Bolívar #65-98 Llano Largo;Barquisimeto;Lara;3508;Venezuela
+111;LAMAI;5;20.11.1990;18.12.1990;27.11.1990;1;19,64;La maison d'Asie;1 rue Alsace-Lorraine;Toulouse;;31000;France
+112;SEVES;5;21.11.1990;19.12.1990;26.11.1990;3;288,43;Seven Seas Imports;90 Wadhurst Rd.;London;;OX15 4NB;UK
+113;BLONP;4;22.11.1990;20.12.1990;02.12.1990;3;131,7;Blondel père et fils;24, place Kléber;Strasbourg;;67000;France
+114;QUICK;1;22.11.1990;20.12.1990;03.12.1990;2;183,17;QUICK-Stop;Taucherstraße 10;Cunewalde;;1307;Germany
+115;BONAP;3;25.11.1990;23.12.1990;28.11.1990;1;96,04;Bon app';12, rue des Bouchers;Marseille;;13008;France
+116;DRACD;4;26.11.1990;24.12.1990;04.12.1990;3;30,54;Drachenblut Delikatessen;Walserweg 21;Aachen;;52066;Germany
+117;EASTC;1;26.11.1990;07.01.1991;04.12.1990;1;71,97;Eastern Connection;35 King George;London;;WX3 6FW;UK
+118;ANTON;3;27.11.1990;25.12.1990;02.12.1990;2;22;Antonio Moreno Taquería;Mataderos  2312;México D.F.;;5023;Mexico
+119;GALED;8;28.11.1990;09.01.1991;30.12.1990;2;10,14;Galería del gastronómo;Rambla de Cataluña, 23;Barcelona;;8022;Spain
+120;VAFFE;7;28.11.1990;26.12.1990;02.12.1990;3;13,55;Vaffeljernet;Smagsloget 45;Århus;;8200;Denmark
+121;ERNSH;2;29.11.1990;27.12.1990;02.12.1990;2;101,95;Ernst Handel;Kirchgasse 6;Graz;;8010;Austria
+122;SPLIR;8;02.12.1990;30.12.1990;09.12.1990;2;195,68;Split Rail Beer & Ale;P.O. Box 555;Lander;WY;82520;USA
+123;CHOPS;6;03.12.1990;31.12.1990;27.12.1990;2;1,17;Chop-suey Chinese;Hauptstr. 31;Bern;;3012;Switzerland
+124;LAMAI;1;03.12.1990;31.12.1990;24.12.1990;1;0,45;La maison d'Asie;1 rue Alsace-Lorraine;Toulouse;;31000;France
+125;QUEEN;5;04.12.1990;01.01.1991;09.12.1990;2;890,78;Queen Cozinha;Alameda dos Canàrios, 891;Sao Paulo;SP;05487-020;Brazil
+126;HUNGO;4;05.12.1990;02.01.1991;11.12.1990;3;124,12;Hungry Owl All-Night Grocers;8 Johnstown Road;Cork;Co. Cork;;Ireland
+127;WOLZA;1;05.12.1990;02.01.1991;09.12.1990;3;3,94;Wolski Zajazd;ul. Filtrowa 68;Warszawa;;01-012;Poland
+128;HUNGC;3;06.12.1990;03.01.1991;09.12.1990;2;20,12;Hungry Coyote Import Store;City Center Plaza 516 Main St.;Elgin;OR;97827;USA
+129;MEREP;1;09.12.1990;06.01.1991;13.12.1990;2;20,39;Mère Paillarde;43 rue St. Laurent;Montréal;Québec;H1J 1C3;Canada
+130;SEVES;1;09.12.1990;06.01.1991;13.12.1990;3;22,21;Seven Seas Imports;90 Wadhurst Rd.;London;;OX15 4NB;UK
+131;FOLKO;5;10.12.1990;07.01.1991;19.12.1990;3;5,44;Folk och fä HB;Åkergatan 24;Bräcke;;S-844 67;Sweden
+132;QUEDE;2;11.12.1990;08.01.1991;13.12.1990;1;45,03;Que Delícia;Rua da Panificadora, 12;Rio de Janeiro;RJ;02389-673;Brazil
+133;HUNGO;8;12.12.1990;09.01.1991;16.01.1991;3;35,03;Hungry Owl All-Night Grocers;8 Johnstown Road;Cork;Co. Cork;;Ireland
+134;LILAS;3;12.12.1990;09.01.1991;13.12.1990;3;7,99;LILA-Supermercado;Carrera 52 con Ave. Bolívar #65-98 Llano Largo;Barquisimeto;Lara;3508;Venezuela
+135;ERNSH;4;13.12.1990;10.01.1991;16.12.1990;1;94,77;Ernst Handel;Kirchgasse 6;Graz;;8010;Austria
+136;AROUT;8;16.12.1990;13.01.1991;18.12.1990;3;34,24;Around the Horn;Brook Farm Stratford St. Mary;Colchester;Essex;CO7 6JX;UK
+137;BERGS;3;16.12.1990;13.01.1991;20.12.1990;3;168,64;Berglunds snabbköp;Berguvsvägen  8;Luleå;;S-958 22;Sweden
+138;SPLIR;1;17.12.1990;14.01.1991;23.12.1990;2;30,96;Split Rail Beer & Ale;P.O. Box 555;Lander;WY;82520;USA
+139;FAMIA;9;18.12.1990;01.01.1991;25.12.1990;3;13,99;Familia Arquibaldo;Rua Orós, 92;Sao Paulo;SP;05442-030;Brazil
+140;SANTG;1;18.12.1990;15.01.1991;20.12.1990;2;93,63;Santé Gourmet;Erling Skakkes gate 78;Stavern;;4110;Norway
+141;SEVES;2;19.12.1990;16.01.1991;20.12.1990;1;34,86;Seven Seas Imports;90 Wadhurst Rd.;London;;OX15 4NB;UK
+142;BOTTM;4;20.12.1990;17.01.1991;24.12.1990;2;47,42;Bottom-Dollar Markets;23 Tsawassen Blvd.;Tsawassen;BC;T2F 8M4;Canada
+143;ERNSH;6;23.12.1990;20.01.1991;26.12.1990;1;126,38;Ernst Handel;Kirchgasse 6;Graz;;8010;Austria
+144;DRACD;3;23.12.1990;20.01.1991;31.12.1990;3;5,45;Drachenblut Delikatessen;Walserweg 21;Aachen;;52066;Germany
+145;PICCO;2;24.12.1990;21.01.1991;01.01.1991;3;122,46;Piccolo und mehr;Geislweg 14;Salzburg;;5020;Austria
+146;SAVEA;1;25.12.1990;22.01.1991;03.01.1991;3;126,56;Save-a-lot Markets;187 Suffolk Ln.;Boise;ID;83720;USA
+147;HUNGC;1;25.12.1990;22.01.1991;03.01.1991;3;30,34;Hungry Coyote Import Store;City Center Plaza 516 Main St.;Elgin;OR;97827;USA
+148;HILAA;6;26.12.1990;23.01.1991;03.01.1991;1;184,41;HILARION-Abastos;Carrera 22 con Ave. Carlos Soublette #8-35;San Cristóbal;Táchira;5022;Venezuela
+149;FRANK;1;27.12.1990;10.01.1991;06.01.1991;3;135,35;Frankenversand;Berliner Platz 43;München;;80805;Germany
+150;PRINI;5;27.12.1990;24.01.1991;02.01.1991;1;60,26;Princesa Isabel Vinhos;Estrada da saúde n. 58;Lisboa;;1756;Portugal
+151;SAVEA;2;30.12.1990;27.01.1991;09.01.1991;3;89,16;Save-a-lot Markets;187 Suffolk Ln.;Boise;ID;83720;USA
+152;VAFFE;8;31.12.1990;14.01.1991;08.01.1991;3;27,36;Vaffeljernet;Smagsloget 45;Århus;;8200;Denmark
+153;EASTC;1;01.01.1991;29.01.1991;16.01.1991;3;83,93;Eastern Connection;35 King George;London;;WX3 6FW;UK
+154;RATTC;1;01.01.1991;29.01.1991;10.01.1991;1;12,51;Rattlesnake Canyon Grocery;2817 Milton Dr.;Albuquerque;NM;87110;USA
+155;ERNSH;8;02.01.1991;13.02.1991;10.01.1991;2;67,88;Ernst Handel;Kirchgasse 6;Graz;;8010;Austria
+156;ERNSH;4;03.01.1991;31.01.1991;09.01.1991;3;73,79;Ernst Handel;Kirchgasse 6;Graz;;8010;Austria
+157;MAGAA;2;03.01.1991;31.01.1991;08.01.1991;1;155,97;Magazzini Alimentari Riuniti;Via Ludovico il Moro 22;Bergamo;;24100;Italy
+158;LINOD;1;06.01.1991;03.02.1991;22.01.1991;1;34,82;LINO-Delicateses;Ave. 5 de Mayo Porlamar;I. de Margarita;Nueva Esparta;4980;Venezuela
+159;QUEEN;7;07.01.1991;18.02.1991;13.01.1991;1;108,04;Queen Cozinha;Alameda dos Canàrios, 891;Sao Paulo;SP;05487-020;Brazil
+160;OTTIK;2;07.01.1991;04.02.1991;30.01.1991;2;91,48;Ottilies Käseladen;Mehrheimerstr. 369;Köln;;50739;Germany
+161;FOLIG;8;08.01.1991;05.02.1991;14.01.1991;1;11,26;Folies gourmandes;184, chaussée de Tournai;Lille;;59000;France
+162;OCEAN;3;09.01.1991;06.02.1991;14.01.1991;1;29,83;Océano Atlántico Ltda.;Ing. Gustavo Moncada 8585 Piso 20-A;Buenos Aires;;1010;Argentina
+163;BOTTM;3;10.01.1991;07.02.1991;15.01.1991;3;2,4;Bottom-Dollar Markets;23 Tsawassen Blvd.;Tsawassen;BC;T2F 8M4;Canada
+164;BOTTM;9;10.01.1991;07.02.1991;21.01.1991;3;23,65;Bottom-Dollar Markets;23 Tsawassen Blvd.;Tsawassen;BC;T2F 8M4;Canada
+165;WARTH;8;13.01.1991;10.02.1991;15.01.1991;2;3,77;Wartian Herkku;Torikatu 38;Oulu;;90110;Finland
+166;LAMAI;3;14.01.1991;11.02.1991;16.01.1991;2;95,66;La maison d'Asie;1 rue Alsace-Lorraine;Toulouse;;31000;France
+167;FAMIA;2;14.01.1991;11.02.1991;17.01.1991;3;21,48;Familia Arquibaldo;Rua Orós, 92;Sao Paulo;SP;05442-030;Brazil
+168;HUNGC;3;15.01.1991;12.02.1991;24.01.1991;1;0,2;Hungry Coyote Import Store;City Center Plaza 516 Main St.;Elgin;OR;97827;USA
+169;WARTH;8;16.01.1991;13.02.1991;27.01.1991;3;22,72;Wartian Herkku;Torikatu 38;Oulu;;90110;Finland
+170;SIMOB;4;16.01.1991;13.02.1991;28.01.1991;3;70,29;Simons bistro;Vinbæltet 34;Kobenhavn;;1734;Denmark
+171;QUICK;4;17.01.1991;14.02.1991;24.01.1991;1;17,55;QUICK-Stop;Taucherstraße 10;Cunewalde;;1307;Germany
+172;RICSU;4;20.01.1991;17.02.1991;30.01.1991;2;137,35;Richter Supermarkt;Starenweg 5;Genève;;1204;Switzerland
+173;WELLI;3;21.01.1991;18.02.1991;27.01.1991;1;44,12;Wellington Importadora;Rua do Mercado, 12;Resende;SP;08737-363;Brazil
+174;QUEDE;8;21.01.1991;04.03.1991;27.01.1991;1;99,23;Que Delícia;Rua da Panificadora, 12;Rio de Janeiro;RJ;02389-673;Brazil
+175;FRANS;2;22.01.1991;19.02.1991;31.01.1991;1;3,02;Franchi S.p.A.;Via Monte Bianco 34;Torino;;10100;Italy
+176;GOURL;6;23.01.1991;06.02.1991;24.02.1991;3;24,5;Gourmet Lanchonetes;Av. Brasil, 442;Campinas;SP;04876-786;Brazil
+177;MEREP;7;23.01.1991;20.02.1991;27.01.1991;2;370,61;Mère Paillarde;43 rue St. Laurent;Montréal;Québec;H1J 1C3;Canada
+178;LAMAI;6;24.01.1991;21.02.1991;14.02.1991;2;7,93;La maison d'Asie;1 rue Alsace-Lorraine;Toulouse;;31000;France
+179;GALED;4;27.01.1991;24.02.1991;06.02.1991;1;18,69;Galería del gastronómo;Rambla de Cataluña, 23;Barcelona;;8022;Spain
+180;PICCO;4;27.01.1991;24.02.1991;03.03.1991;2;31,29;Piccolo und mehr;Geislweg 14;Salzburg;;5020;Austria
+181;REGGC;7;28.01.1991;25.02.1991;04.02.1991;1;11,09;Reggiani Caseifici;Strada Provinciale 124;Reggio Emilia;;42100;Italy
+182;HUNGO;3;29.01.1991;12.03.1991;07.02.1991;2;56,63;Hungry Owl All-Night Grocers;8 Johnstown Road;Cork;Co. Cork;;Ireland
+183;ERNSH;4;30.01.1991;13.02.1991;03.02.1991;1;458,78;Ernst Handel;Kirchgasse 6;Graz;;8010;Austria
+184;BOTTM;4;30.01.1991;13.02.1991;07.02.1991;2;44,17;Bottom-Dollar Markets;23 Tsawassen Blvd.;Tsawassen;BC;T2F 8M4;Canada
+185;SPLIR;3;31.01.1991;14.02.1991;07.02.1991;2;4,34;Split Rail Beer & Ale;P.O. Box 555;Lander;WY;82520;USA
+186;PRINI;3;03.02.1991;03.03.1991;04.03.1991;3;73,83;Princesa Isabel Vinhos;Estrada da saúde n. 58;Lisboa;;1756;Portugal
+187;FOLKO;3;03.02.1991;03.03.1991;13.02.1991;2;17,92;Folk och fä HB;Åkergatan 24;Bräcke;;S-844 67;Sweden
+188;CONSH;8;04.02.1991;18.03.1991;07.02.1991;2;9,21;Consolidated Holdings;Berkeley Gardens 12  Brewery;London;;WX1 6LT;UK
+189;BLONP;3;05.02.1991;05.03.1991;11.02.1991;2;156,66;Blondel père et fils;24, place Kléber;Strasbourg;;67000;France
+190;WARTH;8;05.02.1991;05.03.1991;12.02.1991;1;19,97;Wartian Herkku;Torikatu 38;Oulu;;90110;Finland
+191;TOMSP;3;06.02.1991;06.03.1991;14.02.1991;2;8,24;Toms Spezialitäten;Luisenstr. 48;Münster;;44087;Germany
+192;MEREP;6;07.02.1991;07.03.1991;10.02.1991;3;4,07;Mère Paillarde;43 rue St. Laurent;Montréal;Québec;H1J 1C3;Canada
+193;SAVEA;4;10.02.1991;10.03.1991;28.02.1991;2;86,53;Save-a-lot Markets;187 Suffolk Ln.;Boise;ID;83720;USA
+194;OLDWO;3;10.02.1991;24.03.1991;14.03.1991;2;73,02;Old World Delicatessen;2743 Bering St.;Anchorage;AK;99508;USA
+195;ERNSH;3;11.02.1991;11.03.1991;18.02.1991;2;47,94;Ernst Handel;Kirchgasse 6;Graz;;8010;Austria
+196;REGGC;8;12.02.1991;12.03.1991;14.02.1991;1;13,95;Reggiani Caseifici;Strada Provinciale 124;Reggio Emilia;;42100;Italy
+197;BERGS;3;12.02.1991;12.03.1991;21.02.1991;3;3,5;Berglunds snabbköp;Berguvsvägen  8;Luleå;;S-958 22;Sweden
+198;BERGS;3;13.02.1991;13.03.1991;20.02.1991;1;9,3;Berglunds snabbköp;Berguvsvägen  8;Luleå;;S-958 22;Sweden
+199;TOMSP;6;14.02.1991;14.03.1991;19.02.1991;1;14,68;Toms Spezialitäten;Luisenstr. 48;Münster;;44087;Germany
+200;RICAR;4;14.02.1991;14.03.1991;07.03.1991;2;68,66;Ricardo Adocicados;Av. Copacabana, 267;Rio de Janeiro;RJ;02389-890;Brazil
+201;RANCH;4;17.02.1991;17.03.1991;24.02.1991;2;38,82;Rancho grande;Av. del Libertador 900;Buenos Aires;;1010;Argentina
+202;BLONP;3;18.02.1991;18.03.1991;27.02.1991;2;53,3;Blondel père et fils;24, place Kléber;Strasbourg;;67000;France
+203;VICTE;8;19.02.1991;19.03.1991;11.03.1991;2;7,23;Victuailles en stock;2, rue du Commerce;Lyon;;69004;France
+204;QUICK;4;19.02.1991;05.03.1991;12.03.1991;3;189,09;QUICK-Stop;Taucherstraße 10;Cunewalde;;1307;Germany
+205;SAVEA;8;20.02.1991;20.03.1991;26.02.1991;1;140,26;Save-a-lot Markets;187 Suffolk Ln.;Boise;ID;83720;USA
+206;AROUT;1;21.02.1991;21.03.1991;26.02.1991;2;25,36;Around the Horn;Brook Farm Stratford St. Mary;Colchester;Essex;CO7 6JX;UK
+207;LAMAI;4;21.02.1991;21.03.1991;25.02.1991;3;2,74;La maison d'Asie;1 rue Alsace-Lorraine;Toulouse;;31000;France
+208;WARTH;8;24.02.1991;07.04.1991;03.03.1991;2;180,45;Wartian Herkku;Torikatu 38;Oulu;;90110;Finland
+209;KOENE;8;25.02.1991;08.04.1991;28.02.1991;2;8,12;Königlich Essen;Maubelstr. 90;Brandenburg;;14776;Germany
+210;KOENE;2;25.02.1991;25.03.1991;03.03.1991;1;11,57;Königlich Essen;Maubelstr. 90;Brandenburg;;14776;Germany
+211;SUPRD;7;26.02.1991;26.03.1991;04.03.1991;3;147,06;Suprêmes délices;Boulevard Tirou, 255;Charleroi;;B-6000;Belgium
+212;VICTE;4;27.02.1991;27.03.1991;28.02.1991;2;25,09;Victuailles en stock;2, rue du Commerce;Lyon;;69004;France
+213;FOLKO;8;28.02.1991;28.03.1991;03.03.1991;1;16,27;Folk och fä HB;Åkergatan 24;Bräcke;;S-844 67;Sweden
+214;LILAS;1;28.02.1991;28.03.1991;05.03.1991;3;148,61;LILA-Supermercado;Carrera 52 con Ave. Bolívar #65-98 Llano Largo;Barquisimeto;Lara;3508;Venezuela
+215;CONSH;2;03.03.1991;31.03.1991;18.03.1991;1;6,17;Consolidated Holdings;Berkeley Gardens 12  Brewery;London;;WX1 6LT;UK
+216;SUPRD;5;04.03.1991;01.04.1991;06.03.1991;3;14,78;Suprêmes délices;Boulevard Tirou, 255;Charleroi;;B-6000;Belgium
+217;FURIB;4;04.03.1991;01.04.1991;14.03.1991;2;89;Furia Bacalhau e Frutos do Mar;Jardim das rosas n. 32;Lisboa;;1675;Portugal
+218;VAFFE;1;05.03.1991;02.04.1991;14.03.1991;3;145,04;Vaffeljernet;Smagsloget 45;Århus;;8200;Denmark
+219;COMMI;4;06.03.1991;03.04.1991;13.03.1991;1;11,93;Comércio Mineiro;Av. dos Lusíadas, 23;Sao Paulo;SP;05432-043;Brazil
+220;MAGAA;8;06.03.1991;03.04.1991;11.03.1991;2;4,93;Magazzini Alimentari Riuniti;Via Ludovico il Moro 22;Bergamo;;24100;Italy
+221;KOENE;3;07.03.1991;04.04.1991;12.03.1991;3;44,12;Königlich Essen;Maubelstr. 90;Brandenburg;;14776;Germany
+222;WHITC;1;10.03.1991;07.04.1991;14.03.1991;1;60,18;White Clover Markets;1029 - 12th Ave. S.;Seattle;WA;98124;USA
+223;BONAP;4;11.03.1991;08.04.1991;14.03.1991;2;64,56;Bon app';12, rue des Bouchers;Marseille;;13008;France
+224;BSBEV;2;11.03.1991;08.04.1991;18.03.1991;3;45,59;B's Beverages;Fauntleroy Circus;London;;EC2 5NT;UK
+225;SEVES;8;12.03.1991;09.04.1991;19.03.1991;1;4,2;Seven Seas Imports;90 Wadhurst Rd.;London;;OX15 4NB;UK
+226;ISLAT;1;13.03.1991;27.03.1991;21.03.1991;3;16,37;Island Trading;Garden House Crowther Way;Cowes;Isle of Wight;PO31 7PJ;UK
+227;PERIC;5;13.03.1991;10.04.1991;21.03.1991;2;83,49;Pericles Comidas clásicas;Calle Dr. Jorge Cash 321;México D.F.;;5033;Mexico
+228;SUPRD;9;14.03.1991;11.04.1991;04.04.1991;1;68,52;Suprêmes délices;Boulevard Tirou, 255;Charleroi;;B-6000;Belgium
+229;HILAA;8;17.03.1991;14.04.1991;24.03.1991;3;4,41;HILARION-Abastos;Carrera 22 con Ave. Carlos Soublette #8-35;San Cristóbal;Táchira;5022;Venezuela
+230;PRINI;5;17.03.1991;14.04.1991;25.03.1991;2;13,02;Princesa Isabel Vinhos;Estrada da saúde n. 58;Lisboa;;1756;Portugal
+231;VICTE;2;18.03.1991;01.04.1991;26.03.1991;3;4,81;Victuailles en stock;2, rue du Commerce;Lyon;;69004;France
+232;RATTC;3;19.03.1991;16.04.1991;21.03.1991;3;708,95;Rattlesnake Canyon Grocery;2817 Milton Dr.;Albuquerque;NM;87110;USA
+233;FOLIG;6;20.03.1991;17.04.1991;24.03.1991;2;1,35;Folies gourmandes;184, chaussée de Tournai;Lille;;59000;France
+234;RICAR;8;20.03.1991;17.04.1991;25.03.1991;2;64,33;Ricardo Adocicados;Av. Copacabana, 267;Rio de Janeiro;RJ;02389-890;Brazil
+235;LAZYK;1;21.03.1991;18.04.1991;10.04.1991;3;7,48;Lazy K Kountry Store;12 Orchestra Terrace;Walla Walla;WA;99362;USA
+236;WHITC;7;24.03.1991;21.04.1991;25.04.1991;2;15,28;White Clover Markets;1029 - 12th Ave. S.;Seattle;WA;98124;USA
+237;BSBEV;3;24.03.1991;21.04.1991;01.04.1991;3;6,88;B's Beverages;Fauntleroy Circus;London;;EC2 5NT;UK
+238;LINOD;4;25.03.1991;08.04.1991;31.03.1991;2;64,45;LINO-Delicateses;Ave. 5 de Mayo Porlamar;I. de Margarita;Nueva Esparta;4980;Venezuela
+239;HILAA;1;26.03.1991;23.04.1991;02.04.1991;2;30,53;HILARION-Abastos;Carrera 22 con Ave. Carlos Soublette #8-35;San Cristóbal;Táchira;5022;Venezuela
+240;QUEEN;2;26.03.1991;23.04.1991;28.03.1991;2;71,07;Queen Cozinha;Alameda dos Canàrios, 891;Sao Paulo;SP;05487-020;Brazil
+241;FRANK;8;27.03.1991;24.04.1991;02.04.1991;2;4,93;Frankenversand;Berliner Platz 43;München;;80805;Germany
+242;PICCO;6;28.03.1991;25.04.1991;09.04.1991;2;5,29;Piccolo und mehr;Geislweg 14;Salzburg;;5020;Austria
+243;HILAA;7;31.03.1991;28.04.1991;03.04.1991;2;210,19;HILARION-Abastos;Carrera 22 con Ave. Carlos Soublette #8-35;San Cristóbal;Táchira;5022;Venezuela
+244;FURIB;8;31.03.1991;28.04.1991;08.04.1991;3;16,96;Furia Bacalhau e Frutos do Mar;Jardim das rosas n. 32;Lisboa;;1675;Portugal
+245;BOTTM;3;01.04.1991;29.04.1991;11.04.1991;1;62,89;Bottom-Dollar Markets;23 Tsawassen Blvd.;Tsawassen;BC;T2F 8M4;Canada
+246;LAMAI;4;02.04.1991;30.04.1991;10.04.1991;3;10,64;La maison d'Asie;1 rue Alsace-Lorraine;Toulouse;;31000;France
+247;COMMI;4;02.04.1991;30.04.1991;09.04.1991;2;65,99;Comércio Mineiro;Av. dos Lusíadas, 23;Sao Paulo;SP;05432-043;Brazil
+248;LAUGB;3;03.04.1991;01.05.1991;11.04.1991;3;4,65;Laughing Bacchus Wine Cellars;2319 Elm St.;Vancouver;BC;V3F 2K1;Canada
+249;TRADH;7;04.04.1991;02.05.1991;07.04.1991;2;46,77;Tradiçao Hipermercados;Av. Inês de Castro, 414;Sao Paulo;SP;05634-030;Brazil
+250;LEHMS;7;04.04.1991;02.05.1991;07.04.1991;1;36,21;Lehmanns Marktstand;Magazinweg 7;Frankfurt a.M.;;60528;Germany
+251;HILAA;8;07.04.1991;05.05.1991;11.04.1991;2;29,75;HILARION-Abastos;Carrera 22 con Ave. Carlos Soublette #8-35;San Cristóbal;Táchira;5022;Venezuela
+252;LILAS;4;08.04.1991;06.05.1991;16.04.1991;2;102,02;LILA-Supermercado;Carrera 52 con Ave. Bolívar #65-98 Llano Largo;Barquisimeto;Lara;3508;Venezuela
+253;LAMAI;6;09.04.1991;07.05.1991;17.04.1991;1;42,68;La maison d'Asie;1 rue Alsace-Lorraine;Toulouse;;31000;France
+254;BLAUS;9;09.04.1991;07.05.1991;16.04.1991;3;8,85;Blauer See Delikatessen;Forsterstr. 57;Mannheim;;68306;Germany
+255;PERIC;2;10.04.1991;08.05.1991;29.04.1991;1;69,32;Pericles Comidas clásicas;Calle Dr. Jorge Cash 321;México D.F.;;5033;Mexico
+256;HUNGO;6;11.04.1991;09.05.1991;16.04.1991;2;16,74;Hungry Owl All-Night Grocers;8 Johnstown Road;Cork;Co. Cork;;Ireland
+257;WHITC;4;11.04.1991;09.05.1991;18.04.1991;3;59,13;White Clover Markets;1029 - 12th Ave. S.;Seattle;WA;98124;USA
+258;MEREP;3;14.04.1991;12.05.1991;21.04.1991;3;7,13;Mère Paillarde;43 rue St. Laurent;Montréal;Québec;H1J 1C3;Canada
+259;KOENE;9;15.04.1991;13.05.1991;02.05.1991;2;21,19;Königlich Essen;Maubelstr. 90;Brandenburg;;14776;Germany
+260;ANTON;7;15.04.1991;13.05.1991;22.04.1991;1;47,45;Antonio Moreno Taquería;Mataderos  2312;México D.F.;;5023;Mexico
+261;OTTIK;1;16.04.1991;14.05.1991;13.05.1991;2;4,99;Ottilies Käseladen;Mehrheimerstr. 369;Köln;;50739;Germany
+262;BLAUS;4;17.04.1991;15.05.1991;29.04.1991;1;0,15;Blauer See Delikatessen;Forsterstr. 57;Mannheim;;68306;Germany
+263;SAVEA;6;18.04.1991;16.05.1991;28.04.1991;3;367,63;Save-a-lot Markets;187 Suffolk Ln.;Boise;ID;83720;USA
+264;BONAP;4;18.04.1991;16.05.1991;21.04.1991;3;350,64;Bon app';12, rue des Bouchers;Marseille;;13008;France
+265;FAMIA;7;21.04.1991;19.05.1991;24.04.1991;2;3,53;Familia Arquibaldo;Rua Orós, 92;Sao Paulo;SP;05442-030;Brazil
+266;WANDK;7;22.04.1991;03.06.1991;28.04.1991;1;105,65;Die Wandernde Kuh;Adenauerallee 900;Stuttgart;;70563;Germany
+267;ERNSH;3;22.04.1991;20.05.1991;16.05.1991;2;789,95;Ernst Handel;Kirchgasse 6;Graz;;8010;Austria
+268;QUICK;2;23.04.1991;07.05.1991;23.05.1991;1;204,47;QUICK-Stop;Taucherstraße 10;Cunewalde;;1307;Germany
+269;HUNGO;2;24.04.1991;22.05.1991;01.05.1991;3;62,78;Hungry Owl All-Night Grocers;8 Johnstown Road;Cork;Co. Cork;;Ireland
+270;NORTS;3;24.04.1991;22.05.1991;29.04.1991;3;32,07;North/South;South House 300 Queensbridge;London;;SW7 1RZ;UK
+271;TORTU;4;25.04.1991;09.05.1991;05.05.1991;2;218,15;Tortuga Restaurante;Avda. Azteca 123;México D.F.;;5033;Mexico
+272;CHOPS;6;28.04.1991;26.05.1991;01.05.1991;3;91,76;Chop-suey Chinese;Hauptstr. 31;Bern;;3012;Switzerland
+273;SANTG;7;29.04.1991;27.05.1991;01.05.1991;1;13,37;Santé Gourmet;Erling Skakkes gate 78;Stavern;;4110;Norway
+274;CACTU;8;29.04.1991;27.05.1991;02.05.1991;2;17,22;Cactus Comidas para llevar;Cerrito 333;Buenos Aires;;1010;Argentina
+275;LEHMS;4;30.04.1991;28.05.1991;06.05.1991;1;45,33;Lehmanns Marktstand;Magazinweg 7;Frankfurt a.M.;;60528;Germany
+276;SEVES;7;01.05.1991;29.05.1991;30.05.1991;2;77,63;Seven Seas Imports;90 Wadhurst Rd.;London;;OX15 4NB;UK
+277;BERGS;1;01.05.1991;29.05.1991;07.05.1991;2;244,79;Berglunds snabbköp;Berguvsvägen  8;Luleå;;S-958 22;Sweden
+278;BONAP;1;02.05.1991;30.05.1991;23.05.1991;2;11,06;Bon app';12, rue des Bouchers;Marseille;;13008;France
+279;WARTH;4;05.05.1991;02.06.1991;15.05.1991;2;58,59;Wartian Herkku;Torikatu 38;Oulu;;90110;Finland
+280;QUICK;7;05.05.1991;02.06.1991;07.05.1991;1;41,9;QUICK-Stop;Taucherstraße 10;Cunewalde;;1307;Germany
+281;GREAL;6;06.05.1991;20.05.1991;09.05.1991;2;3,35;Great Lakes Food Market;2732 Baker Blvd.;Eugene;OR;97403;USA
+282;MAISD;5;07.05.1991;04.06.1991;09.05.1991;2;66,69;Maison Dewey;Rue Joseph-Bens 532;Bruxelles;;B-1180;Belgium
+283;PICCO;3;08.05.1991;05.06.1991;12.05.1991;2;339,22;Piccolo und mehr;Geislweg 14;Salzburg;;5020;Austria
+284;OCEAN;7;08.05.1991;05.06.1991;19.05.1991;1;8,12;Océano Atlántico Ltda.;Ing. Gustavo Moncada 8585 Piso 20-A;Buenos Aires;;1010;Argentina
+285;EASTC;7;09.05.1991;06.06.1991;12.05.1991;3;74,46;Eastern Connection;35 King George;London;;WX3 6FW;UK
+286;FOLKO;8;12.05.1991;09.06.1991;22.05.1991;1;188,04;Folk och fä HB;Åkergatan 24;Bräcke;;S-844 67;Sweden
+287;LEHMS;8;12.05.1991;09.06.1991;14.05.1991;2;27,94;Lehmanns Marktstand;Magazinweg 7;Frankfurt a.M.;;60528;Germany
+288;ANTON;4;13.05.1991;10.06.1991;21.05.1991;1;15,64;Antonio Moreno Taquería;Mataderos  2312;México D.F.;;5023;Mexico
+289;LEHMS;3;14.05.1991;11.06.1991;06.06.1991;2;58,88;Lehmanns Marktstand;Magazinweg 7;Frankfurt a.M.;;60528;Germany
+290;RICSU;1;14.05.1991;28.05.1991;19.05.1991;1;78,85;Richter Supermarkt;Starenweg 5;Genève;;1204;Switzerland
+291;BSBEV;9;15.05.1991;12.06.1991;16.05.1991;3;4,87;B's Beverages;Fauntleroy Circus;London;;EC2 5NT;UK
+292;BSBEV;6;16.05.1991;13.06.1991;23.05.1991;3;12,36;B's Beverages;Fauntleroy Circus;London;;EC2 5NT;UK
+293;QUICK;3;19.05.1991;16.06.1991;13.06.1991;3;1007,64;QUICK-Stop;Taucherstraße 10;Cunewalde;;1307;Germany
+294;HANAR;2;19.05.1991;16.06.1991;29.05.1991;1;68,65;Hanari Carnes;Rua do Paço, 67;Rio de Janeiro;RJ;05454-876;Brazil
+295;KOENE;1;20.05.1991;17.06.1991;26.05.1991;3;10,95;Königlich Essen;Maubelstr. 90;Brandenburg;;14776;Germany
+296;LILAS;8;21.05.1991;18.06.1991;23.05.1991;2;48,17;LILA-Supermercado;Carrera 52 con Ave. Bolívar #65-98 Llano Largo;Barquisimeto;Lara;3508;Venezuela
+297;LONEP;4;21.05.1991;18.06.1991;30.05.1991;1;24,91;Lonesome Pine Restaurant;89 Chiaroscuro Rd.;Portland;OR;97219;USA
+298;LAZYK;8;22.05.1991;19.06.1991;26.06.1991;2;11,92;Lazy K Kountry Store;12 Orchestra Terrace;Walla Walla;WA;99362;USA
+299;VICTE;1;23.05.1991;20.06.1991;27.05.1991;3;194,72;Victuailles en stock;2, rue du Commerce;Lyon;;69004;France
+300;SEVES;3;23.05.1991;20.06.1991;02.06.1991;2;178,43;Seven Seas Imports;90 Wadhurst Rd.;London;;OX15 4NB;UK
+301;TOMSP;3;26.05.1991;23.06.1991;02.06.1991;2;1,43;Toms Spezialitäten;Luisenstr. 48;Münster;;44087;Germany
+302;QUICK;5;27.05.1991;10.06.1991;30.05.1991;1;171,24;QUICK-Stop;Taucherstraße 10;Cunewalde;;1307;Germany
+303;GODOS;7;28.05.1991;25.06.1991;06.06.1991;3;4,32;Godos Cocina Típica;C/ Romero, 33;Sevilla;;41101;Spain
+304;FURIB;4;28.05.1991;09.07.1991;06.06.1991;3;72,95;Furia Bacalhau e Frutos do Mar;Jardim das rosas n. 32;Lisboa;;1675;Portugal
+305;HILAA;2;29.05.1991;26.06.1991;05.06.1991;1;83,22;HILARION-Abastos;Carrera 22 con Ave. Carlos Soublette #8-35;San Cristóbal;Táchira;5022;Venezuela
+306;WARTH;2;30.05.1991;27.06.1991;03.06.1991;2;149,49;Wartian Herkku;Torikatu 38;Oulu;;90110;Finland
+307;OTTIK;4;30.05.1991;27.06.1991;05.06.1991;3;120,97;Ottilies Käseladen;Mehrheimerstr. 369;Köln;;50739;Germany
+308;SAVEA;6;02.06.1991;30.06.1991;04.06.1991;3;252,49;Save-a-lot Markets;187 Suffolk Ln.;Boise;ID;83720;USA
+309;SIMOB;2;03.06.1991;15.07.1991;13.06.1991;1;9,8;Simons bistro;Vinbæltet 34;Kobenhavn;;1734;Denmark
+310;LEHMS;9;03.06.1991;17.06.1991;06.06.1991;2;96,72;Lehmanns Marktstand;Magazinweg 7;Frankfurt a.M.;;60528;Germany
+311;AROUT;1;04.06.1991;02.07.1991;10.06.1991;2;72,97;Around the Horn;Brook Farm Stratford St. Mary;Colchester;Essex;CO7 6JX;UK
+312;BLONP;6;05.06.1991;03.07.1991;13.06.1991;1;8,05;Blondel père et fils;24, place Kléber;Strasbourg;;67000;France
+313;FRANK;8;06.06.1991;04.07.1991;09.06.1991;1;36,65;Frankenversand;Berliner Platz 43;München;;80805;Germany
+314;FOLKO;2;06.06.1991;04.07.1991;09.06.1991;2;242,21;Folk och fä HB;Åkergatan 24;Bräcke;;S-844 67;Sweden
+315;REGGC;1;09.06.1991;07.07.1991;12.06.1991;1;22,95;Reggiani Caseifici;Strada Provinciale 124;Reggio Emilia;;42100;Italy
+316;RICAR;2;10.06.1991;22.07.1991;24.06.1991;2;60,43;Ricardo Adocicados;Av. Copacabana, 267;Rio de Janeiro;RJ;02389-890;Brazil
+317;RATTC;4;10.06.1991;08.07.1991;16.06.1991;3;13,75;Rattlesnake Canyon Grocery;2817 Milton Dr.;Albuquerque;NM;87110;USA
+318;MEREP;8;11.06.1991;09.07.1991;18.06.1991;2;7,15;Mère Paillarde;43 rue St. Laurent;Montréal;Québec;H1J 1C3;Canada
+319;BLONP;9;12.06.1991;10.07.1991;18.06.1991;1;88,4;Blondel père et fils;24, place Kléber;Strasbourg;;67000;France
+320;HUNGO;1;12.06.1991;10.07.1991;17.06.1991;1;33,97;Hungry Owl All-Night Grocers;8 Johnstown Road;Cork;Co. Cork;;Ireland
+321;GALED;3;13.06.1991;11.07.1991;09.07.1991;3;6,54;Galería del gastronómo;Rambla de Cataluña, 23;Barcelona;;8022;Spain
+322;RATTC;5;16.06.1991;14.07.1991;11.07.1991;1;58,98;Rattlesnake Canyon Grocery;2817 Milton Dr.;Albuquerque;NM;87110;USA
+323;MEREP;3;17.06.1991;15.07.1991;19.06.1991;3;188,99;Mère Paillarde;43 rue St. Laurent;Montréal;Québec;H1J 1C3;Canada
+324;ERNSH;8;17.06.1991;29.07.1991;04.07.1991;3;26,06;Ernst Handel;Kirchgasse 6;Graz;;8010;Austria
+325;BERGS;3;18.06.1991;16.07.1991;25.06.1991;2;116,43;Berglunds snabbköp;Berguvsvägen  8;Luleå;;S-958 22;Sweden
+326;ANTON;7;19.06.1991;17.07.1991;20.06.1991;3;84,84;Antonio Moreno Taquería;Mataderos  2312;México D.F.;;5023;Mexico
+327;TRAIH;4;19.06.1991;17.07.1991;30.06.1991;2;37,6;Trail's Head Gourmet Provisioners;722 DaVinci Blvd.;Kirkland;WA;98034;USA
+328;MORGK;5;20.06.1991;04.07.1991;30.06.1991;1;127,34;Morgenstern Gesundkost;Heerstr. 22;Leipzig;;4179;Germany
+329;TORTU;3;23.06.1991;07.07.1991;30.06.1991;3;18,56;Tortuga Restaurante;Avda. Azteca 123;México D.F.;;5033;Mexico
+330;TRAIH;9;23.06.1991;04.08.1991;30.06.1991;2;25,41;Trail's Head Gourmet Provisioners;722 DaVinci Blvd.;Kirkland;WA;98034;USA
+331;BSBEV;4;24.06.1991;22.07.1991;25.07.1991;3;29,6;B's Beverages;Fauntleroy Circus;London;;EC2 5NT;UK
+332;LETSS;1;25.06.1991;23.07.1991;04.07.1991;2;13,73;Let's Stop N Shop;87 Polk St. Suite 5;San Francisco;CA;94117;USA
+333;OTTIK;4;26.06.1991;24.07.1991;01.07.1991;3;75,89;Ottilies Käseladen;Mehrheimerstr. 369;Köln;;50739;Germany
+334;FAMIA;3;26.06.1991;24.07.1991;02.07.1991;1;3,01;Familia Arquibaldo;Rua Orós, 92;Sao Paulo;SP;05442-030;Brazil
+335;BLAUS;3;27.06.1991;25.07.1991;14.07.1991;2;27,71;Blauer See Delikatessen;Forsterstr. 57;Mannheim;;68306;Germany
+336;WARTH;2;30.06.1991;28.07.1991;04.07.1991;2;7,28;Wartian Herkku;Torikatu 38;Oulu;;90110;Finland
+337;BLONP;4;30.06.1991;28.07.1991;04.07.1991;1;59,14;Blondel père et fils;24, place Kléber;Strasbourg;;67000;France
+338;WELLI;7;01.07.1991;29.07.1991;10.07.1991;1;13,41;Wellington Importadora;Rua do Mercado, 12;Resende;SP;08737-363;Brazil
+339;REGGC;9;02.07.1991;30.07.1991;09.07.1991;1;0,48;Reggiani Caseifici;Strada Provinciale 124;Reggio Emilia;;42100;Italy
+340;QUEDE;1;02.07.1991;30.07.1991;09.07.1991;1;62,52;Que Delícia;Rua da Panificadora, 12;Rio de Janeiro;RJ;02389-673;Brazil
+341;QUICK;2;03.07.1991;31.07.1991;10.07.1991;3;194,67;QUICK-Stop;Taucherstraße 10;Cunewalde;;1307;Germany
+342;GREAL;8;04.07.1991;01.08.1991;14.07.1991;2;4,42;Great Lakes Food Market;2732 Baker Blvd.;Eugene;OR;97403;USA
+343;MEREP;4;07.07.1991;04.08.1991;14.07.1991;3;44,77;Mère Paillarde;43 rue St. Laurent;Montréal;Québec;H1J 1C3;Canada
+344;VAFFE;1;07.07.1991;21.07.1991;16.07.1991;1;55,92;Vaffeljernet;Smagsloget 45;Århus;;8200;Denmark
+345;LEHMS;3;08.07.1991;05.08.1991;16.07.1991;1;32,1;Lehmanns Marktstand;Magazinweg 7;Frankfurt a.M.;;60528;Germany
+346;LEHMS;7;09.07.1991;06.08.1991;13.08.1991;2;174,2;Lehmanns Marktstand;Magazinweg 7;Frankfurt a.M.;;60528;Germany
+347;OLDWO;3;09.07.1991;06.08.1991;16.07.1991;2;5,24;Old World Delicatessen;2743 Bering St.;Anchorage;AK;99508;USA
+348;ERNSH;2;10.07.1991;07.08.1991;14.07.1991;1;96,78;Ernst Handel;Kirchgasse 6;Graz;;8010;Austria
+349;WHITC;8;11.07.1991;08.08.1991;12.08.1991;1;16,34;White Clover Markets;1029 - 12th Ave. S.;Seattle;WA;98124;USA
+350;PICCO;7;11.07.1991;08.08.1991;18.07.1991;3;35,12;Piccolo und mehr;Geislweg 14;Salzburg;;5020;Austria
+351;RATTC;1;14.07.1991;11.08.1991;18.07.1991;3;44,42;Rattlesnake Canyon Grocery;2817 Milton Dr.;Albuquerque;NM;87110;USA
+352;BSBEV;6;15.07.1991;26.08.1991;21.07.1991;3;29,98;B's Beverages;Fauntleroy Circus;London;;EC2 5NT;UK
+353;HUNGC;4;16.07.1991;13.08.1991;21.07.1991;1;45,13;Hungry Coyote Import Store;City Center Plaza 516 Main St.;Elgin;OR;97827;USA
+354;HILAA;7;16.07.1991;27.08.1991;22.07.1991;1;58,3;HILARION-Abastos;Carrera 22 con Ave. Carlos Soublette #8-35;San Cristóbal;Táchira;5022;Venezuela
+355;VAFFE;8;17.07.1991;14.08.1991;22.07.1991;2;2,92;Vaffeljernet;Smagsloget 45;Århus;;8200;Denmark
+356;SAVEA;8;18.07.1991;15.08.1991;08.08.1991;2;48,77;Save-a-lot Markets;187 Suffolk Ln.;Boise;ID;83720;USA
+357;FURIB;1;18.07.1991;15.08.1991;29.07.1991;1;7,46;Furia Bacalhau e Frutos do Mar;Jardim das rosas n. 32;Lisboa;;1675;Portugal
+358;MEREP;1;21.07.1991;18.08.1991;29.07.1991;2;379,13;Mère Paillarde;43 rue St. Laurent;Montréal;Québec;H1J 1C3;Canada
+359;TRADH;4;22.07.1991;19.08.1991;31.07.1991;3;79,4;Tradiçao Hipermercados;Av. Inês de Castro, 414;Sao Paulo;SP;05634-030;Brazil
+360;SAVEA;5;22.07.1991;19.08.1991;25.07.1991;1;200,24;Save-a-lot Markets;187 Suffolk Ln.;Boise;ID;83720;USA
+361;TOMSP;4;23.07.1991;20.08.1991;01.08.1991;2;27,79;Toms Spezialitäten;Luisenstr. 48;Münster;;44087;Germany
+362;DUMON;7;24.07.1991;21.08.1991;30.07.1991;2;1,85;Du monde entier;67, rue des Cinquante Otages;Nantes;;44000;France
+363;LAMAI;8;25.07.1991;22.08.1991;06.08.1991;1;26,78;La maison d'Asie;1 rue Alsace-Lorraine;Toulouse;;31000;France
+364;WOLZA;6;25.07.1991;22.08.1991;01.08.1991;2;80,65;Wolski Zajazd;ul. Filtrowa 68;Warszawa;;01-012;Poland
+365;SAVEA;1;28.07.1991;25.08.1991;01.08.1991;2;544,08;Save-a-lot Markets;187 Suffolk Ln.;Boise;ID;83720;USA
+366;HILAA;4;29.07.1991;26.08.1991;01.08.1991;2;8,11;HILARION-Abastos;Carrera 22 con Ave. Carlos Soublette #8-35;San Cristóbal;Táchira;5022;Venezuela
+367;BLAUS;8;29.07.1991;26.08.1991;01.08.1991;3;1,93;Blauer See Delikatessen;Forsterstr. 57;Mannheim;;68306;Germany
+368;WILMK;2;30.07.1991;27.08.1991;06.08.1991;3;0,75;Wilman Kala;Keskuskatu 45;Helsinki;;21240;Finland
+369;GREAL;1;31.07.1991;28.08.1991;05.08.1991;2;116,53;Great Lakes Food Market;2732 Baker Blvd.;Eugene;OR;97403;USA
+370;GREAL;4;31.07.1991;28.08.1991;04.08.1991;2;18,53;Great Lakes Food Market;2732 Baker Blvd.;Eugene;OR;97403;USA
+371;MEREP;1;01.08.1991;12.09.1991;08.08.1991;1;154,68;Mère Paillarde;43 rue St. Laurent;Montréal;Québec;H1J 1C3;Canada
+372;MEREP;3;04.08.1991;01.09.1991;07.08.1991;3;91,05;Mère Paillarde;43 rue St. Laurent;Montréal;Québec;H1J 1C3;Canada
+373;LAUGB;2;05.08.1991;02.09.1991;14.08.1991;3;0,94;Laughing Bacchus Wine Cellars;2319 Elm St.;Vancouver;BC;V3F 2K1;Canada
+374;ISLAT;4;05.08.1991;02.09.1991;11.08.1991;2;23,73;Island Trading;Garden House Crowther Way;Cowes;Isle of Wight;PO31 7PJ;UK
+375;RICAR;4;06.08.1991;03.09.1991;11.08.1991;3;50,97;Ricardo Adocicados;Av. Copacabana, 267;Rio de Janeiro;RJ;02389-890;Brazil
+376;FRANK;8;07.08.1991;04.09.1991;12.08.1991;2;97,18;Frankenversand;Berliner Platz 43;München;;80805;Germany
+377;THECR;4;07.08.1991;04.09.1991;19.08.1991;2;94,8;The Cracker Box;55 Grizzly Peak Rd.;Butte;MT;59801;USA
+378;ANATR;3;08.08.1991;05.09.1991;14.08.1991;1;43,9;Ana Trujillo Emparedados y helados;Avda. de la Constitución 2222;México D.F.;;5021;Mexico
+379;BERGS;1;11.08.1991;08.09.1991;20.08.1991;2;138,69;Berglunds snabbköp;Berguvsvägen  8;Luleå;;S-958 22;Sweden
+380;SAVEA;8;11.08.1991;22.09.1991;21.08.1991;3;107,46;Save-a-lot Markets;187 Suffolk Ln.;Boise;ID;83720;USA
+381;BLONP;4;12.08.1991;09.09.1991;20.08.1991;3;30,36;Blondel père et fils;24, place Kléber;Strasbourg;;67000;France
+382;GODOS;4;12.08.1991;09.09.1991;20.08.1991;3;85,46;Godos Cocina Típica;C/ Romero, 33;Sevilla;;41101;Spain
+383;KOENE;1;13.08.1991;10.09.1991;19.08.1991;2;32,35;Königlich Essen;Maubelstr. 90;Brandenburg;;14776;Germany
+384;LAMAI;8;14.08.1991;11.09.1991;15.08.1991;1;0,87;La maison d'Asie;1 rue Alsace-Lorraine;Toulouse;;31000;France
+385;WANDK;8;14.08.1991;11.09.1991;19.08.1991;1;41,38;Die Wandernde Kuh;Adenauerallee 900;Stuttgart;;70563;Germany
+386;ERNSH;7;15.08.1991;12.09.1991;18.08.1991;3;477,9;Ernst Handel;Kirchgasse 6;Graz;;8010;Austria
+387;FOLIG;4;15.08.1991;12.09.1991;21.08.1991;3;487,38;Folies gourmandes;184, chaussée de Tournai;Lille;;59000;France
+388;MAGAA;8;18.08.1991;15.09.1991;21.08.1991;3;47,46;Magazzini Alimentari Riuniti;Via Ludovico il Moro 22;Bergamo;;24100;Italy
+389;WARTH;4;19.08.1991;16.09.1991;26.08.1991;1;1,15;Wartian Herkku;Torikatu 38;Oulu;;90110;Finland
+390;QUEEN;6;19.08.1991;16.09.1991;26.08.1991;1;201,29;Queen Cozinha;Alameda dos Canàrios, 891;Sao Paulo;SP;05487-020;Brazil
+391;LINOD;3;20.08.1991;17.09.1991;01.09.1991;1;158,44;LINO-Delicateses;Ave. 5 de Mayo Porlamar;I. de Margarita;Nueva Esparta;4980;Venezuela
+392;SANTG;7;20.08.1991;17.09.1991;27.08.1991;3;38,64;Santé Gourmet;Erling Skakkes gate 78;Stavern;;4110;Norway
+393;WANDK;4;21.08.1991;18.09.1991;28.08.1991;1;23,55;Die Wandernde Kuh;Adenauerallee 900;Stuttgart;;70563;Germany
+394;HILAA;4;22.08.1991;19.09.1991;26.08.1991;2;179,61;HILARION-Abastos;Carrera 22 con Ave. Carlos Soublette #8-35;San Cristóbal;Táchira;5022;Venezuela
+395;SIMOB;7;22.08.1991;19.09.1991;05.09.1991;3;41,89;Simons bistro;Vinbæltet 34;Kobenhavn;;1734;Denmark
+396;ALFKI;6;25.08.1991;22.09.1991;02.09.1991;1;29,46;Alfreds Futterkiste;Obere Str. 57;Berlin;;12209;Germany
+397;WELLI;3;25.08.1991;22.09.1991;01.09.1991;2;0,14;Wellington Importadora;Rua do Mercado, 12;Resende;SP;08737-363;Brazil
+398;HANAR;4;26.08.1991;23.09.1991;02.09.1991;1;12,41;Hanari Carnes;Rua do Paço, 67;Rio de Janeiro;RJ;05454-876;Brazil
+399;HUNGO;9;27.08.1991;08.10.1991;03.09.1991;3;142,33;Hungry Owl All-Night Grocers;8 Johnstown Road;Cork;Co. Cork;;Ireland
+400;QUEDE;4;27.08.1991;10.09.1991;03.09.1991;2;45,54;Que Delícia;Rua da Panificadora, 12;Rio de Janeiro;RJ;02389-673;Brazil
+401;RICAR;5;28.08.1991;09.10.1991;09.09.1991;2;14,25;Ricardo Adocicados;Av. Copacabana, 267;Rio de Janeiro;RJ;02389-890;Brazil
+402;MAISD;5;28.08.1991;25.09.1991;29.08.1991;3;6,2;Maison Dewey;Rue Joseph-Bens 532;Bruxelles;;B-1180;Belgium
+403;FAMIA;5;29.08.1991;26.09.1991;03.09.1991;3;176,81;Familia Arquibaldo;Rua Orós, 92;Sao Paulo;SP;05442-030;Brazil
+404;WANDK;8;01.09.1991;29.09.1991;11.09.1991;2;20,6;Die Wandernde Kuh;Adenauerallee 900;Stuttgart;;70563;Germany
+405;GOURL;4;01.09.1991;29.09.1991;08.09.1991;2;7,14;Gourmet Lanchonetes;Av. Brasil, 442;Campinas;SP;04876-786;Brazil
+406;FRANK;1;02.09.1991;30.09.1991;19.09.1991;1;93,25;Frankenversand;Berliner Platz 43;München;;80805;Germany
+407;BERGS;5;02.09.1991;30.09.1991;11.09.1991;1;55,26;Berglunds snabbköp;Berguvsvägen  8;Luleå;;S-958 22;Sweden
+408;REGGC;1;03.09.1991;01.10.1991;11.09.1991;2;4,41;Reggiani Caseifici;Strada Provinciale 124;Reggio Emilia;;42100;Italy
+409;GREAL;6;04.09.1991;02.10.1991;10.09.1991;1;57,15;Great Lakes Food Market;2732 Baker Blvd.;Eugene;OR;97403;USA
+410;SAVEA;2;04.09.1991;02.10.1991;15.09.1991;2;352,69;Save-a-lot Markets;187 Suffolk Ln.;Boise;ID;83720;USA
+411;QUICK;4;05.09.1991;03.10.1991;08.09.1991;1;364,15;QUICK-Stop;Taucherstraße 10;Cunewalde;;1307;Germany
+412;QUEEN;7;05.09.1991;03.10.1991;10.09.1991;2;105,81;Queen Cozinha;Alameda dos Canàrios, 891;Sao Paulo;SP;05487-020;Brazil
+413;HUNGC;8;08.09.1991;06.10.1991;15.10.1991;1;111,29;Hungry Coyote Import Store;City Center Plaza 516 Main St.;Elgin;OR;97827;USA
+414;HUNGO;7;09.09.1991;07.10.1991;15.09.1991;3;17,55;Hungry Owl All-Night Grocers;8 Johnstown Road;Cork;Co. Cork;;Ireland
+415;LONEP;3;09.09.1991;07.10.1991;18.09.1991;2;1,28;Lonesome Pine Restaurant;89 Chiaroscuro Rd.;Portland;OR;97219;USA
+416;BONAP;2;10.09.1991;24.09.1991;03.10.1991;2;113,15;Bon app';12, rue des Bouchers;Marseille;;13008;France
+417;FURIB;1;10.09.1991;08.10.1991;19.09.1991;3;1,27;Furia Bacalhau e Frutos do Mar;Jardim das rosas n. 32;Lisboa;;1675;Portugal
+418;LONEP;1;11.09.1991;09.10.1991;17.09.1991;2;26,31;Lonesome Pine Restaurant;89 Chiaroscuro Rd.;Portland;OR;97219;USA
+419;RICSU;7;12.09.1991;10.10.1991;22.09.1991;2;232,42;Richter Supermarkt;Starenweg 5;Genève;;1204;Switzerland
+420;ERNSH;7;12.09.1991;10.10.1991;19.09.1991;1;78,09;Ernst Handel;Kirchgasse 6;Graz;;8010;Austria
+421;WANDK;1;15.09.1991;13.10.1991;23.09.1991;2;47,22;Die Wandernde Kuh;Adenauerallee 900;Stuttgart;;70563;Germany
+422;SIMOB;2;15.09.1991;13.10.1991;22.09.1991;1;24,39;Simons bistro;Vinbæltet 34;Kobenhavn;;1734;Denmark
+423;FRANK;4;16.09.1991;14.10.1991;18.09.1991;1;203,48;Frankenversand;Berliner Platz 43;München;;80805;Germany
+424;FRANR;1;17.09.1991;15.10.1991;24.09.1991;1;30,34;France restauration;54, rue Royale;Nantes;;44000;France
+425;BERGS;9;17.09.1991;01.10.1991;26.09.1991;2;95,75;Berglunds snabbköp;Berguvsvägen  8;Luleå;;S-958 22;Sweden
+426;WILMK;2;18.09.1991;16.10.1991;19.09.1991;1;22,76;Wilman Kala;Keskuskatu 45;Helsinki;;21240;Finland
+427;ISLAT;4;18.09.1991;16.10.1991;30.09.1991;2;0,9;Island Trading;Garden House Crowther Way;Cowes;Isle of Wight;PO31 7PJ;UK
+428;FRANK;5;19.09.1991;17.10.1991;23.09.1991;2;31,85;Frankenversand;Berliner Platz 43;München;;80805;Germany
+429;TORTU;2;22.09.1991;20.10.1991;29.09.1991;2;2,01;Tortuga Restaurante;Avda. Azteca 123;México D.F.;;5033;Mexico
+430;ANTON;1;22.09.1991;20.10.1991;26.09.1991;3;4,03;Antonio Moreno Taquería;Mataderos  2312;México D.F.;;5023;Mexico
+431;SAVEA;7;23.09.1991;21.10.1991;16.10.1991;3;388,98;Save-a-lot Markets;187 Suffolk Ln.;Boise;ID;83720;USA
+432;BLONP;8;23.09.1991;21.10.1991;30.09.1991;3;27,94;Blondel père et fils;24, place Kléber;Strasbourg;;67000;France
+433;OLDWO;1;24.09.1991;22.10.1991;26.09.1991;1;26,61;Old World Delicatessen;2743 Bering St.;Anchorage;AK;99508;USA
+434;GREAL;3;25.09.1991;23.10.1991;30.09.1991;3;76,13;Great Lakes Food Market;2732 Baker Blvd.;Eugene;OR;97403;USA
+435;ANTON;3;25.09.1991;23.10.1991;01.10.1991;2;36,13;Antonio Moreno Taquería;Mataderos  2312;México D.F.;;5023;Mexico
+436;DUMON;2;26.09.1991;24.10.1991;01.10.1991;1;4,4;Du monde entier;67, rue des Cinquante Otages;Nantes;;44000;France
+437;OTTIK;3;26.09.1991;24.10.1991;30.09.1991;1;145,63;Ottilies Käseladen;Mehrheimerstr. 369;Köln;;50739;Germany
+438;GOURL;4;29.09.1991;13.10.1991;03.10.1991;2;33,75;Gourmet Lanchonetes;Av. Brasil, 442;Campinas;SP;04876-786;Brazil
+439;PICCO;2;30.09.1991;28.10.1991;08.10.1991;1;96,5;Piccolo und mehr;Geislweg 14;Salzburg;;5020;Austria
+440;HUNGO;9;30.09.1991;28.10.1991;30.10.1991;2;296,43;Hungry Owl All-Night Grocers;8 Johnstown Road;Cork;Co. Cork;;Ireland
+441;VAFFE;4;01.10.1991;15.10.1991;07.10.1991;2;299,09;Vaffeljernet;Smagsloget 45;Århus;;8200;Denmark
+442;BERGS;1;01.10.1991;29.10.1991;07.10.1991;2;13,42;Berglunds snabbköp;Berguvsvägen  8;Luleå;;S-958 22;Sweden
+443;HANAR;1;02.10.1991;30.10.1991;03.10.1991;1;15,8;Hanari Carnes;Rua do Paço, 67;Rio de Janeiro;RJ;05454-876;Brazil
+444;QUICK;2;03.10.1991;14.11.1991;22.10.1991;2;810,05;QUICK-Stop;Taucherstraße 10;Cunewalde;;1307;Germany
+445;ALFKI;4;03.10.1991;31.10.1991;13.10.1991;2;61,02;Alfred's Futterkiste;Obere Str. 57;Berlin;;12209;Germany
+446;WHITC;3;06.10.1991;20.10.1991;10.10.1991;3;139,34;White Clover Markets;1029 - 12th Ave. S.;Seattle;WA;98124;USA
+447;QUICK;8;06.10.1991;03.11.1991;09.10.1991;3;398,36;QUICK-Stop;Taucherstraße 10;Cunewalde;;1307;Germany
+448;WILMK;7;07.10.1991;18.11.1991;14.10.1991;1;16,72;Wilman Kala;Keskuskatu 45;Helsinki;;21240;Finland
+449;WHITC;8;08.10.1991;19.11.1991;14.10.1991;3;102,55;White Clover Markets;1029 - 12th Ave. S.;Seattle;WA;98124;USA
+450;LINOD;3;08.10.1991;05.11.1991;14.10.1991;1;45,52;LINO-Delicateses;Ave. 5 de Mayo Porlamar;I. de Margarita;Nueva Esparta;4980;Venezuela
+451;ERNSH;4;09.10.1991;06.11.1991;17.10.1991;1;272,47;Ernst Handel;Kirchgasse 6;Graz;;8010;Austria
+452;MORGK;3;09.10.1991;06.11.1991;13.10.1991;3;0,58;Morgenstern Gesundkost;Heerstr. 22;Leipzig;;4179;Germany
+453;SAVEA;3;10.10.1991;07.11.1991;16.10.1991;1;65,1;Save-a-lot Markets;187 Suffolk Ln.;Boise;ID;83720;USA
+454;HUNGO;6;13.10.1991;27.10.1991;15.10.1991;3;220,31;Hungry Owl All-Night Grocers;8 Johnstown Road;Cork;Co. Cork;;Ireland
+455;ALFKI;4;13.10.1991;24.11.1991;21.10.1991;1;23,94;Alfred's Futterkiste;Obere Str. 57;Berlin;;12209;Germany
+456;FOLKO;6;14.10.1991;11.11.1991;20.10.1991;2;152,3;Folk och fä HB;Åkergatan 24;Bräcke;;S-844 67;Sweden
+457;QUEEN;6;14.10.1991;11.11.1991;07.11.1991;1;4,78;Queen Cozinha;Alameda dos Canàrios, 891;Sao Paulo;SP;05487-020;Brazil
+458;HILAA;9;15.10.1991;12.11.1991;18.11.1991;2;3,52;HILARION-Abastos;Carrera 22 con Ave. Carlos Soublette #8-35;San Cristóbal;Táchira;5022;Venezuela
+459;OLDWO;8;16.10.1991;13.11.1991;21.10.1991;3;135,63;Old World Delicatessen;2743 Bering St.;Anchorage;AK;99508;USA
+460;AROUT;4;16.10.1991;30.10.1991;23.10.1991;3;21,74;Around the Horn;Brook Farm Stratford St. Mary;Colchester;Essex;CO7 6JX;UK
+461;THEBI;6;17.10.1991;28.11.1991;05.11.1991;2;2,96;The Big Cheese;89 Jefferson Way Suite 2;Portland;OR;97201;USA
+462;GOURL;1;17.10.1991;14.11.1991;20.11.1991;3;210,8;Gourmet Lanchonetes;Av. Brasil, 442;Campinas;SP;04876-786;Brazil
+463;FRANS;1;20.10.1991;17.11.1991;23.10.1991;1;4,98;Franchi S.p.A.;Via Monte Bianco 34;Torino;;10100;Italy
+464;SAVEA;5;21.10.1991;02.12.1991;29.10.1991;2;52,41;Save-a-lot Markets;187 Suffolk Ln.;Boise;ID;83720;USA
+465;HUNGO;3;21.10.1991;18.11.1991;31.10.1991;1;89,93;Hungry Owl All-Night Grocers;8 Johnstown Road;Cork;Co. Cork;;Ireland
+466;SAVEA;1;22.10.1991;19.11.1991;24.10.1991;1;167,05;Save-a-lot Markets;187 Suffolk Ln.;Boise;ID;83720;USA
+467;SAVEA;5;22.10.1991;19.11.1991;27.10.1991;3;24,49;Save-a-lot Markets;187 Suffolk Ln.;Boise;ID;83720;USA
+468;BONAP;3;23.10.1991;06.11.1991;29.10.1991;1;63,2;Bon app';12, rue des Bouchers;Marseille;;13008;France
+469;RANCH;4;24.10.1991;21.11.1991;27.10.1991;2;22,57;Rancho grande;Av. del Libertador 900;Buenos Aires;;1010;Argentina
+470;FRANK;1;24.10.1991;21.11.1991;29.10.1991;2;59,25;Frankenversand;Berliner Platz 43;München;;80805;Germany
+471;KOENE;1;27.10.1991;24.11.1991;29.10.1991;3;170,88;Königlich Essen;Maubelstr. 90;Brandenburg;;14776;Germany
+472;LETSS;8;27.10.1991;24.11.1991;05.11.1991;2;51,44;Let's Stop N Shop;87 Polk St. Suite 5;San Francisco;CA;94117;USA
+473;QUEDE;8;28.10.1991;11.11.1991;05.11.1991;2;9,53;Que Delícia;Rua da Panificadora, 12;Rio de Janeiro;RJ;02389-673;Brazil
+474;QUICK;5;29.10.1991;26.11.1991;31.10.1991;3;48,92;QUICK-Stop;Taucherstraße 10;Cunewalde;;1307;Germany
+475;SAVEA;8;29.10.1991;10.12.1991;04.11.1991;1;74,58;Save-a-lot Markets;187 Suffolk Ln.;Boise;ID;83720;USA
+476;WHITC;3;30.10.1991;27.11.1991;25.11.1991;1;21,72;White Clover Markets;1029 - 12th Ave. S.;Seattle;WA;98124;USA
+477;MEREP;8;30.10.1991;11.12.1991;05.11.1991;2;57,75;Mère Paillarde;43 rue St. Laurent;Montréal;Québec;H1J 1C3;Canada
+478;FAMIA;4;31.10.1991;28.11.1991;05.11.1991;3;10,83;Familia Arquibaldo;Rua Orós, 92;Sao Paulo;SP;05442-030;Brazil
+479;EASTC;4;03.11.1991;17.11.1991;05.12.1991;1;16,56;Eastern Connection;35 King George;London;;WX3 6FW;UK
+480;REGGC;2;03.11.1991;01.12.1991;05.12.1991;1;89,9;Reggiani Caseifici;Strada Provinciale 124;Reggio Emilia;;42100;Italy
+481;QUEEN;4;04.11.1991;02.12.1991;11.11.1991;2;58,33;Queen Cozinha;Alameda dos Canàrios, 891;Sao Paulo;SP;05487-020;Brazil
+482;LINOD;8;04.11.1991;16.12.1991;14.11.1991;3;141,06;LINO-Delicateses;Ave. 5 de Mayo Porlamar;I. de Margarita;Nueva Esparta;4980;Venezuela
+483;BONAP;5;05.11.1991;03.12.1991;14.11.1991;1;20,12;Bon app';12, rue des Bouchers;Marseille;;13008;France
+484;CHOPS;7;06.11.1991;04.12.1991;14.11.1991;1;96,65;Chop-suey Chinese;Hauptstr. 31;Bern;;3012;Switzerland
+485;BONAP;3;06.11.1991;04.12.1991;07.11.1991;1;16,97;Bon app';12, rue des Bouchers;Marseille;;13008;France
+486;BERGS;1;07.11.1991;05.12.1991;10.11.1991;3;110,11;Berglunds snabbköp;Berguvsvägen  8;Luleå;;S-958 22;Sweden
+487;GOURL;2;07.11.1991;05.12.1991;12.11.1991;3;1,63;Gourmet Lanchonetes;Av. Brasil, 442;Campinas;SP;04876-786;Brazil
+488;LETSS;6;10.11.1991;08.12.1991;21.11.1991;2;45,97;Let's Stop N Shop;87 Polk St. Suite 5;San Francisco;CA;94117;USA
+489;HUNGO;9;11.11.1991;09.12.1991;21.11.1991;2;44,1;Hungry Owl All-Night Grocers;8 Johnstown Road;Cork;Co. Cork;;Ireland
+490;VINET;2;11.11.1991;09.12.1991;18.11.1991;2;7,79;Vins et alcools Chevalier;59 rue de l'Abbaye;Reims;;51100;France
+491;SPECD;2;12.11.1991;10.12.1991;18.11.1991;1;2,91;Spécialités du monde;25, rue Lauriston;Paris;;75016;France
+492;VINET;3;12.11.1991;10.12.1991;17.11.1991;3;11,08;Vins et alcools Chevalier;59 rue de l'Abbaye;Reims;;51100;France
+493;WHITC;4;13.11.1991;11.12.1991;25.11.1991;2;81,88;White Clover Markets;1029 - 12th Ave. S.;Seattle;WA;98124;USA
+494;AROUT;4;14.11.1991;28.11.1991;18.11.1991;3;10,96;Around the Horn;Brook Farm Stratford St. Mary;Colchester;Essex;CO7 6JX;UK
+495;BOTTM;3;14.11.1991;12.12.1991;18.11.1991;3;243,73;Bottom-Dollar Markets;23 Tsawassen Blvd.;Tsawassen;BC;T2F 8M4;Canada
+496;AROUT;1;17.11.1991;15.12.1991;21.11.1991;2;23,72;Around the Horn;Brook Farm Stratford St. Mary;Colchester;Essex;CO7 6JX;UK
+497;VAFFE;6;17.11.1991;15.12.1991;24.11.1991;1;69,19;Vaffeljernet;Smagsloget 45;Århus;;8200;Denmark
+498;QUICK;9;18.11.1991;16.12.1991;27.11.1991;1;3,52;QUICK-Stop;Taucherstraße 10;Cunewalde;;1307;Germany
+499;CHOPS;1;19.11.1991;17.12.1991;21.11.1991;3;31,43;Chop-suey Chinese;Hauptstr. 31;Bern;;3012;Switzerland
+500;PICCO;6;19.11.1991;17.12.1991;26.11.1991;1;117,33;Piccolo und mehr;Geislweg 14;Salzburg;;5020;Austria
+501;SAVEA;3;20.11.1991;18.12.1991;28.11.1991;1;232,55;Save-a-lot Markets;187 Suffolk Ln.;Boise;ID;83720;USA
+502;ISLAT;4;20.11.1991;18.12.1991;19.12.1991;2;61,53;Island Trading;Garden House Crowther Way;Cowes;Isle of Wight;PO31 7PJ;UK
+503;WARTH;9;21.11.1991;19.12.1991;24.11.1991;1;79,3;Wartian Herkku;Torikatu 38;Oulu;;90110;Finland
+504;RICSU;3;24.11.1991;22.12.1991;03.12.1991;3;130,79;Richter Supermarkt;Starenweg 5;Genève;;1204;Switzerland
+505;NORTS;2;24.11.1991;22.12.1991;28.11.1991;3;1,39;North/South;South House 300 Queensbridge;London;;SW7 1RZ;UK
+506;FRANS;3;25.11.1991;23.12.1991;27.11.1991;1;7,7;Franchi S.p.A.;Via Monte Bianco 34;Torino;;10100;Italy
+507;MAGAA;6;25.11.1991;23.12.1991;27.11.1991;3;2,38;Magazzini Alimentari Riuniti;Via Ludovico il Moro 22;Bergamo;;24100;Italy
+508;BONAP;4;26.11.1991;24.12.1991;28.11.1991;2;16,71;Bon app';12, rue des Bouchers;Marseille;;13008;France
+509;SPLIR;8;27.11.1991;25.12.1991;02.12.1991;2;73,21;Split Rail Beer & Ale;P.O. Box 555;Lander;WY;82520;USA
+510;SAVEA;6;27.11.1991;25.12.1991;15.12.1991;1;8,19;Save-a-lot Markets;187 Suffolk Ln.;Boise;ID;83720;USA
+511;RICSU;3;28.11.1991;26.12.1991;04.12.1991;3;138,17;Richter Supermarkt;Starenweg 5;Genève;;1204;Switzerland
+512;ANATR;3;28.11.1991;26.12.1991;12.12.1991;3;11,99;Ana Trujillo Emparedados y helados;Avda. de la Constitución 2222;México D.F.;;5021;Mexico
+513;MAISD;4;01.12.1991;29.12.1991;10.12.1991;1;155,64;Maison Dewey;Rue Joseph-Bens 532;Bruxelles;;B-1180;Belgium
+514;RATTC;5;02.12.1991;30.12.1991;08.12.1991;2;18,66;Rattlesnake Canyon Grocery;2817 Milton Dr.;Albuquerque;NM;87110;USA
+515;FOLKO;3;02.12.1991;30.12.1991;09.12.1991;1;328,74;Folk och fä HB;Åkergatan 24;Bräcke;;S-844 67;Sweden
+516;FOLIG;3;03.12.1991;31.12.1991;08.12.1991;3;37,35;Folies gourmandes;184, chaussée de Tournai;Lille;;59000;France
+517;ERNSH;6;03.12.1991;31.12.1991;08.12.1991;3;145,45;Ernst Handel;Kirchgasse 6;Graz;;8010;Austria
+518;QUICK;3;04.12.1991;01.01.1992;09.12.1991;3;42,74;QUICK-Stop;Taucherstraße 10;Cunewalde;;1307;Germany
+519;OTTIK;4;05.12.1991;02.01.1992;09.12.1991;1;157,55;Ottilies Käseladen;Mehrheimerstr. 369;Köln;;50739;Germany
+520;SUPRD;4;05.12.1991;02.01.1992;15.12.1991;3;1,59;Suprêmes délices;Boulevard Tirou, 255;Charleroi;;B-6000;Belgium
+521;AROUT;3;08.12.1991;05.01.1992;15.12.1991;2;146,32;Around the Horn;Brook Farm Stratford St. Mary;Colchester;Essex;CO7 6JX;UK
+522;VAFFE;3;08.12.1991;05.01.1992;12.12.1991;1;65,06;Vaffeljernet;Smagsloget 45;Århus;;8200;Denmark
+523;HANAR;8;09.12.1991;06.01.1992;17.12.1991;3;5,32;Hanari Carnes;Rua do Paço, 67;Rio de Janeiro;RJ;05454-876;Brazil
+524;ERNSH;9;10.12.1991;07.01.1992;02.01.1992;2;11,19;Ernst Handel;Kirchgasse 6;Graz;;8010;Austria
+525;LEHMS;3;10.12.1991;07.01.1992;19.12.1991;2;91,28;Lehmanns Marktstand;Magazinweg 7;Frankfurt a.M.;;60528;Germany
+526;ERNSH;1;11.12.1991;08.01.1992;16.12.1991;3;96,43;Ernst Handel;Kirchgasse 6;Graz;;8010;Austria
+527;FOLKO;4;11.12.1991;25.12.1991;12.12.1991;1;48,2;Folk och fä HB;Åkergatan 24;Bräcke;;S-844 67;Sweden
+528;THECR;7;12.12.1991;09.01.1992;26.12.1991;1;20,25;The Cracker Box;55 Grizzly Peak Rd.;Butte;MT;59801;USA
+529;ERNSH;1;15.12.1991;12.01.1992;18.12.1991;3;351,53;Ernst Handel;Kirchgasse 6;Graz;;8010;Austria
+530;GOURL;7;15.12.1991;29.12.1991;21.01.1992;2;3,01;Gourmet Lanchonetes;Av. Brasil, 442;Campinas;SP;04876-786;Brazil
+531;BERGS;3;16.12.1991;13.01.1992;24.12.1991;1;6,79;Berglunds snabbköp;Berguvsvägen  8;Luleå;;S-958 22;Sweden
+532;MORGK;3;16.12.1991;13.01.1992;14.01.1992;2;58,13;Morgenstern Gesundkost;Heerstr. 22;Leipzig;;4179;Germany
+533;LILAS;2;16.12.1991;30.12.1991;25.12.1991;1;42,13;LILA-Supermercado;Carrera 52 con Ave. Bolívar #65-98 Llano Largo;Barquisimeto;Lara;3508;Venezuela
+534;WARTH;2;17.12.1991;14.01.1992;19.12.1991;3;73,16;Wartian Herkku;Torikatu 38;Oulu;;90110;Finland
+535;CACTU;9;17.12.1991;14.01.1992;22.12.1991;3;1,1;Cactus Comidas para llevar;Cerrito 333;Buenos Aires;;1010;Argentina
+536;HANAR;4;18.12.1991;15.01.1992;19.12.1991;2;124,98;Hanari Carnes;Rua do Paço, 67;Rio de Janeiro;RJ;05454-876;Brazil
+537;MAGAA;4;18.12.1991;15.01.1992;22.12.1991;3;70,09;Magazzini Alimentari Riuniti;Via Ludovico il Moro 22;Bergamo;;24100;Italy
+538;GROSR;1;18.12.1991;15.01.1992;24.12.1991;3;1,51;GROSELLA-Restaurante;5ª Ave. Los Palos Grandes;Caracas;DF;1081;Venezuela
+539;QUEEN;8;19.12.1991;16.01.1992;23.12.1991;1;110,87;Queen Cozinha;Alameda dos Canàrios, 891;Sao Paulo;SP;05487-020;Brazil
+540;LAMAI;2;19.12.1991;02.01.1992;26.12.1991;1;249,93;La maison d'Asie;1 rue Alsace-Lorraine;Toulouse;;31000;France
+541;QUICK;1;22.12.1991;19.01.1992;19.01.1992;2;42,7;QUICK-Stop;Taucherstraße 10;Cunewalde;;1307;Germany
+542;FOLIG;1;22.12.1991;19.01.1992;31.12.1991;2;100,6;Folies gourmandes;184, chaussée de Tournai;Lille;;59000;France
+543;GOURL;6;22.12.1991;19.01.1992;26.12.1991;1;28,23;Gourmet Lanchonetes;Av. Brasil, 442;Campinas;SP;04876-786;Brazil
+544;FRANK;6;23.12.1991;20.01.1992;01.01.1992;2;16,85;Frankenversand;Berliner Platz 43;München;;80805;Germany
+545;WOLZA;1;23.12.1991;20.01.1992;31.12.1991;3;23,79;Wolski Zajazd;ul. Filtrowa 68;Warszawa;;01-012;Poland
+546;AROUT;3;24.12.1991;21.01.1992;08.01.1992;3;4,52;Around the Horn;Brook Farm Stratford St. Mary;Colchester;Essex;CO7 6JX;UK
+547;QUEDE;6;24.12.1991;21.01.1992;02.01.1992;1;21,49;Que Delícia;Rua da Panificadora, 12;Rio de Janeiro;RJ;02389-673;Brazil
+548;ERNSH;8;24.12.1991;21.01.1992;20.01.1992;2;126,66;Ernst Handel;Kirchgasse 6;Graz;;8010;Austria
+549;HILAA;3;25.12.1991;22.01.1992;14.01.1992;1;26,52;HILARION-Abastos;Carrera 22 con Ave. Carlos Soublette #8-35;San Cristóbal;Táchira;5022;Venezuela
+550;DRACD;7;25.12.1991;22.01.1992;05.01.1992;2;33,35;Drachenblut Delikatessen;Walserweg 21;Aachen;;52066;Germany
+551;ISLAT;2;26.12.1991;23.01.1992;05.01.1992;1;2,33;Island Trading;Garden House Crowther Way;Cowes;Isle of Wight;PO31 7PJ;UK
+552;KOENE;9;26.12.1991;06.02.1992;05.01.1992;3;30,76;Königlich Essen;Maubelstr. 90;Brandenburg;;14776;Germany
+553;SEVES;1;26.12.1991;23.01.1992;05.01.1992;3;137,44;Seven Seas Imports;90 Wadhurst Rd.;London;;OX15 4NB;UK
+554;BOLID;4;29.12.1991;26.01.1992;31.12.1991;2;97,09;Bólido Comidas preparadas;C/ Araquil, 67;Madrid;;28023;Spain
+555;SIMOB;4;29.12.1991;26.01.1992;02.01.1992;2;257,26;Simons bistro;Vinbæltet 34;Kobenhavn;;1734;Denmark
+556;WELLI;4;30.12.1991;27.01.1992;06.01.1992;1;55,23;Wellington Importadora;Rua do Mercado, 12;Resende;SP;08737-363;Brazil
+557;SEVES;6;30.12.1991;27.01.1992;07.01.1992;2;27,33;Seven Seas Imports;90 Wadhurst Rd.;London;;OX15 4NB;UK
+558;THEBI;2;30.12.1991;27.01.1992;09.01.1992;3;237,34;The Big Cheese;89 Jefferson Way Suite 2;Portland;OR;97201;USA
+559;VICTE;3;31.12.1991;28.01.1992;05.01.1992;2;22,11;Victuailles en stock;2, rue du Commerce;Lyon;;69004;France
+560;FRANS;4;31.12.1991;28.01.1992;30.01.1992;1;1,36;Franchi S.p.A.;Via Monte Bianco 34;Torino;;10100;Italy
+561;OLDWO;2;01.01.1992;29.01.1992;09.01.1992;3;45,53;Old World Delicatessen;2743 Bering St.;Anchorage;AK;99508;USA
+562;WELLI;7;01.01.1992;29.01.1992;07.01.1992;1;4,87;Wellington Importadora;Rua do Mercado, 12;Resende;SP;08737-363;Brazil
+563;LAUGB;2;01.01.1992;29.01.1992;07.01.1992;3;4,33;Laughing Bacchus Wine Cellars;2319 Elm St.;Vancouver;BC;V3F 2K1;Canada
+564;LINOD;8;02.01.1992;30.01.1992;08.01.1992;1;31,22;LINO-Delicateses;Ave. 5 de Mayo Porlamar;I. de Margarita;Nueva Esparta;4980;Venezuela
+565;REGGC;5;02.01.1992;30.01.1992;12.01.1992;1;59,78;Reggiani Caseifici;Strada Provinciale 124;Reggio Emilia;;42100;Italy
+566;RICAR;1;05.01.1992;02.02.1992;09.01.1992;1;47,38;Ricardo Adocicados;Av. Copacabana, 267;Rio de Janeiro;RJ;02389-890;Brazil
+567;VICTE;3;05.01.1992;02.02.1992;14.01.1992;3;130,94;Victuailles en stock;2, rue du Commerce;Lyon;;69004;France
+568;SAVEA;2;05.01.1992;02.02.1992;14.01.1992;3;14,62;Save-a-lot Markets;187 Suffolk Ln.;Boise;ID;83720;USA
+569;GREAL;4;06.01.1992;03.02.1992;04.02.1992;2;719,78;Great Lakes Food Market;2732 Baker Blvd.;Eugene;OR;97403;USA
+570;KOENE;3;06.01.1992;20.01.1992;13.01.1992;2;306,07;Königlich Essen;Maubelstr. 90;Brandenburg;;14776;Germany
+571;MAGAA;7;07.01.1992;04.02.1992;12.01.1992;3;65,48;Magazzini Alimentari Riuniti;Via Ludovico il Moro 22;Bergamo;;24100;Italy
+572;CACTU;2;07.01.1992;04.02.1992;16.01.1992;3;19,76;Cactus Comidas para llevar;Cerrito 333;Buenos Aires;;1010;Argentina
+573;RATTC;3;07.01.1992;04.02.1992;13.01.1992;2;37,52;Rattlesnake Canyon Grocery;2817 Milton Dr.;Albuquerque;NM;87110;USA
+574;SPLIR;1;08.01.1992;05.02.1992;15.01.1992;1;36,68;Split Rail Beer & Ale;P.O. Box 555;Lander;WY;82520;USA
+575;TRAIH;6;08.01.1992;05.02.1992;16.01.1992;3;7;Trail's Head Gourmet Provisioners;722 DaVinci Blvd.;Kirkland;WA;98034;USA
+576;LILAS;5;09.01.1992;06.02.1992;13.01.1992;2;163,97;LILA-Supermercado;Carrera 52 con Ave. Bolívar #65-98 Llano Largo;Barquisimeto;Lara;3508;Venezuela
+577;FOLKO;8;09.01.1992;06.02.1992;30.01.1992;1;1,23;Folk och fä HB;Åkergatan 24;Bräcke;;S-844 67;Sweden
+578;DRACD;1;09.01.1992;06.02.1992;14.01.1992;1;79,25;Drachenblut Delikatessen;Walserweg 21;Aachen;;52066;Germany
+579;BLONP;6;12.01.1992;09.02.1992;06.02.1992;1;7,09;Blondel père et fils;24, place Kléber;Strasbourg;;67000;France
+580;BONAP;1;12.01.1992;26.01.1992;06.02.1992;2;63,54;Bon app';12, rue des Bouchers;Marseille;;13008;France
+581;RANCH;9;13.01.1992;27.01.1992;04.02.1992;1;90,85;Rancho grande;Av. del Libertador 900;Buenos Aires;;1010;Argentina
+582;ISLAT;9;13.01.1992;10.02.1992;23.01.1992;1;154,72;Island Trading;Garden House Crowther Way;Cowes;Isle of Wight;PO31 7PJ;UK
+583;TRADH;4;13.01.1992;24.02.1992;21.01.1992;2;81,83;Tradiçao Hipermercados;Av. Inês de Castro, 414;Sao Paulo;SP;05634-030;Brazil
+584;SANTG;3;14.01.1992;11.02.1992;23.01.1992;2;72,19;Santé Gourmet;Erling Skakkes gate 78;Stavern;;4110;Norway
+585;LAMAI;2;14.01.1992;11.02.1992;19.01.1992;2;43,26;La maison d'Asie;1 rue Alsace-Lorraine;Toulouse;;31000;France
+586;OTTIK;6;15.01.1992;12.02.1992;23.01.1992;2;71,49;Ottilies Käseladen;Mehrheimerstr. 369;Köln;;50739;Germany
+587;TRADH;1;15.01.1992;12.02.1992;19.01.1992;3;29,78;Tradiçao Hipermercados;Av. Inês de Castro, 414;Sao Paulo;SP;05634-030;Brazil
+588;ALFKI;1;15.01.1992;12.02.1992;21.01.1992;3;69,53;Alfred's Futterkiste;Obere Str. 57;Berlin;;12209;Germany
+589;ERNSH;7;16.01.1992;13.02.1992;21.01.1992;1;411,88;Ernst Handel;Kirchgasse 6;Graz;;8010;Austria
+590;BERGS;9;16.01.1992;13.02.1992;23.01.1992;3;13,32;Berglunds snabbköp;Berguvsvägen  8;Luleå;;S-958 22;Sweden
+591;LINOD;3;19.01.1992;16.02.1992;23.01.1992;3;59,28;LINO-Delicateses;Ave. 5 de Mayo Porlamar;I. de Margarita;Nueva Esparta;4980;Venezuela
+592;TRADH;3;19.01.1992;16.02.1992;22.01.1992;3;35,43;Tradiçao Hipermercados;Av. Inês de Castro, 414;Sao Paulo;SP;05634-030;Brazil
+593;LINOD;4;19.01.1992;02.03.1992;16.02.1992;2;2,71;LINO-Delicateses;Ave. 5 de Mayo Porlamar;I. de Margarita;Nueva Esparta;4980;Venezuela
+594;SUPRD;5;20.01.1992;17.02.1992;29.01.1992;2;424,3;Suprêmes délices;Boulevard Tirou, 255;Charleroi;;B-6000;Belgium
+595;TORTU;1;20.01.1992;17.02.1992;29.01.1992;3;54,42;Tortuga Restaurante;Avda. Azteca 123;México D.F.;;5033;Mexico
+596;VICTE;4;21.01.1992;18.02.1992;26.01.1992;2;9,26;Victuailles en stock;2, rue du Commerce;Lyon;;69004;France
+597;PICCO;8;21.01.1992;18.02.1992;26.01.1992;2;25,22;Piccolo und mehr;Geislweg 14;Salzburg;;5020;Austria
+598;QUICK;8;21.01.1992;04.02.1992;30.01.1992;1;212,98;QUICK-Stop;Taucherstraße 10;Cunewalde;;1307;Germany
+599;SUPRD;2;22.01.1992;05.03.1992;23.01.1992;3;56,46;Suprêmes délices;Boulevard Tirou, 255;Charleroi;;B-6000;Belgium
+600;SAVEA;4;22.01.1992;05.02.1992;10.02.1992;3;487,57;Save-a-lot Markets;187 Suffolk Ln.;Boise;ID;83720;USA
+601;CONSH;7;23.01.1992;20.02.1992;29.01.1992;2;38,24;Consolidated Holdings;Berkeley Gardens 12  Brewery;London;;WX1 6LT;UK
+602;KOENE;9;23.01.1992;20.02.1992;30.01.1992;2;0,56;Königlich Essen;Maubelstr. 90;Brandenburg;;14776;Germany
+603;VICTE;1;23.01.1992;06.03.1992;30.01.1992;1;49,19;Victuailles en stock;2, rue du Commerce;Lyon;;69004;France
+604;RICAR;5;26.01.1992;23.02.1992;02.02.1992;1;160,55;Ricardo Adocicados;Av. Copacabana, 267;Rio de Janeiro;RJ;02389-890;Brazil
+605;RATTC;8;26.01.1992;09.02.1992;30.01.1992;1;174,05;Rattlesnake Canyon Grocery;2817 Milton Dr.;Albuquerque;NM;87110;USA
+606;BLAUS;9;27.01.1992;24.02.1992;03.02.1992;2;53,83;Blauer See Delikatessen;Forsterstr. 57;Mannheim;;68306;Germany
+607;ERNSH;3;27.01.1992;24.02.1992;05.02.1992;2;100,22;Ernst Handel;Kirchgasse 6;Graz;;8010;Austria
+608;OLDWO;3;27.01.1992;24.02.1992;04.02.1992;1;170,97;Old World Delicatessen;2743 Bering St.;Anchorage;AK;99508;USA
+609;ANTON;3;28.01.1992;25.02.1992;10.02.1992;2;58,43;Antonio Moreno Taquería;Mataderos  2312;México D.F.;;5023;Mexico
+610;BERGS;8;28.01.1992;25.02.1992;06.02.1992;2;188,85;Berglunds snabbköp;Berguvsvägen  8;Luleå;;S-958 22;Sweden
+611;LACOR;2;29.01.1992;26.02.1992;03.02.1992;1;52,51;La corne d'abondance;67, avenue de l'Europe;Versailles;;78000;France
+612;FRANK;1;29.01.1992;26.02.1992;02.02.1992;2;76,1;Frankenversand;Berliner Platz 43;München;;80805;Germany
+613;FRANR;3;29.01.1992;26.02.1992;04.02.1992;3;19,26;France restauration;54, rue Royale;Nantes;;44000;France
+614;WHITC;4;30.01.1992;27.02.1992;17.02.1992;2;14,93;White Clover Markets;1029 - 12th Ave. S.;Seattle;WA;98124;USA
+615;LEHMS;8;30.01.1992;13.03.1992;02.02.1992;2;53,23;Lehmanns Marktstand;Magazinweg 7;Frankfurt a.M.;;60528;Germany
+616;HILAA;4;02.02.1992;02.03.1992;17.02.1992;2;30,26;HILARION-Abastos;Carrera 22 con Ave. Carlos Soublette #8-35;San Cristóbal;Táchira;5022;Venezuela
+617;AROUT;4;02.02.1992;02.03.1992;09.02.1992;2;3,04;Around the Horn;Brook Farm Stratford St. Mary;Colchester;Essex;CO7 6JX;UK
+618;QUICK;2;02.02.1992;16.02.1992;12.02.1992;1;348,14;QUICK-Stop;Taucherstraße 10;Cunewalde;;1307;Germany
+619;BERGS;5;03.02.1992;03.03.1992;12.02.1992;1;109,11;Berglunds snabbköp;Berguvsvägen  8;Luleå;;S-958 22;Sweden
+620;LONEP;6;03.02.1992;17.03.1992;11.02.1992;1;1,93;Lonesome Pine Restaurant;89 Chiaroscuro Rd.;Portland;OR;97219;USA
+621;QUEEN;7;04.02.1992;04.03.1992;23.02.1992;2;191,27;Queen Cozinha;Alameda dos Canàrios, 891;Sao Paulo;SP;05487-020;Brazil
+622;SEVES;5;04.02.1992;04.03.1992;09.02.1992;1;143,28;Seven Seas Imports;90 Wadhurst Rd.;London;;OX15 4NB;UK
+623;WOLZA;5;04.02.1992;04.03.1992;13.02.1992;3;12,04;Wolski Zajazd;ul. Filtrowa 68;Warszawa;;01-012;Poland
+624;BONAP;9;05.02.1992;05.03.1992;10.02.1992;2;112,27;Bon app';12, rue des Bouchers;Marseille;;13008;France
+625;GODOS;5;05.02.1992;05.03.1992;09.02.1992;2;175,32;Godos Cocina Típica;C/ Romero, 33;Sevilla;;41101;Spain
+626;WILMK;4;06.02.1992;06.03.1992;09.02.1992;1;0,82;Wilman Kala;Keskuskatu 45;Helsinki;;21240;Finland
+627;GODOS;5;06.02.1992;06.03.1992;11.02.1992;2;19,58;Godos Cocina Típica;C/ Romero, 33;Sevilla;;41101;Spain
+628;BERGS;4;06.02.1992;06.03.1992;03.03.1992;2;32,37;Berglunds snabbköp;Berguvsvägen  8;Luleå;;S-958 22;Sweden
+629;BONAP;7;09.02.1992;09.03.1992;12.02.1992;3;60,42;Bon app';12, rue des Bouchers;Marseille;;13008;France
+630;RICAR;1;09.02.1992;09.03.1992;19.02.1992;1;38,06;Ricardo Adocicados;Av. Copacabana, 267;Rio de Janeiro;RJ;02389-890;Brazil
+631;QUICK;4;10.02.1992;10.03.1992;12.02.1992;1;46,69;QUICK-Stop;Taucherstraße 10;Cunewalde;;1307;Germany
+632;WILMK;3;10.02.1992;10.03.1992;12.02.1992;3;8,5;Wilman Kala;Keskuskatu 45;Helsinki;;21240;Finland
+633;FOLKO;7;10.02.1992;24.03.1992;18.02.1992;1;88,01;Folk och fä HB;Åkergatan 24;Bräcke;;S-844 67;Sweden
+634;CACTU;4;11.02.1992;11.03.1992;18.02.1992;1;2,84;Cactus Comidas para llevar;Cerrito 333;Buenos Aires;;1010;Argentina
+635;SAVEA;4;11.02.1992;11.03.1992;20.02.1992;3;23,1;Save-a-lot Markets;187 Suffolk Ln.;Boise;ID;83720;USA
+636;LONEP;8;12.02.1992;12.03.1992;20.02.1992;3;0,53;Lonesome Pine Restaurant;89 Chiaroscuro Rd.;Portland;OR;97219;USA
+637;LETSS;4;12.02.1992;12.03.1992;13.02.1992;2;90,97;Let's Stop N Shop;87 Polk St. Suite 5;San Francisco;CA;94117;USA
+638;SUPRD;6;12.02.1992;12.03.1992;18.02.1992;3;5,64;Suprêmes délices;Boulevard Tirou, 255;Charleroi;;B-6000;Belgium
+639;HANAR;1;13.02.1992;13.03.1992;02.03.1992;1;4,99;Hanari Carnes;Rua do Paço, 67;Rio de Janeiro;RJ;05454-876;Brazil
+640;GALED;8;13.02.1992;13.03.1992;16.02.1992;3;1,25;Galería del gastronómo;Rambla de Cataluña, 23;Barcelona;;8022;Spain
+641;GODOS;1;16.02.1992;16.03.1992;23.02.1992;2;51,87;Godos Cocina Típica;C/ Romero, 33;Sevilla;;41101;Spain
+642;RATTC;9;16.02.1992;16.03.1992;23.02.1992;3;280,61;Rattlesnake Canyon Grocery;2817 Milton Dr.;Albuquerque;NM;87110;USA
+643;DUMON;7;16.02.1992;16.03.1992;18.02.1992;1;32,76;Du monde entier;67, rue des Cinquante Otages;Nantes;;44000;France
+644;LEHMS;7;17.02.1992;17.03.1992;19.02.1992;2;20,37;Lehmanns Marktstand;Magazinweg 7;Frankfurt a.M.;;60528;Germany
+645;MAISD;4;17.02.1992;17.03.1992;19.02.1992;2;120,27;Maison Dewey;Rue Joseph-Bens 532;Bruxelles;;B-1180;Belgium
+646;KOENE;9;18.02.1992;18.03.1992;20.02.1992;2;77,78;Königlich Essen;Maubelstr. 90;Brandenburg;;14776;Germany
+647;SAVEA;1;18.02.1992;18.03.1992;20.02.1992;1;116,13;Save-a-lot Markets;187 Suffolk Ln.;Boise;ID;83720;USA
+648;ERNSH;3;18.02.1992;18.03.1992;23.02.1992;1;162,75;Ernst Handel;Kirchgasse 6;Graz;;8010;Austria
+649;MAISD;7;19.02.1992;19.03.1992;27.02.1992;3;32,45;Maison Dewey;Rue Joseph-Bens 532;Bruxelles;;B-1180;Belgium
+650;HUNGO;3;19.02.1992;19.03.1992;25.02.1992;2;603,54;Hungry Owl All-Night Grocers;8 Johnstown Road;Cork;Co. Cork;;Ireland
+651;OCEAN;4;20.02.1992;20.03.1992;06.03.1992;2;1,27;Océano Atlántico Ltda.;Ing. Gustavo Moncada 8585 Piso 20-A;Buenos Aires;;1010;Argentina
+652;LILAS;5;20.02.1992;20.03.1992;26.02.1992;3;1,21;LILA-Supermercado;Carrera 52 con Ave. Bolívar #65-98 Llano Largo;Barquisimeto;Lara;3508;Venezuela
+653;WELLI;1;20.02.1992;20.03.1992;04.03.1992;2;1,66;Wellington Importadora;Rua do Mercado, 12;Resende;SP;08737-363;Brazil
+654;HILAA;4;23.02.1992;23.03.1992;26.02.1992;1;62,09;HILARION-Abastos;Carrera 22 con Ave. Carlos Soublette #8-35;San Cristóbal;Táchira;5022;Venezuela
+655;FOLKO;1;23.02.1992;23.03.1992;03.03.1992;1;44,15;Folk och fä HB;Åkergatan 24;Bräcke;;S-844 67;Sweden
+656;HANAR;3;24.02.1992;24.03.1992;04.03.1992;3;36,71;Hanari Carnes;Rua do Paço, 67;Rio de Janeiro;RJ;05454-876;Brazil
+657;WHITC;3;24.02.1992;24.03.1992;27.02.1992;3;162,95;White Clover Markets;1029 - 12th Ave. S.;Seattle;WA;98124;USA
+658;WELLI;9;24.02.1992;24.03.1992;06.03.1992;2;13,72;Wellington Importadora;Rua do Mercado, 12;Resende;SP;08737-363;Brazil
+659;WOLZA;4;25.02.1992;11.03.1992;03.03.1992;3;26,29;Wolski Zajazd;ul. Filtrowa 68;Warszawa;;01-012;Poland
+660;SPECD;6;25.02.1992;25.03.1992;27.02.1992;3;9,19;Spécialités du monde;25, rue Lauriston;Paris;;75016;France
+661;REGGC;4;26.02.1992;26.03.1992;06.03.1992;2;32,96;Reggiani Caseifici;Strada Provinciale 124;Reggio Emilia;;42100;Italy
+662;SANTG;1;26.02.1992;26.03.1992;10.03.1992;2;53,05;Santé Gourmet;Erling Skakkes gate 78;Stavern;;4110;Norway
+663;WILMK;1;26.02.1992;26.03.1992;04.03.1992;3;38,11;Wilman Kala;Keskuskatu 45;Helsinki;;21240;Finland
+664;GODOS;3;26.02.1992;26.03.1992;05.03.1992;1;38,19;Godos Cocina Típica;C/ Romero, 33;Sevilla;;41101;Spain
+665;HUNGO;2;26.02.1992;26.03.1992;18.03.1992;2;580,91;Hungry Owl All-Night Grocers;8 Johnstown Road;Cork;Co. Cork;;Ireland
+666;QUEEN;4;26.02.1992;26.03.1992;04.03.1992;1;33,05;Queen Cozinha;Alameda dos Canàrios, 891;Sao Paulo;SP;05487-020;Brazil
+667;QUEEN;6;27.02.1992;27.03.1992;02.03.1992;1;21,19;Queen Cozinha;Alameda dos Canàrios, 891;Sao Paulo;SP;05487-020;Brazil
+668;TORTU;2;27.02.1992;27.03.1992;02.03.1992;2;3,51;Tortuga Restaurante;Avda. Azteca 123;México D.F.;;5033;Mexico
+669;RANCH;1;27.02.1992;27.03.1992;09.03.1992;2;63,77;Rancho grande;Av. del Libertador 900;Buenos Aires;;1010;Argentina
+670;ROMEY;4;02.03.1992;30.03.1992;11.03.1992;2;8,29;Romero y tomillo;Gran Vía, 1;Madrid;;28001;Spain
+671;BOTTM;3;02.03.1992;30.03.1992;11.03.1992;3;48,83;Bottom-Dollar Markets;23 Tsawassen Blvd.;Tsawassen;BC;T2F 8M4;Canada
+672;LINOD;2;02.03.1992;30.03.1992;04.03.1992;2;19,8;LINO-Delicateses;Ave. 5 de Mayo Porlamar;I. de Margarita;Nueva Esparta;4980;Venezuela
+673;AROUT;4;03.03.1992;31.03.1992;09.03.1992;2;29,61;Around the Horn;Brook Farm Stratford St. Mary;Colchester;Essex;CO7 6JX;UK
+674;VAFFE;1;03.03.1992;14.04.1992;09.03.1992;1;176,48;Vaffeljernet;Smagsloget 45;Århus;;8200;Denmark
+675;HANAR;5;03.03.1992;31.03.1992;05.03.1992;3;62,74;Hanari Carnes;Rua do Paço, 67;Rio de Janeiro;RJ;05454-876;Brazil
+676;LAMAI;7;03.03.1992;14.04.1992;13.03.1992;3;68,26;La maison d'Asie;1 rue Alsace-Lorraine;Toulouse;;31000;France
+677;BERGS;3;04.03.1992;01.04.1992;08.04.1992;2;151,52;Berglunds snabbköp;Berguvsvägen  8;Luleå;;S-958 22;Sweden
+678;HANAR;3;04.03.1992;01.04.1992;13.03.1992;1;2,27;Hanari Carnes;Rua do Paço, 67;Rio de Janeiro;RJ;05454-876;Brazil
+679;ANATR;4;04.03.1992;01.04.1992;11.03.1992;3;39,92;Ana Trujillo Emparedados y helados;Avda. de la Constitución 2222;México D.F.;;5021;Mexico
+680;LACOR;4;05.03.1992;02.04.1992;08.04.1992;1;19,79;La corne d'abondance;67, avenue de l'Europe;Versailles;;78000;France
+681;GALED;1;05.03.1992;02.04.1992;18.03.1992;1;1,36;Galería del gastronómo;Rambla de Cataluña, 23;Barcelona;;8022;Spain
+682;FRANK;6;05.03.1992;02.04.1992;12.03.1992;1;33,93;Frankenversand;Berliner Platz 43;München;;80805;Germany
+683;SUPRD;4;06.03.1992;17.04.1992;18.03.1992;3;15,55;Suprêmes délices;Boulevard Tirou, 255;Charleroi;;B-6000;Belgium
+684;RICSU;4;06.03.1992;20.03.1992;19.03.1992;2;13,6;Richter Supermarkt;Starenweg 5;Genève;;1204;Switzerland
+685;BONAP;8;06.03.1992;03.04.1992;24.03.1992;1;134,64;Bon app';12, rue des Bouchers;Marseille;;13008;France
+686;ISLAT;6;06.03.1992;03.04.1992;16.03.1992;3;54,15;Island Trading;Garden House Crowther Way;Cowes;Isle of Wight;PO31 7PJ;UK
+687;LEHMS;3;09.03.1992;06.04.1992;12.03.1992;3;32,01;Lehmanns Marktstand;Magazinweg 7;Frankfurt a.M.;;60528;Germany
+688;WELLI;4;09.03.1992;06.04.1992;18.03.1992;3;47,59;Wellington Importadora;Rua do Mercado, 12;Resende;SP;08737-363;Brazil
+689;GREAL;3;09.03.1992;06.04.1992;18.03.1992;2;33,68;Great Lakes Food Market;2732 Baker Blvd.;Eugene;OR;97403;USA
+690;CACTU;7;10.03.1992;24.03.1992;13.03.1992;3;31,51;Cactus Comidas para llevar;Cerrito 333;Buenos Aires;;1010;Argentina
+691;QUICK;3;10.03.1992;07.04.1992;16.03.1992;2;31,89;QUICK-Stop;Taucherstraße 10;Cunewalde;;1307;Germany
+692;MAGAA;2;10.03.1992;07.04.1992;13.03.1992;2;76,33;Magazzini Alimentari Riuniti;Via Ludovico il Moro 22;Bergamo;;24100;Italy
+693;BONAP;8;11.03.1992;08.04.1992;23.03.1992;3;19,77;Bon app';12, rue des Bouchers;Marseille;;13008;France
+694;SAVEA;7;11.03.1992;08.04.1992;20.03.1992;2;400,81;Save-a-lot Markets;187 Suffolk Ln.;Boise;ID;83720;USA
+695;REGGC;9;11.03.1992;08.04.1992;18.03.1992;3;17,95;Reggiani Caseifici;Strada Provinciale 124;Reggio Emilia;;42100;Italy
+696;BSBEV;4;11.03.1992;08.04.1992;19.03.1992;2;2,17;B's Beverages;Fauntleroy Circus;London;;EC2 5NT;UK
+697;BOTTM;6;12.03.1992;26.03.1992;13.03.1992;3;52,92;Bottom-Dollar Markets;23 Tsawassen Blvd.;Tsawassen;BC;T2F 8M4;Canada
+698;MORGK;4;12.03.1992;09.04.1992;18.03.1992;1;10,22;Morgenstern Gesundkost;Heerstr. 22;Leipzig;;4179;Germany
+699;VAFFE;1;12.03.1992;09.04.1992;19.03.1992;2;27,2;Vaffeljernet;Smagsloget 45;Århus;;8200;Denmark
+700;BSBEV;3;13.03.1992;10.04.1992;16.03.1992;2;3,26;B's Beverages;Fauntleroy Circus;London;;EC2 5NT;UK
+701;GODOS;3;13.03.1992;10.04.1992;19.03.1992;3;23,39;Godos Cocina Típica;C/ Romero, 33;Sevilla;;41101;Spain
+702;BOTTM;2;13.03.1992;10.04.1992;17.03.1992;3;74,44;Bottom-Dollar Markets;23 Tsawassen Blvd.;Tsawassen;BC;T2F 8M4;Canada
+703;MAGAA;1;16.03.1992;13.04.1992;23.03.1992;2;2,5;Magazzini Alimentari Riuniti;Via Ludovico il Moro 22;Bergamo;;24100;Italy
+704;RICSU;9;16.03.1992;27.04.1992;07.04.1992;2;30,85;Richter Supermarkt;Starenweg 5;Genève;;1204;Switzerland
+705;ALFKI;1;16.03.1992;27.04.1992;24.03.1992;1;40,42;Alfred's Futterkiste;Obere Str. 57;Berlin;;12209;Germany
+706;AROUT;9;16.03.1992;30.03.1992;25.03.1992;2;23,72;Around the Horn;Brook Farm Stratford St. Mary;Colchester;Essex;CO7 6JX;UK
+707;LINOD;5;17.03.1992;28.04.1992;20.03.1992;1;27,91;LINO-Delicateses;Ave. 5 de Mayo Porlamar;I. de Margarita;Nueva Esparta;4980;Venezuela
+708;FOLKO;8;17.03.1992;14.04.1992;20.03.1992;2;3,26;Folk och fä HB;Åkergatan 24;Bräcke;;S-844 67;Sweden
+709;BLAUS;6;17.03.1992;28.04.1992;20.03.1992;2;44,65;Blauer See Delikatessen;Forsterstr. 57;Mannheim;;68306;Germany
+710;HILAA;8;18.03.1992;15.04.1992;27.03.1992;3;105,36;HILARION-Abastos;Carrera 22 con Ave. Carlos Soublette #8-35;San Cristóbal;Táchira;5022;Venezuela
+711;OCEAN;7;18.03.1992;15.04.1992;27.03.1992;2;49,56;Océano Atlántico Ltda.;Ing. Gustavo Moncada 8585 Piso 20-A;Buenos Aires;;1010;Argentina
+712;GOURL;6;18.03.1992;29.04.1992;23.03.1992;2;4,98;Gourmet Lanchonetes;Av. Brasil, 442;Campinas;SP;04876-786;Brazil
+713;HILAA;3;19.03.1992;02.04.1992;08.04.1992;1;2,08;HILARION-Abastos;Carrera 22 con Ave. Carlos Soublette #8-35;San Cristóbal;Táchira;5022;Venezuela
+714;QUEEN;8;19.03.1992;16.04.1992;30.03.1992;1;104,47;Queen Cozinha;Alameda dos Canàrios, 891;Sao Paulo;SP;05487-020;Brazil
+715;QUICK;8;19.03.1992;16.04.1992;23.03.1992;2;275,79;QUICK-Stop;Taucherstraße 10;Cunewalde;;1307;Germany
+716;FURIB;9;19.03.1992;16.04.1992;26.03.1992;3;2,7;Furia Bacalhau e Frutos do Mar;Jardim das rosas n. 32;Lisboa;;1675;Portugal
+717;SPECD;3;20.03.1992;17.04.1992;24.03.1992;2;87,38;Spécialités du monde;25, rue Lauriston;Paris;;75016;France
+718;OLDWO;6;20.03.1992;17.04.1992;30.03.1992;3;144,38;Old World Delicatessen;2743 Bering St.;Anchorage;AK;99508;USA
+719;CHOPS;4;20.03.1992;17.04.1992;08.04.1992;1;27,19;Chop-suey Chinese;Hauptstr. 31;Bern;;3012;Switzerland
+720;TOMSP;2;23.03.1992;20.04.1992;02.04.1992;2;62,22;Toms Spezialitäten;Luisenstr. 48;Münster;;44087;Germany
+721;ERNSH;1;23.03.1992;20.04.1992;01.04.1992;3;74,6;Ernst Handel;Kirchgasse 6;Graz;;8010;Austria
+722;COMMI;1;23.03.1992;20.04.1992;30.03.1992;2;0,21;Comércio Mineiro;Av. dos Lusíadas, 23;Sao Paulo;SP;05432-043;Brazil
+723;BOLID;9;24.03.1992;07.04.1992;24.04.1992;1;16,16;Bólido Comidas preparadas;C/ Araquil, 67;Madrid;;28023;Spain
+724;FRANR;2;24.03.1992;21.04.1992;02.04.1992;2;121,82;France restauration;54, rue Royale;Nantes;;44000;France
+725;LACOR;4;24.03.1992;21.04.1992;26.03.1992;2;0,02;La corne d'abondance;67, avenue de l'Europe;Versailles;;78000;France
+726;LACOR;6;24.03.1992;21.04.1992;27.03.1992;2;15,17;La corne d'abondance;67, avenue de l'Europe;Versailles;;78000;France
+727;SPLIR;3;25.03.1992;08.04.1992;03.04.1992;3;12,96;Split Rail Beer & Ale;P.O. Box 555;Lander;WY;82520;USA
+728;BOTTM;1;25.03.1992;22.04.1992;27.03.1992;3;32,27;Bottom-Dollar Markets;23 Tsawassen Blvd.;Tsawassen;BC;T2F 8M4;Canada
+729;HILAA;1;25.03.1992;06.05.1992;03.04.1992;1;37,97;HILARION-Abastos;Carrera 22 con Ave. Carlos Soublette #8-35;San Cristóbal;Táchira;5022;Venezuela
+730;FOLKO;8;26.03.1992;23.04.1992;10.04.1992;3;208,5;Folk och fä HB;Åkergatan 24;Bräcke;;S-844 67;Sweden
+731;MAISD;9;26.03.1992;23.04.1992;23.04.1992;2;32,82;Maison Dewey;Rue Joseph-Bens 532;Bruxelles;;B-1180;Belgium
+732;ERNSH;8;26.03.1992;23.04.1992;31.03.1992;2;353,07;Ernst Handel;Kirchgasse 6;Graz;;8010;Austria
+733;FOLKO;4;27.03.1992;08.05.1992;17.04.1992;1;1,26;Folk och fä HB;Åkergatan 24;Bräcke;;S-844 67;Sweden
+734;HANAR;1;27.03.1992;24.04.1992;02.04.1992;2;193,37;Hanari Carnes;Rua do Paço, 67;Rio de Janeiro;RJ;05454-876;Brazil
+735;BOTTM;2;27.03.1992;24.04.1992;08.04.1992;1;14,01;Bottom-Dollar Markets;23 Tsawassen Blvd.;Tsawassen;BC;T2F 8M4;Canada
+736;SAVEA;2;27.03.1992;24.04.1992;06.04.1992;2;657,54;Save-a-lot Markets;187 Suffolk Ln.;Boise;ID;83720;USA
+737;SAVEA;1;30.03.1992;27.04.1992;03.04.1992;3;211,22;Save-a-lot Markets;187 Suffolk Ln.;Boise;ID;83720;USA
+738;HUNGO;2;30.03.1992;27.04.1992;02.04.1992;1;91,51;Hungry Owl All-Night Grocers;8 Johnstown Road;Cork;Co. Cork;;Ireland
+739;OCEAN;8;30.03.1992;27.04.1992;21.04.1992;2;217,86;Océano Atlántico Ltda.;Ing. Gustavo Moncada 8585 Piso 20-A;Buenos Aires;;1010;Argentina
+740;EASTC;8;31.03.1992;28.04.1992;06.04.1992;1;185,48;Eastern Connection;35 King George;London;;WX3 6FW;UK
+741;RATTC;3;31.03.1992;28.04.1992;10.04.1992;2;61,14;Rattlesnake Canyon Grocery;2817 Milton Dr.;Albuquerque;NM;87110;USA
+742;QUEDE;2;31.03.1992;28.04.1992;02.04.1992;1;34,76;Que Delícia;Rua da Panificadora, 12;Rio de Janeiro;RJ;02389-673;Brazil
+743;ERNSH;2;01.04.1992;13.05.1992;07.04.1992;3;117,61;Ernst Handel;Kirchgasse 6;Graz;;8010;Austria
+744;QUICK;1;01.04.1992;29.04.1992;07.04.1992;1;38,51;QUICK-Stop;Taucherstraße 10;Cunewalde;;1307;Germany
+745;THEBI;1;01.04.1992;29.04.1992;03.04.1992;3;4,27;The Big Cheese;89 Jefferson Way Suite 2;Portland;OR;97201;USA
+746;FOLKO;7;01.04.1992;29.04.1992;10.04.1992;3;8,81;Folk och fä HB;Åkergatan 24;Bräcke;;S-844 67;Sweden
+747;VAFFE;2;02.04.1992;16.04.1992;09.04.1992;3;65,53;Vaffeljernet;Smagsloget 45;Århus;;8200;Denmark
+748;PERIC;1;02.04.1992;30.04.1992;06.04.1992;3;46;Pericles Comidas clásicas;Calle Dr. Jorge Cash 321;México D.F.;;5033;Mexico
+749;QUICK;4;02.04.1992;30.04.1992;10.04.1992;2;1,12;QUICK-Stop;Taucherstraße 10;Cunewalde;;1307;Germany
+750;LILAS;8;03.04.1992;15.05.1992;13.04.1992;2;73,91;LILA-Supermercado;Carrera 52 con Ave. Bolívar #65-98 Llano Largo;Barquisimeto;Lara;3508;Venezuela
+751;WOLZA;8;03.04.1992;17.04.1992;17.04.1992;2;20,31;Wolski Zajazd;ul. Filtrowa 68;Warszawa;;01-012;Poland
+752;OTTIK;6;03.04.1992;01.05.1992;10.04.1992;2;96,35;Ottilies Käseladen;Mehrheimerstr. 369;Köln;;50739;Germany
+753;RATTC;2;06.04.1992;04.05.1992;14.04.1992;3;55,12;Rattlesnake Canyon Grocery;2817 Milton Dr.;Albuquerque;NM;87110;USA
+754;FOLKO;2;06.04.1992;04.05.1992;14.04.1992;2;197,3;Folk och fä HB;Åkergatan 24;Bräcke;;S-844 67;Sweden
+755;SAVEA;4;06.04.1992;04.05.1992;16.04.1992;1;141,16;Save-a-lot Markets;187 Suffolk Ln.;Boise;ID;83720;USA
+756;THECR;3;06.04.1992;04.05.1992;08.04.1992;3;14,91;The Cracker Box;55 Grizzly Peak Rd.;Butte;MT;59801;USA
+757;MAISD;3;07.04.1992;05.05.1992;20.04.1992;1;44,84;Maison Dewey;Rue Joseph-Bens 532;Bruxelles;;B-1180;Belgium
+758;WILMK;2;07.04.1992;05.05.1992;10.04.1992;1;0,75;Wilman Kala;Keskuskatu 45;Helsinki;;21240;Finland
+759;GREAL;3;07.04.1992;05.05.1992;15.04.1992;2;25,19;Great Lakes Food Market;2732 Baker Blvd.;Eugene;OR;97403;USA
+760;PRINI;8;08.04.1992;06.05.1992;13.04.1992;2;202,24;Princesa Isabel Vinhos;Estrada da saúde n. 58;Lisboa;;1756;Portugal
+761;ERNSH;7;08.04.1992;06.05.1992;;3;79,46;Ernst Handel;Kirchgasse 6;Graz;;8010;Austria
+762;GODOS;2;08.04.1992;06.05.1992;10.04.1992;1;59,11;Godos Cocina Típica;C/ Romero, 33;Sevilla;;41101;Spain
+763;REGGC;2;09.04.1992;07.05.1992;21.04.1992;2;28,71;Reggiani Caseifici;Strada Provinciale 124;Reggio Emilia;;42100;Italy
+764;ALFKI;3;09.04.1992;07.05.1992;13.04.1992;1;1,21;Alfred's Futterkiste;Obere Str. 57;Berlin;;12209;Germany
+765;FRANK;1;09.04.1992;23.04.1992;17.04.1992;3;242,95;Frankenversand;Berliner Platz 43;München;;80805;Germany
+766;ROMEY;2;09.04.1992;07.05.1992;10.04.1992;1;32,99;Romero y tomillo;Gran Vía, 1;Madrid;;28001;Spain
+767;LINOD;2;10.04.1992;08.05.1992;15.04.1992;3;23,6;LINO-Delicateses;Ave. 5 de Mayo Porlamar;I. de Margarita;Nueva Esparta;4980;Venezuela
+768;SANTG;2;10.04.1992;24.04.1992;20.04.1992;2;4,62;Santé Gourmet;Erling Skakkes gate 78;Stavern;;4110;Norway
+769;AROUT;9;10.04.1992;08.05.1992;13.04.1992;2;33,8;Around the Horn;Brook Farm Stratford St. Mary;Colchester;Essex;CO7 6JX;UK
+770;ERNSH;9;13.04.1992;11.05.1992;20.04.1992;2;754,26;Ernst Handel;Kirchgasse 6;Graz;;8010;Austria
+771;LONEP;4;13.04.1992;11.05.1992;16.04.1992;2;11,65;Lonesome Pine Restaurant;89 Chiaroscuro Rd.;Portland;OR;97219;USA
+772;RANCH;6;13.04.1992;11.05.1992;;3;3,17;Rancho grande;Av. del Libertador 900;Buenos Aires;;1010;Argentina
+773;OTTIK;2;14.04.1992;12.05.1992;16.04.1992;2;43,3;Ottilies Käseladen;Mehrheimerstr. 369;Köln;;50739;Germany
+774;QUICK;3;14.04.1992;12.05.1992;21.04.1992;1;297,18;QUICK-Stop;Taucherstraße 10;Cunewalde;;1307;Germany
+775;HANAR;9;14.04.1992;12.05.1992;04.05.1992;2;6,27;Hanari Carnes;Rua do Paço, 67;Rio de Janeiro;RJ;05454-876;Brazil
+776;BSBEV;1;14.04.1992;28.04.1992;24.04.1992;2;123,83;B's Beverages;Fauntleroy Circus;London;;EC2 5NT;UK
+777;EASTC;4;15.04.1992;13.05.1992;20.04.1992;1;74,36;Eastern Connection;35 King George;London;;WX3 6FW;UK
+778;WARTH;6;15.04.1992;13.05.1992;24.04.1992;3;29,17;Wartian Herkku;Torikatu 38;Oulu;;90110;Finland
+779;FRANS;4;15.04.1992;13.05.1992;28.04.1992;1;47,09;Franchi S.p.A.;Via Monte Bianco 34;Torino;;10100;Italy
+780;BOTTM;1;16.04.1992;14.05.1992;20.04.1992;1;52,52;Bottom-Dollar Markets;23 Tsawassen Blvd.;Tsawassen;BC;T2F 8M4;Canada
+781;KOENE;2;16.04.1992;14.05.1992;22.04.1992;1;29,59;Königlich Essen;Maubelstr. 90;Brandenburg;;14776;Germany
+782;CHOPS;4;16.04.1992;14.05.1992;27.04.1992;1;47,84;Chop-suey Chinese;Hauptstr. 31;Bern;;3012;Switzerland
+783;SAVEA;7;17.04.1992;15.05.1992;27.04.1992;2;830,75;Save-a-lot Markets;187 Suffolk Ln.;Boise;ID;83720;USA
+784;SAVEA;6;17.04.1992;15.05.1992;24.04.1992;2;227,22;Save-a-lot Markets;187 Suffolk Ln.;Boise;ID;83720;USA
+785;WHITC;2;17.04.1992;15.05.1992;23.04.1992;3;606,19;White Clover Markets;1029 - 12th Ave. S.;Seattle;WA;98124;USA
+786;RICSU;7;17.04.1992;15.05.1992;23.04.1992;3;84,74;Richter Supermarkt;Starenweg 5;Genève;;1204;Switzerland
+787;OLDWO;8;20.04.1992;01.06.1992;27.04.1992;1;40,32;Old World Delicatessen;2743 Bering St.;Anchorage;AK;99508;USA
+788;SUPRD;2;20.04.1992;18.05.1992;24.04.1992;2;0,17;Suprêmes délices;Boulevard Tirou, 255;Charleroi;;B-6000;Belgium
+789;DRACD;8;20.04.1992;18.05.1992;22.04.1992;3;149,47;Drachenblut Delikatessen;Walserweg 21;Aachen;;52066;Germany
+790;GODOS;7;21.04.1992;19.05.1992;27.04.1992;1;3,2;Godos Cocina Típica;C/ Romero, 33;Sevilla;;41101;Spain
+791;SUPRD;1;21.04.1992;19.05.1992;30.04.1992;2;29,59;Suprêmes délices;Boulevard Tirou, 255;Charleroi;;B-6000;Belgium
+792;LINOD;1;21.04.1992;19.05.1992;;2;65;LINO-Delicateses;Ave. 5 de Mayo Porlamar;I. de Margarita;Nueva Esparta;4980;Venezuela
+793;GREAL;4;22.04.1992;20.05.1992;;3;18,84;Great Lakes Food Market;2732 Baker Blvd.;Eugene;OR;97403;USA
+794;CHOPS;3;22.04.1992;20.05.1992;28.04.1992;2;48,22;Chop-suey Chinese;Hauptstr. 31;Bern;;3012;Switzerland
+795;COMMI;2;22.04.1992;06.05.1992;01.05.1992;1;29,99;Comércio Mineiro;Av. dos Lusíadas, 23;Sao Paulo;SP;05432-043;Brazil
+796;SPECD;5;22.04.1992;20.05.1992;29.04.1992;2;8,8;Spécialités du monde;25, rue Lauriston;Paris;;75016;France
+797;WOLZA;4;23.04.1992;21.05.1992;01.05.1992;1;8,72;Wolski Zajazd;ul. Filtrowa 68;Warszawa;;01-012;Poland
+798;BOTTM;6;23.04.1992;21.05.1992;;2;70,58;Bottom-Dollar Markets;23 Tsawassen Blvd.;Tsawassen;BC;T2F 8M4;Canada
+799;WANDK;8;23.04.1992;21.05.1992;24.04.1992;2;71,64;Die Wandernde Kuh;Adenauerallee 900;Stuttgart;;70563;Germany
+800;EASTC;7;24.04.1992;22.05.1992;01.05.1992;3;46,62;Eastern Connection;35 King George;London;;WX3 6FW;UK
+801;BOTTM;7;24.04.1992;22.05.1992;30.04.1992;3;24,12;Bottom-Dollar Markets;23 Tsawassen Blvd.;Tsawassen;BC;T2F 8M4;Canada
+802;GOURL;3;24.04.1992;22.05.1992;04.05.1992;1;8,34;Gourmet Lanchonetes;Av. Brasil, 442;Campinas;SP;04876-786;Brazil
+803;FOLKO;8;27.04.1992;25.05.1992;05.05.1992;2;59,41;Folk och fä HB;Åkergatan 24;Bräcke;;S-844 67;Sweden
+804;LAMAI;7;27.04.1992;25.05.1992;;3;2,79;La maison d'Asie;1 rue Alsace-Lorraine;Toulouse;;31000;France
+805;HANAR;3;27.04.1992;25.05.1992;01.05.1992;1;67,26;Hanari Carnes;Rua do Paço, 67;Rio de Janeiro;RJ;05454-876;Brazil
+806;PICCO;2;27.04.1992;25.05.1992;29.04.1992;2;53,05;Piccolo und mehr;Geislweg 14;Salzburg;;5020;Austria
+807;CACTU;8;28.04.1992;26.05.1992;;1;0,33;Cactus Comidas para llevar;Cerrito 333;Buenos Aires;;1010;Argentina
+808;HILAA;7;28.04.1992;26.05.1992;05.05.1992;2;120,92;HILARION-Abastos;Carrera 22 con Ave. Carlos Soublette #8-35;San Cristóbal;Táchira;5022;Venezuela
+809;EASTC;8;28.04.1992;12.05.1992;01.05.1992;2;278,96;Eastern Connection;35 King George;London;;WX3 6FW;UK
+810;NORTS;3;29.04.1992;27.05.1992;01.05.1992;3;4,13;North/South;South House 300 Queensbridge;London;;SW7 1RZ;UK
+811;BLAUS;9;29.04.1992;27.05.1992;;3;31,14;Blauer See Delikatessen;Forsterstr. 57;Mannheim;;68306;Germany
+812;RICAR;2;29.04.1992;10.06.1992;;2;85,8;Ricardo Adocicados;Av. Copacabana, 267;Rio de Janeiro;RJ;02389-890;Brazil
+813;FRANS;2;30.04.1992;28.05.1992;04.05.1992;2;10,98;Franchi S.p.A.;Via Monte Bianco 34;Torino;;10100;Italy
+814;GREAL;4;30.04.1992;11.06.1992;;3;14,01;Great Lakes Food Market;2732 Baker Blvd.;Eugene;OR;97403;USA
+815;REGGC;4;30.04.1992;28.05.1992;;2;29,93;Reggiani Caseifici;Strada Provinciale 124;Reggio Emilia;;42100;Italy
+816;HUNGO;3;30.04.1992;28.05.1992;06.05.1992;2;81,73;Hungry Owl All-Night Grocers;8 Johnstown Road;Cork;Co. Cork;;Ireland
+817;SAVEA;1;01.05.1992;29.05.1992;04.05.1992;1;30,09;Save-a-lot Markets;187 Suffolk Ln.;Boise;ID;83720;USA
+818;LILAS;8;01.05.1992;29.05.1992;;1;12,91;LILA-Supermercado;Carrera 52 con Ave. Bolívar #65-98 Llano Largo;Barquisimeto;Lara;3508;Venezuela
+819;WHITC;7;01.05.1992;29.05.1992;04.05.1992;2;44,72;White Clover Markets;1029 - 12th Ave. S.;Seattle;WA;98124;USA
+820;DRACD;1;04.05.1992;18.05.1992;06.05.1992;2;7,98;Drachenblut Delikatessen;Walserweg 21;Aachen;;52066;Germany
+821;QUEEN;8;04.05.1992;01.06.1992;;2;81,75;Queen Cozinha;Alameda dos Canàrios, 891;Sao Paulo;SP;05487-020;Brazil
+822;TORTU;1;04.05.1992;01.06.1992;06.05.1992;2;15,67;Tortuga Restaurante;Avda. Azteca 123;México D.F.;;5033;Mexico
+823;LEHMS;2;05.05.1992;02.06.1992;;1;136;Lehmanns Marktstand;Magazinweg 7;Frankfurt a.M.;;60528;Germany
+824;LILAS;1;05.05.1992;02.06.1992;;1;0,93;LILA-Supermercado;Carrera 52 con Ave. Bolívar #65-98 Llano Largo;Barquisimeto;Lara;3508;Venezuela
+825;ERNSH;4;05.05.1992;02.06.1992;;2;258,64;Ernst Handel;Kirchgasse 6;Graz;;8010;Austria
+826;PERIC;2;05.05.1992;02.06.1992;;2;24,95;Pericles Comidas clásicas;Calle Dr. Jorge Cash 321;México D.F.;;5033;Mexico
+827;SIMOB;7;06.05.1992;03.06.1992;;2;18,44;Simons bistro;Vinbæltet 34;Kobenhavn;;1734;Denmark
+828;RICSU;8;06.05.1992;03.06.1992;;2;6,19;Richter Supermarkt;Starenweg 5;Genève;;1204;Switzerland
+829;BONAP;4;06.05.1992;03.06.1992;;2;38,28;Bon app';12, rue des Bouchers;Marseille;;13008;France
+830;RATTC;1;06.05.1992;03.06.1992;;2;8,53;Rattlesnake Canyon Grocery;2817 Milton Dr.;Albuquerque;NM;87110;USA
