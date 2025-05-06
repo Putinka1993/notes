@@ -41,6 +41,14 @@ selected_list = ['1105042d-9197-4bcd-9668-bb5ab2a76221',
                  'b5355c21-48ad-42e7-9ee6-ebe9085881a3']
 od.query('product_uuid in @selected_list').head()
 
+# !!!!!!! найти зкаказы у которых 5 дней до дня рождения и после 5 дней
+# изначально мы поля с датами преобразуем в даты.
+cust_orders[
+    ((cust_orders['order_date'].dt.day >= cust_orders['birthday'].dt.day - 5) &
+    (cust_orders['order_date'].dt.day <= cust_orders['birthday'].dt.day + 5))
+    & cust_orders['order_date'].dt.month == cust_orders['birthday'].dt.month
+]
+
 # Из таблицы customers выведите всех клиентов, имя которых начинается на букву А и имеет 5 и более букв в своем составе.
 customers[(customers['customer_name'].str.split().str[0].str.len() == 5) & (customers['customer_name'].str.startswith('А'))]
 
