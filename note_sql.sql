@@ -1,9 +1,6 @@
 -- Patterns
 
-
-
 -- ABC
-
 with group_name as (
 	select
 		name ,
@@ -26,6 +23,7 @@ select
 	end as abc_category
 from
 	group_name
+
 
 
 -- Посчитаем доходы и расходы по месяцам нарастающим итогом (кумулятивно):
