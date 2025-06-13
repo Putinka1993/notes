@@ -1,5 +1,33 @@
 -- Patterns
 
+
+
+-- ABC
+
+with group_name as (
+	select
+		name ,
+		sum(price * quantity) as revenue
+	from
+		pizza_full_data
+	group by
+		name
+)
+select
+	name ,
+	revenue ,
+	sum(revenue) over(order by revenue DESC) as cum_sum ,
+	sum(revenue) over() as total_revenue ,
+	round(sum(revenue) over(order by revenue DESC) / sum(revenue) over() * 100) as perc_of_total_revenue ,
+	case
+		when round(sum(revenue) over(order by revenue DESC) / sum(revenue) over() * 100) <= 80 then 'A'
+		when round(sum(revenue) over(order by revenue DESC) / sum(revenue) over() * 100) <= 95 then 'B'
+		else 'C'
+	end as abc_category
+from
+	group_name
+
+
 -- Посчитаем доходы и расходы по месяцам нарастающим итогом (кумулятивно):
 SELECT
 	"year" ,
