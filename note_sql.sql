@@ -1,6 +1,6 @@
 -- Patterns
 
--- ABC
+-- ABC amount and revenue
 with group_name as (
 	select
 		name ,
@@ -8,19 +8,20 @@ with group_name as (
 		sum(quantity) as amount
 	from
 		pizza_full_data
+	where year = 2015
 	group by
 		name
 )
 select
 	name ,
 	case
-		when round(sum(amount) over(order by amount DESC) / sum(amount) over() * 100.0,3) <= 80 then 'A'
-		when round(sum(amount) over(order by amount DESC) / sum(amount) over() * 100.0,3) <= 95 then 'B'
+		when round(sum(amount) over(order by amount desc rows between unbounded preceding and current row) / sum(amount) over() * 100.0,3) <= 80 then 'A'
+		when round(sum(amount) over(order by amount desc ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) / sum(amount) over() * 100.0,3) <= 95 then 'B'
 		else 'C'
 	end as abc_amount ,
 	case
-		when round(sum(revenue) over(order by revenue DESC) / sum(revenue) over() * 100.0,3) <= 80 then 'A'
-		when round(sum(revenue) over(order by revenue DESC) / sum(revenue) over() * 100.0,3) <= 95 then 'B'
+		when round(sum(revenue) over(order by revenue desc ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) / sum(revenue) over() * 100.0,3) <= 80 then 'A'
+		when round(sum(revenue) over(order by revenue desc ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) / sum(revenue) over() * 100.0,3) <= 95 then 'B'
 		else 'C'
 	end as abc_revenue
 from
