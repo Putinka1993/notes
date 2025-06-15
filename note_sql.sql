@@ -39,20 +39,28 @@ with amount_table as (
 	order by
 		month_year ,
 		name
+), cov_table as (
+	select
+		name ,
+		round(stddev_pop(amount) over(partition by name) / avg(amount) over(partition by name), 3) as cov ,
+		case
+			when round(stddev_pop(amount) over(partition by name) / avg(amount) over(partition by name), 3) <= 0.10
+				then 'X'
+			when round(stddev_pop(amount) over(partition by name) / avg(amount) over(partition by name), 3) <= 0.20
+				then 'Y'
+			else 'Z'
+		end as XYZ
+	from
+		amount_table
+	order by
+		name
 )
-select distinct
+select
 	name ,
-	round(stddev_pop(amount) over(partition by name) / avg(amount) over(partition by name), 3) as cov ,
-	case
-		when round(stddev_pop(amount) over(partition by name) / avg(amount) over(partition by name), 3) <= 0.10
-			then 'X'
-		when round(stddev_pop(amount) over(partition by name) / avg(amount) over(partition by name), 3) <= 0.20
-			then 'Y'
-		else 'Z'
-	end as XYZ
+	min(cov) as cov
 from
-	amount_table
-order by
+	cov_table
+group by
 	name
 
 --                                     ABC amount and revenue
