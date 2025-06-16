@@ -44,7 +44,7 @@ with amount_table as (
 		name ,
 		round(stddev_pop(amount) over(partition by name) / avg(amount) over(partition by name), 3) as cov ,
 		case
-			when round(stddev_pop(amount) over(partition by name) / avg(amount) over(partition by name), 3) <= 0.10
+			when round(stddev_pop(amount) over(partition by name) / avg(amount) over(partition by name), 3) <= 0.1
 				then 'X'
 			when round(stddev_pop(amount) over(partition by name) / avg(amount) over(partition by name), 3) <= 0.20
 				then 'Y'
@@ -57,11 +57,13 @@ with amount_table as (
 )
 select
 	name ,
-	min(cov) as cov
+	min(cov) as cov ,
+	XYZ
 from
 	cov_table
 group by
-	name
+	name ,
+	XYZ
 
 --                                     ABC amount and revenue
 
