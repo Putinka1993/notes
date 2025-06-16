@@ -1,6 +1,19 @@
 -- Patterns
 
 
+-- ABC_XYZ amount and revenue
+-- сделать представление таблиц , потом обьеденить их по одинаковому полю
+-- select
+--	abc.name ,
+--	abc.abc_amount || xyz.XYZ as abc_xyz_amount ,
+--	abc.abc_revenue || xyz.XYZ as abc_xyz_revenue
+--from
+--	result_abc as abc
+--	join result_xyz as xyz
+--		on xyz.name = abc.name
+--order by
+--	abc.name
+
 --                                     XYZ COV(коэффицент вариации)
 
 --Цель: оценить стабильность спроса (вариативность продаж).
