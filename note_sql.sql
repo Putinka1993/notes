@@ -12,7 +12,7 @@
 --	join result_xyz as xyz
 --		on xyz.name = abc.name
 --order by
---	abc.name
+--	abc_xyz_revenue
 
 --                                     XYZ COV(коэффицент вариации)
 
