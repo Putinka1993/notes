@@ -135,7 +135,38 @@ select
 from
 	group_name
 
+--                                                   LTV КОГОРТНЫЙ АНАЛИЗ АНАЛОГ
+Берём номер карты и дату покупки.
+Для каждой карты находим её первый месяц покупки — это и есть когорта клиента.
+Считаем, **сколько дней прошло с первой покупки** клиента. Это называется **"возраст клиента"**.
+Смотрим, какой самый "дальний возраст" клиента в днях от первой покупки — нужно для ограничения диапазонов.
+Каждое значение делится на количество клиентов в когорте, чтобы получить средний доход на одного клиента.
 
+WITH data_cohort AS (
+    SELECT
+        card,
+        datetime,
+        FIRST_VALUE(to_char(datetime, 'YYYY-MM')) OVER (PARTITION BY card ORDER BY datetime) AS cohort,
+        EXTRACT(days FROM datetime - FIRST_VALUE(datetime) OVER (PARTITION BY card ORDER BY datetime)) AS df_days,
+        summ
+    FROM checks
+    WHERE card LIKE '2000%'
+    ORDER BY card
+)
+SELECT
+    cohort,
+    COUNT(DISTINCT card) AS cnt_customer,
+    MAX(df_days) AS max_df_days,
+    ROUND(SUM(CASE WHEN df_days = 0 THEN summ END) / COUNT(DISTINCT card)) AS "0_day",
+    ROUND(CASE WHEN MAX(df_days) > 0 THEN SUM(CASE WHEN df_days <= 30 THEN summ END) / COUNT(DISTINCT card) END) AS "30_day",
+    ROUND(CASE WHEN MAX(df_days) > 30 THEN SUM(CASE WHEN df_days <= 60 THEN summ END) / COUNT(DISTINCT card) END) AS "60_day",
+    ROUND(CASE WHEN MAX(df_days) > 60 THEN SUM(CASE WHEN df_days <= 90 THEN summ END) / COUNT(DISTINCT card) END) AS "90_day",
+    ROUND(CASE WHEN MAX(df_days) > 90 THEN SUM(CASE WHEN df_days <= 180 THEN summ END) / COUNT(DISTINCT card) END) AS "180_day",
+    ROUND(CASE WHEN MAX(df_days) > 180 THEN SUM(CASE WHEN df_days <= 300 THEN summ END) / COUNT(DISTINCT card) END) AS "300_day",
+    ROUND(CASE WHEN MAX(df_days) > 300 THEN SUM(CASE WHEN df_days <= 400 THEN summ END) / COUNT(DISTINCT card) END) AS "400_day"
+FROM data_cohort
+GROUP BY cohort
+ORDER BY cohort
 
 -- Посчитаем доходы и расходы по месяцам нарастающим итогом (кумулятивно):
 SELECT
