@@ -168,6 +168,46 @@ FROM data_cohort
 GROUP BY cohort
 ORDER BY cohort
 
+with diff_table as (	
+	select
+		distinct
+		ord.customer_id ,
+		ord.check_id ,
+		pr.category_id ,
+		ord.order_date ,
+		first_value(to_char(ord.order_date, 'YYYY-MM-DD')) over(partition by ord.customer_id order by ord.order_date) as cohort_first ,
+		last_value(to_char(ord.order_date, 'YYYY-MM-DD')) over(partition by ord.customer_id order by ord.order_date) as cohort_last ,
+		ord.order_date - first_value(ord.order_date) over(partition by ord.customer_id, pr.category_id order by ord.order_date) as diff_days
+	from
+		sales.orders as ord 
+		join 
+			sales.order_details as ord_d
+			on
+				ord.check_id = ord_d.check_id
+		join
+			sales.products as pr
+			on
+				ord_d.product_uuid = pr.product_uuid
+)
+select
+	customer_id ,
+	category_id ,
+	count(distinct check_id) as cnt_orders
+from
+	diff_table
+where 
+	diff_days between 1 and 90
+group by
+	customer_id ,
+	category_id
+having 
+	count(distinct check_id) > 2
+order by
+	count(distinct check_id) desc;
+
+
+
+    
 -- Посчитаем доходы и расходы по месяцам нарастающим итогом (кумулятивно):
 SELECT
 	"year" ,
