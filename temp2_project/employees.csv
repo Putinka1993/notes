@@ -1,55 +1,55 @@
 id,id_department,phone_number,email,position,is_active
-1,1,29958626795,klavdi29@example.com,Техник связи,True
-2,1,02194152470,orehovaija@example.org,Специалист по телефонии,True
-3,1,76939852867,pkonovalov@example.org,Специалист по телефонии,True
-4,1,38016850369,petrsidorov@example.net,Системный инженер АТС,True
-5,1,57446097817,agge69@example.com,Инженер связи,True
-6,1,53526504186,arhipovamaja@example.com,Системный инженер АТС,False
-7,1,97725043262,ermola_55@example.net,Техник связи,True
-8,1,03238033005,silvestrmaslov@example.net,Специалист по телефонии,True
-9,2,39009658577,potap04@example.net,Техник по обслуживанию ПК,True
-10,2,92579731640,elizaveta_02@example.net,Техник по обслуживанию ПК,False
-11,2,26332837746,rozhkovamos@example.net,Специалист helpdesk,False
-12,2,54131533238,martjan65@example.com,Специалист helpdesk,True
-13,2,57112061443,pnovikova@example.org,Инженер технической поддержки,True
-14,2,78679294804,radislav_31@example.org,Системный администратор,True
-15,2,22216754432,samolovirakli@example.com,Специалист helpdesk,True
-16,2,77181617765,rodionovvladislav@example.net,Инженер технической поддержки,True
-17,2,16919025693,timofe2002@example.com,Системный администратор,True
-18,2,07243253213,pahom1984@example.org,Специалист helpdesk,True
-19,2,46752638628,simonovaveronika@example.org,Системный администратор,True
-20,2,59134674931,solomonlihachev@example.org,Техник по обслуживанию ПК,True
-21,2,41662875678,visheslav_02@example.org,Системный администратор,False
-22,2,49104718072,zsergeeva@example.com,Техник по обслуживанию ПК,True
-23,3,18542741285,silanti49@example.org,Специалист SOC,False
-24,3,81626718002,visheslav15@example.com,Администратор средств защиты информации,False
-25,3,85948067168,birjukovavalentina@example.net,Аналитик ИБ,True
-26,3,37161088973,anatoli_32@example.org,Администратор средств защиты информации,False
-27,3,50522336926,paramon36@example.net,Специалист SOC,False
-28,3,52987672147,jmakarov@example.org,Специалист SOC,True
-29,3,01048888891,porfirigushchin@example.com,Администратор средств защиты информации,True
-30,3,59747717593,frolovaagata@example.com,Аналитик ИБ,True
-31,4,36910680891,tihonovjakov@example.com,Администратор баз данных,True
-32,4,48739985688,drozdovaglafira@example.com,Администратор баз данных,True
-33,4,42272716094,rodion_42@example.org,Администратор баз данных,True
-34,4,48792257749,samolovaanzhela@example.org,Системный администратор,True
-35,4,52423238094,nikon15@example.com,Системный администратор,False
-36,4,28400122417,mihalovanikita@example.net,Администратор баз данных,True
-37,5,78643702947,vikenti_01@example.org,Администратор приложений,True
-38,5,68816075015,nikiforovdanila@example.net,Инженер по интеграции,True
-39,5,96467314841,zoja_1970@example.org,Системный аналитик,True
-40,5,58267657786,nikita_45@example.com,Системный аналитик,False
-41,5,73394292120,nsitnikov@example.org,Специалист по сопровождению 1С,False
-42,5,80207258465,artemi1989@example.com,Системный аналитик,False
-43,5,39013221919,erofe04@example.org,Инженер по интеграции,True
-44,5,36171118667,arhipovavksenti@example.net,Системный аналитик,False
-45,5,25832200567,tit1998@example.net,Инженер по интеграции,True
-46,5,82719491399,galina_91@example.com,Инженер по интеграции,True
-47,6,41302060903,sidorstepanov@example.com,Специалист по прокладке кабеля,True
-48,6,50017958385,samson73@example.net,Техник по обслуживанию сетей,True
-49,6,25325376085,efimovosip@example.org,Техник по обслуживанию сетей,True
-50,6,05572360288,sergeevajulija@example.com,Специалист по прокладке кабеля,True
-51,6,25008721830,maksimovkondrati@example.net,Техник по обслуживанию сетей,True
-52,6,60678847307,golubevaangelina@example.com,Специалист по прокладке кабеля,False
-53,6,38329951129,timur2025@example.org,Кабельщик-сварщик,True
-54,6,10844883628,tsavelev@example.org,Монтажник СКС,True
+1,1,22155013973,vatslav1976@example.org,Техник связи,True
+2,1,68781960451,evgenija_50@example.com,Специалист по телефонии,False
+3,1,62061546985,harlampi_03@example.org,Техник связи,False
+4,1,82220242786,psuvorov@example.com,Инженер связи,False
+5,1,46410853717,kornil_1974@example.net,Техник связи,False
+6,1,61136845846,kgorbachev@example.net,Техник связи,True
+7,1,78463548229,filipp_93@example.com,Инженер связи,True
+8,1,56635739960,tihonovagap@example.org,Специалист по телефонии,True
+9,2,02748739173,maksim47@example.com,Специалист helpdesk,True
+10,2,05725500741,harlampi_25@example.net,Инженер технической поддержки,True
+11,2,84508518683,rshashkov@example.com,Техник по обслуживанию ПК,True
+12,2,74296215733,eliseevadarja@example.org,Системный администратор,True
+13,2,10649332420,sevastjan_59@example.net,Системный администратор,True
+14,2,10037995864,vorobevamargarita@example.org,Инженер технической поддержки,True
+15,2,17739747983,konon_1993@example.org,Системный администратор,True
+16,2,04513433452,knazarov@example.org,Системный администратор,True
+17,2,56405254539,serge_67@example.org,Специалист helpdesk,True
+18,2,15739561103,karp_23@example.net,Инженер технической поддержки,False
+19,2,02000338074,vrodionov@example.net,Системный администратор,True
+20,2,89920641169,ernest1972@example.org,Техник по обслуживанию ПК,True
+21,2,12469286769,gerasim44@example.org,Системный администратор,True
+22,2,94589069161,afinogen54@example.com,Специалист helpdesk,True
+23,3,73341987817,vasilisa66@example.net,Администратор средств защиты информации,True
+24,3,36895085712,evdokimovaverki@example.com,Администратор средств защиты информации,True
+25,3,16990943548,vzhuravlev@example.com,Инженер по ИБ,True
+26,3,29133646121,sofon_2013@example.net,Специалист SOC,True
+27,3,38319883115,rkulikov@example.com,Администратор средств защиты информации,True
+28,3,74302521132,jan_83@example.org,Аналитик ИБ,False
+29,3,76356058090,smirnovoleg@example.net,Аналитик ИБ,True
+30,3,14966544666,stepan2018@example.net,Инженер по ИБ,False
+31,4,83487218821,drozdovsvjatoslav@example.org,Администратор баз данных,True
+32,4,59597776207,kononovermola@example.org,Системный администратор,False
+33,4,43556228419,sobolevkonon@example.com,Инженер серверных систем,True
+34,4,47420458518,kallistratsazonov@example.com,Системный администратор,True
+35,4,12404673385,kudrjashovserge@example.com,Системный администратор,True
+36,4,51523721959,savinaaleksandra@example.org,Администратор баз данных,True
+37,5,42713992758,fadeevepifan@example.org,Специалист по сопровождению 1С,True
+38,5,90949178214,milikondratev@example.com,Администратор приложений,True
+39,5,46176393656,bobilevapelageja@example.org,Специалист по сопровождению 1С,True
+40,5,54163801739,dfedorova@example.org,Специалист по сопровождению 1С,False
+41,5,13812145003,foma2002@example.net,Администратор приложений,True
+42,5,22159220079,jakov1993@example.net,Системный аналитик,True
+43,5,30433620159,nikolaevkuprijan@example.net,Инженер по интеграции,True
+44,5,93597043232,upanov@example.com,Системный аналитик,True
+45,5,23422622900,ipati_91@example.org,Администратор приложений,True
+46,5,14017823592,semenovtvorimir@example.org,Специалист по сопровождению 1С,True
+47,6,07147244601,frolovmark@example.com,Кабельщик-сварщик,True
+48,6,03486908382,petrovvalentin@example.com,Кабельщик-сварщик,True
+49,6,87070856047,gavrila_43@example.com,Специалист по прокладке кабеля,True
+50,6,65602836424,silapavlov@example.org,Техник по обслуживанию сетей,True
+51,6,92580983316,ksenija_55@example.com,Монтажник СКС,True
+52,6,14759551028,kozlovaakulina@example.org,Специалист по прокладке кабеля,True
+53,6,45612087899,zahar38@example.net,Техник по обслуживанию сетей,False
+54,6,19282128961,hmiheeva@example.org,Специалист по прокладке кабеля,True
