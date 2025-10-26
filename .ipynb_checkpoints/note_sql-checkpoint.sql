@@ -90,32 +90,31 @@ group by
 	name ,
 	XYZ
 
+    
 -- =============================================
 -- ABC-анализ с маржинальностью по лекарствам
 -- =============================================
 
--- 1. Суммируем ключевые показатели по каждому препарату
+-- 1. Агрегация показателей по каждому препарату
 WITH agregation_table AS (
     SELECT
         d.dr_ndrugs AS ndrugs,                     -- Название препарата
-        SUM(d.dr_kol) AS sum_count,                -- Количество проданных единиц
-        SUM(d.dr_croz * d.dr_kol) AS sum_retail,  -- Общая выручка (розница)
+        SUM(d.dr_kol) AS sum_count,                -- Суммарное количество
+        SUM(d.dr_croz * d.dr_kol) AS sum_retail,  -- Общая розничная выручка
         SUM(d.dr_czak * d.dr_kol) AS sum_purch,   -- Общая закупочная стоимость
         ROUND(
-            SUM(d.dr_croz * d.dr_kol - d.dr_czak * d.dr_kol) 
+            SUM(d.dr_croz * d.dr_kol - d.dr_czak * d.dr_kol)
             / SUM(d.dr_croz * d.dr_kol), 2
-        ) * 100 AS margin                          -- Маржинальность (%)
-    FROM
-        drugs d
-    GROUP BY
-        d.dr_ndrugs
+        ) * 100 AS perc_margin                     -- Маржинальность (%) для препарата
+    FROM drugs d
+    GROUP BY d.dr_ndrugs
 )
 
--- 2. Основной запрос с расчетом ABC и накопительных процентов
+-- 2. Основной запрос с расчетом ABC по количеству, рознице и марже
 SELECT
     ndrugs,
 
-    -- Доля от количества
+    -- ABC по количеству
     ROUND(sum_count / SUM(sum_count) OVER() * 100.0, 2) AS perc_count,
     ROUND(SUM(sum_count) OVER(ORDER BY sum_count DESC) 
           / SUM(sum_count) OVER() * 100.0, 2) AS cumsum_COUNT,
@@ -125,7 +124,7 @@ SELECT
         ELSE 'C'
     END AS ABC_count_purch,
 
-    -- Доля от выручки (розничной)
+    -- ABC по выручке
     ROUND(sum_retail / SUM(sum_retail) OVER() * 100.0, 2) AS perc_RETAIL,
     ROUND(SUM(sum_retail) OVER(ORDER BY sum_retail DESC) 
           / SUM(sum_retail) OVER() * 100.0, 2) AS cumsum_RETAIL,
@@ -135,22 +134,33 @@ SELECT
         ELSE 'C'
     END AS ABC_retail,
 
-    -- Доля от маржи
-    ROUND(margin / SUM(margin) OVER() * 100.0, 2) AS perc_MARGIN,
-    ROUND(SUM(margin) OVER(ORDER BY margin DESC) / SUM(margin) OVER() * 100.0, 2) AS cumsum_MARGIN,
+    -- ABC по маржинальности
+    perc_margin,  -- сам процент маржи
+    ROUND(perc_margin / SUM(perc_margin) OVER() * 100.0, 2) AS portion_MARGIN,  -- доля от суммарной маржи
+    ROUND(SUM(perc_margin) OVER(ORDER BY perc_margin DESC) 
+          / SUM(perc_margin) OVER() * 100.0, 2) AS cumsum_MARGIN,
     CASE
-        WHEN ROUND(SUM(margin) OVER(ORDER BY margin DESC) / SUM(margin) OVER() * 100.0, 2) <= 80 THEN 'A'
-        WHEN ROUND(SUM(margin) OVER(ORDER BY margin DESC) / SUM(margin) OVER() * 100.0, 2) <= 95 THEN 'B'
+        WHEN ROUND(SUM(perc_margin) OVER(ORDER BY perc_margin DESC) 
+                   / SUM(perc_margin) OVER() * 100.0, 2) <= 80 THEN 'A'
+        WHEN ROUND(SUM(perc_margin) OVER(ORDER BY perc_margin DESC) 
+                   / SUM(perc_margin) OVER() * 100.0, 2) <= 95 THEN 'B'
         ELSE 'C'
     END AS ABC_margin
 
 FROM agregation_table
 
--- 3. Сортировка для наглядного ABC анализа
-ORDER BY 
-    ABC_count_purch ASC,
+-- 3. Сортировка для наглядности анализа
+ORDER BY
+    ABC_margin ASC,
     ABC_retail ASC,
-    ABC_margin ASC;
+    ABC_count_purch ASC,
+    perc_margin DESC;
+
+🔹 Ключевые моменты:
+	1.	perc_margin — маржинальность одного препарата.
+	2.	portion_MARGIN — доля от суммарной маржи всех препаратов.
+	3.	ABC классификация — A/B/C по количеству, рознице и марже.
+	4.	Сортировка позволяет сначала видеть препараты с высокой маржинальностью, потом по продажам и количеству.
 
 
 
