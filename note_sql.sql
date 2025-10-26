@@ -90,6 +90,71 @@ group by
 	name ,
 	XYZ
 
+-- =============================================
+-- ABC-анализ с маржинальностью по лекарствам
+-- =============================================
+
+-- 1. Суммируем ключевые показатели по каждому препарату
+WITH agregation_table AS (
+    SELECT
+        d.dr_ndrugs AS ndrugs,                     -- Название препарата
+        SUM(d.dr_kol) AS sum_count,                -- Количество проданных единиц
+        SUM(d.dr_croz * d.dr_kol) AS sum_retail,  -- Общая выручка (розница)
+        SUM(d.dr_czak * d.dr_kol) AS sum_purch,   -- Общая закупочная стоимость
+        ROUND(
+            SUM(d.dr_croz * d.dr_kol - d.dr_czak * d.dr_kol) 
+            / SUM(d.dr_croz * d.dr_kol), 2
+        ) * 100 AS margin                          -- Маржинальность (%)
+    FROM
+        drugs d
+    GROUP BY
+        d.dr_ndrugs
+)
+
+-- 2. Основной запрос с расчетом ABC и накопительных процентов
+SELECT
+    ndrugs,
+
+    -- Доля от количества
+    ROUND(sum_count / SUM(sum_count) OVER() * 100.0, 2) AS perc_count,
+    ROUND(SUM(sum_count) OVER(ORDER BY sum_count DESC) 
+          / SUM(sum_count) OVER() * 100.0, 2) AS cumsum_COUNT,
+    CASE
+        WHEN SUM(sum_count) OVER(ORDER BY sum_count DESC) / SUM(sum_count) OVER() * 100.0 <= 80 THEN 'A'
+        WHEN SUM(sum_count) OVER(ORDER BY sum_count DESC) / SUM(sum_count) OVER() * 100.0 <= 95 THEN 'B'
+        ELSE 'C'
+    END AS ABC_count_purch,
+
+    -- Доля от выручки (розничной)
+    ROUND(sum_retail / SUM(sum_retail) OVER() * 100.0, 2) AS perc_RETAIL,
+    ROUND(SUM(sum_retail) OVER(ORDER BY sum_retail DESC) 
+          / SUM(sum_retail) OVER() * 100.0, 2) AS cumsum_RETAIL,
+    CASE
+        WHEN SUM(sum_retail) OVER(ORDER BY sum_retail DESC) / SUM(sum_retail) OVER() * 100.0 <= 80 THEN 'A'
+        WHEN SUM(sum_retail) OVER(ORDER BY sum_retail DESC) / SUM(sum_retail) OVER() * 100.0 <= 95 THEN 'B'
+        ELSE 'C'
+    END AS ABC_retail,
+
+    -- Доля от маржи
+    ROUND(margin / SUM(margin) OVER() * 100.0, 2) AS perc_MARGIN,
+    ROUND(SUM(margin) OVER(ORDER BY margin DESC) / SUM(margin) OVER() * 100.0, 2) AS cumsum_MARGIN,
+    CASE
+        WHEN ROUND(SUM(margin) OVER(ORDER BY margin DESC) / SUM(margin) OVER() * 100.0, 2) <= 80 THEN 'A'
+        WHEN ROUND(SUM(margin) OVER(ORDER BY margin DESC) / SUM(margin) OVER() * 100.0, 2) <= 95 THEN 'B'
+        ELSE 'C'
+    END AS ABC_margin
+
+FROM agregation_table
+
+-- 3. Сортировка для наглядного ABC анализа
+ORDER BY 
+    ABC_count_purch ASC,
+    ABC_retail ASC,
+    ABC_margin ASC;
+
+
+
+
 --                                     ABC amount and revenue
 
 --Цель: определить важность товаров по вкладу в прибыль/выручку.
@@ -134,6 +199,9 @@ select
 	end as abc_revenue
 from
 	group_name
+
+
+
 
 --                                                   LTV КОГОРТНЫЙ АНАЛИЗ АНАЛОГ
 --Берём номер карты и дату покупки.
