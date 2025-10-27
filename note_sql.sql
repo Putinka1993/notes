@@ -26,8 +26,107 @@
 --order by
 --	abc_xyz_revenue
 
---                                     XYZ COV(коэффицент вариации)
+--                                                                      🧾 Конспект — XYZ-анализ с заполнением пропущенных дат (PostgreSQL)
+WITH
+-- 1️⃣ Создаём календарь от минимальной до максимальной даты во всей таблице
+calendar AS (
+    SELECT generate_series(
+        (SELECT MIN(dr_dat) FROM drugs),
+        (SELECT MAX(dr_dat) FROM drugs),
+        interval '1 day'
+    )::date AS cal_date
+),
 
+-- 2️⃣ Достаём список всех уникальных товаров
+products AS (
+    SELECT DISTINCT dr_ndrugs FROM drugs
+),
+
+-- 3️⃣ Формируем “сетку”: каждая дата × каждый товар
+calendar_products AS (
+    SELECT
+        p.dr_ndrugs,
+        c.cal_date
+    FROM
+        products p
+    CROSS JOIN
+        calendar c
+),
+
+-- 4️⃣ Агрегируем продажи по товарам и датам (на случай дубликатов)
+sales_agg AS (
+    SELECT
+        dr_ndrugs,
+        dr_dat,
+        SUM(dr_kol) AS total_sales
+    FROM
+        drugs
+    GROUP BY
+        dr_ndrugs, dr_dat
+),
+
+-- 5️⃣ Объединяем сетку с реальными продажами, подставляем 0 при отсутствии данных
+fill_null AS (
+    SELECT
+        cp.dr_ndrugs,
+        cp.cal_date,
+        COALESCE(sa.total_sales, 0) AS filled_sales
+    FROM
+        calendar_products cp
+    LEFT JOIN
+        sales_agg sa
+        ON cp.dr_ndrugs = sa.dr_ndrugs
+       AND cp.cal_date = sa.dr_dat
+    ORDER BY
+        cp.dr_ndrugs,
+        cp.cal_date
+),
+
+-- 6️⃣ Считаем общий объём продаж по каждому товару и дате
+group_table AS (
+    SELECT
+        cal_date,
+        dr_ndrugs,
+        SUM(filled_sales) AS amount
+    FROM
+        fill_null
+    GROUP BY
+        cal_date, dr_ndrugs
+),
+
+-- 7️⃣ Рассчитываем коэффициент вариации и присваиваем категории XYZ
+XYZ_table AS (
+    SELECT
+        dr_ndrugs,
+        ROUND(STDDEV_POP(amount) OVER (PARTITION BY dr_ndrugs)
+              / AVG(amount) OVER (PARTITION BY dr_ndrugs), 3) AS cov,
+        CASE
+            WHEN ROUND(STDDEV_POP(amount) OVER (PARTITION BY dr_ndrugs)
+                       / AVG(amount) OVER (PARTITION BY dr_ndrugs), 3) <= 0.10 THEN 'X'
+            WHEN ROUND(STDDEV_POP(amount) OVER (PARTITION BY dr_ndrugs)
+                       / AVG(amount) OVER (PARTITION BY dr_ndrugs), 3) <= 0.20 THEN 'Y'
+            ELSE 'Z'
+        END AS XYZ
+    FROM
+        group_table
+)
+
+-- 8️⃣ Итоговая таблица: товар, коэффициент вариации, категория XYZ
+SELECT
+    dr_ndrugs,
+    MIN(cov) AS cov,
+    XYZ
+FROM
+    XYZ_table
+GROUP BY
+    dr_ndrugs, XYZ
+ORDER BY
+    cov ASC;
+
+
+
+
+--                                     XYZ COV(коэффицент вариации)
 --Цель: оценить стабильность спроса (вариативность продаж).
 --	•	X — стабильный спрос
 --	•	Y — умеренно колеблющийся
