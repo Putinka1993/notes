@@ -432,6 +432,49 @@ SELECT
 FROM data_sum
 ORDER BY year_order, year_month_num
 
+
+
+--                                                        corr кореляция
+    
+-- в данной задаче модель данных выглядела в виде платформы курсов
+
+-- и надо было соеденить данные 'выполнить' и 'проверить' вместе и сделать корелляцию с данными по 'тестам'
+-- переменные таблицы coderun, codesubmit и teststart
+
+    
+with task_table as (
+	select id , created_at::date as dt from coderun cr 
+	union all
+	select id , created_at::date as dt from codesubmit cs
+),
+cnt_task_table as (
+	select
+		dt
+		, count(id) as cnt_task
+	from
+		task_table tt
+	group by
+		dt
+),
+cnt_test_table as (
+	select
+		created_at::date as dt
+		, count(id) as cnt_test
+	from
+		teststart ts 
+	group by
+		created_at::date
+)
+select
+	round(corr(coalesce(cnt_task, 0), coalesce(cnt_test, 0))::numeric, 2) as cnt_corr
+from
+	cnt_task_table ctat
+full outer join
+	cnt_test_table ctet on ctat.dt = ctet.dt ;
+
+
+
+    
 -- Напишите запрос, который возвращает САМЫЙ ДОРОГОЙ ПРОДУКТ В КАЖДОЙ КАТЕГОРИИ.
 -- если был самый дешевый то в оконной функции в order by мы бы оставили обычную сортировку
 with d_rank as (
