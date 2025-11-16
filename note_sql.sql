@@ -1,3 +1,14 @@
+🔥 Главное правило, которое запомни навсегда
+
+❗ IF NULL означает отсутствие сущности / операции
+
+👉 Заменяй на 0 (COALESCE)
+
+❗ IF NULL означает неизвестное значение
+
+👉 НЕ заменяй на 0
+
+
 -- Patterns
 
 
@@ -511,6 +522,38 @@ select
 	, percentile_disc(0.5) within group(order by gt.cnt_tests ) as tests_median
 from 
 	group_problem gp, group_tests gt ;
+
+
+--                       delta, balance , avg
+
+with accrual_table as (
+	select
+		user_id
+		, sum(value) as accruals_avg_money
+	from
+		transaction tr
+	where
+		(type_id = 29 or type_id between 2 and 22) and value < 500
+	group by
+		user_id
+),
+write_of_table as (
+	select
+		user_id
+		, sum(-value) as write_of_avg_money
+	from
+		transaction tr
+	where
+		(type_id = 1 or type_id between 23 and 28) and value < 500
+	group by
+		user_id
+)
+select
+	round(avg(wt.write_of_avg_money ), 2) as write_of
+	, round(avg(at.accruals_avg_money ), 2) as accruals
+	, round(avg(coalesce(at.accruals_avg_money, 0) + coalesce(wt.write_of_avg_money, 0)), 2) as balance
+from
+	accrual_table at full join write_of_table wt on at.user_id = wt.user_id  ; 
 
 
 
