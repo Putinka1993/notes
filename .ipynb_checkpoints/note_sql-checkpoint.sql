@@ -473,6 +473,46 @@ full outer join
 	cnt_test_table ctet on ctat.dt = ctet.dt ;
 
 
+--                        percentile , union
+
+with problem_table as (
+	select
+		problem_id, user_id
+	from
+		codesubmit
+	union all
+	select
+		problem_id, user_id
+	from
+		coderun
+),
+group_problem as (
+	select
+		user_id
+		, count(distinct problem_id) as cnt_problems
+	from
+		problem_table pt join users u on pt.user_id = u.id 
+	group by
+		user_id
+),
+group_tests as (
+	select
+		ts.user_id
+		, count(distinct ts.test_id ) as cnt_tests
+	from
+		teststart ts 
+	group by
+		ts.user_id
+)
+select
+	round(avg(gp.cnt_problems ), 2) as problems_avg
+	, round(avg(gt.cnt_tests ), 2) as tests_avg
+	, percentile_disc(0.5) within group(order by gp.cnt_problems) as problems_median
+	, percentile_disc(0.5) within group(order by gt.cnt_tests ) as tests_median
+from 
+	group_problem gp, group_tests gt ;
+
+
 
     
 -- Напишите запрос, который возвращает САМЫЙ ДОРОГОЙ ПРОДУКТ В КАЖДОЙ КАТЕГОРИИ.
