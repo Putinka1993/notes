@@ -485,7 +485,7 @@ full outer join
 	cnt_test_table ctet on ctat.dt = ctet.dt ;
 
 
---                        percentile , union
+--                        percentile , union , generate_series, 
 
 with problem_table as (
 	select
@@ -523,6 +523,29 @@ select
 	, percentile_disc(0.5) within group(order by gt.cnt_tests ) as tests_median
 from 
 	group_problem gp, group_tests gt ;
+
+
+
+with agg as (
+	select
+		tr.user_id 
+		, sum(case when type_id = 1 or type_id between 23 and 28 then -value else value end) as balance
+	from
+		transaction tr join users u on tr.user_id = u.id 
+	where
+		value < 500 and coalesce(u.company_id, 0) != 1
+	group by
+		user_id
+)
+select
+	gs as percentile
+    , percentile_disc(gs) WITHIN GROUP (ORDER BY balance) AS balance
+FROM agg, generate_series(0.1, 1, 0.1) as gs
+GROUP BY gs
+ORDER BY gs;
+
+
+
 
 
 --                       delta, balance , avg
