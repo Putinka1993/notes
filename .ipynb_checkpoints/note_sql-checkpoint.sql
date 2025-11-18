@@ -277,6 +277,40 @@ ORDER BY
 
 
 
+--                                        MAU
+    
+-- Учитываем только месяцы, в которые были заходы на платформу в течение 25 или более дней (не обязательно подряд). 
+--Это позволит исключить из анализа неполные месяцы, а также месяцы с недостаточной активностью для репрезентативной оценки.
+
+with agg as (
+    select
+        to_char(ue.entry_at, 'YYYY-MM') as year_month,
+        count(distinct ue.entry_at::date) as cnt_dt
+    from
+        userentry ue
+    group by
+        to_char(ue.entry_at, 'YYYY-MM')
+    having count(distinct ue.entry_at::date) >= 25
+),
+group_month as (
+	select
+		to_char(ue.entry_at, 'YYYY-MM') 
+	    , count(distinct ue.user_id) as cnt_users_per_month
+	from
+	    userentry ue
+	where
+	    to_char(ue.entry_at, 'YYYY-MM') in (select year_month from agg)
+	group by
+		to_char(ue.entry_at, 'YYYY-MM')
+)
+select
+	round(avg(cnt_users_per_month)) as mau
+from
+	group_month
+
+
+
+
 
 --                                     ABC amount and revenue
 
