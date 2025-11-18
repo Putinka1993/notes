@@ -13,6 +13,74 @@
 -- Patterns
 
 
+--                               n day retention
+
+
+    
+with join_table as (
+  select
+    u.id as user_id,
+    date(ue.entry_at) as entry_at,
+    date(u.date_joined) as date_joined,
+    extract(day from ue.entry_at - u.date_joined) as diff,
+    to_char(u.date_joined, 'YYYY-MM') as cohort
+  from userentry ue
+  join users u on ue.user_id = u.id
+  where to_char(u.date_joined, 'YYYY') = '2022'
+)
+select
+  cohort,
+  round(count(distinct case when diff = 0  then user_id end) * 100.0 /
+        count(distinct case when diff = 0 then user_id end), 2) as "0 (%)",
+  round(count(distinct case when diff = 1  then user_id end) * 100.0 /
+        count(distinct case when diff = 0 then user_id end), 2) as "1 (%)",
+  round(count(distinct case when diff = 3  then user_id end) * 100.0 /
+        count(distinct case when diff = 0 then user_id end), 2) as "3 (%)",
+  round(count(distinct case when diff = 7  then user_id end) * 100.0 /
+        count(distinct case when diff = 0 then user_id end), 2) as "7 (%)",
+  round(count(distinct case when diff = 14 then user_id end) * 100.0 /
+        count(distinct case when diff = 0 then user_id end), 2) as "14 (%)",
+  round(count(distinct case when diff = 30 then user_id end) * 100.0 /
+        count(distinct case when diff = 0 then user_id end), 2) as "30 (%)",
+  round(count(distinct case when diff = 60 then user_id end) * 100.0 /
+        count(distinct case when diff = 0 then user_id end), 2) as "60 (%)",
+  round(count(distinct case when diff = 90 then user_id end) * 100.0 /
+        count(distinct case when diff = 0 then user_id end), 2) as "90 (%)"
+from join_table
+group by cohort;
+
+
+--                               mau MAU
+
+-- average MAU 
+with agg as (
+    select
+        to_char(ue.entry_at, 'YYYY-MM') as year_month,
+        count(distinct ue.entry_at::date) as cnt_dt
+    from
+        userentry ue
+    group by
+        to_char(ue.entry_at, 'YYYY-MM')
+    having count(distinct ue.entry_at::date) >= 25
+),
+group_month as (
+	select
+		to_char(ue.entry_at, 'YYYY-MM') 
+	    , count(distinct ue.user_id) as cnt_users_per_month
+	from
+	    userentry ue
+	where
+	    to_char(ue.entry_at, 'YYYY-MM') in (select year_month from agg)
+	group by
+		to_char(ue.entry_at, 'YYYY-MM')
+)
+select
+	round(avg(cnt_users_per_month)) as mau
+from
+	group_month;
+
+
+
 -- ABC_XYZ amount and revenue
 
 --Описание групп ABC-XYZ анализа
@@ -277,40 +345,6 @@ ORDER BY
 
 
 
---                                        MAU
-    
--- Учитываем только месяцы, в которые были заходы на платформу в течение 25 или более дней (не обязательно подряд). 
---Это позволит исключить из анализа неполные месяцы, а также месяцы с недостаточной активностью для репрезентативной оценки.
-
-with agg as (
-    select
-        to_char(ue.entry_at, 'YYYY-MM') as year_month,
-        count(distinct ue.entry_at::date) as cnt_dt
-    from
-        userentry ue
-    group by
-        to_char(ue.entry_at, 'YYYY-MM')
-    having count(distinct ue.entry_at::date) >= 25
-),
-group_month as (
-	select
-		to_char(ue.entry_at, 'YYYY-MM') 
-	    , count(distinct ue.user_id) as cnt_users_per_month
-	from
-	    userentry ue
-	where
-	    to_char(ue.entry_at, 'YYYY-MM') in (select year_month from agg)
-	group by
-		to_char(ue.entry_at, 'YYYY-MM')
-)
-select
-	round(avg(cnt_users_per_month)) as mau
-from
-	group_month
-
-
-
-
 
 --                                     ABC amount and revenue
 
@@ -519,7 +553,7 @@ full outer join
 	cnt_test_table ctet on ctat.dt = ctet.dt ;
 
 
---                        percentile , union , generate_series, 
+--                        percentile , union
 
 with problem_table as (
 	select
@@ -557,50 +591,6 @@ select
 	, percentile_disc(0.5) within group(order by gt.cnt_tests ) as tests_median
 from 
 	group_problem gp, group_tests gt ;
-
-
-
-with agg as (
-	select
-		tr.user_id 
-		, sum(case when type_id = 1 or type_id between 23 and 28 then -value else value end) as balance
-	from
-		transaction tr join users u on tr.user_id = u.id 
-	where
-		value < 500 and coalesce(u.company_id, 0) != 1
-	group by
-		user_id
-)
-select
-	gs as percentile
-    , percentile_disc(gs) WITHIN GROUP (ORDER BY balance) AS balance
-FROM agg, generate_series(0.1, 1, 0.1) as gs
-GROUP BY gs
-ORDER BY gs;
-/*
-ПЕРЦЕНТИЛИ БАЛАНСОВ (company_id = 1, value < 500)
-┌────────────┬────────┬─────────────────────────────────────────────────────────────┐
-│ Перцентиль │ Баланс │ Что это значит на самом деле                                │
-├────────────┼────────┼─────────────────────────────────────────────────────────────┤
-│ 0.1        │ 25     │ У 10 % пользователей баланс ≤ 25                            │
-│ 0.2        │ 53     │ У 20 % пользователей баланс ≤ 53                            │
-│ 0.3        │ 53     │ У 30 % пользователей баланс ≤ 53                            │
-│ 0.4        │ 53     │ У 40 % пользователей баланс ≤ 53                            │
-│ 0.5        │ 58     │ У 50 % (половина всех) баланс ≤ 58 → это медиана            │
-│ 0.6        │ 73     │ У 60 % пользователей баланс ≤ 73                            │
-│ 0.7        │ 84     │ У 70 % пользователей баланс ≤ 84                            │
-│ 0.8        │ 103    │ У 80 % пользователей баланс ≤ 103                           │
-│ 0.9        │ 109    │ У 90 % пользователей баланс ≤ 109                           │
-│ 1.0        │ 2216   │ У 100 % пользователей баланс ≤ 2216 → это МАКСИМУМ в выборке│
-└────────────┴────────┴─────────────────────────────────────────────────────────────┘
-
-Ключевые выводы:
- • 40 % всех пользователей имеют баланс ≤ 53 (огромная «куча» на этом значении)
- • Медиана = 58 (половина пользователей беднее или равна 58)
- • 90 % пользователей имеют ≤ 109
- • Топ-10 % (самые богатые) тянут максимум до 2216 → очень длинный правый хвост
-*/
-
 
 
 --                       delta, balance , avg
