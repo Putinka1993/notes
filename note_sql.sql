@@ -14,8 +14,6 @@
 
 
 --                               n day retention
-
-
     
 with join_table as (
   select
@@ -48,6 +46,37 @@ select
         count(distinct case when diff = 0 then user_id end), 2) as "90 (%)"
 from join_table
 group by cohort;
+
+
+--                               rolling retention 
+
+with diff_table as (
+	select
+		to_char(u.date_joined, 'YYYY-MM') as cohort
+		--, ue.entry_at::date - u.date_joined::date as diff
+		, extract(days from ue.entry_at - u.date_joined) as diff
+		, user_id
+	from 
+		userentry ue join users u on ue.user_id = u.id 
+	where
+		extract(year from u.date_joined::date) = 2022
+)
+select
+	cohort
+	, round(count(distinct case when diff >= 0 then user_id end) * 100.0 / count(distinct case when diff >= 0 then user_id end), 2) as "0 (%)"
+	, round(count(distinct case when diff >= 1 then user_id end) * 100.0 / count(distinct case when diff >= 0 then user_id end), 2) as "1 (%)"
+	, round(count(distinct case when diff >= 3 then user_id end) * 100.0 / count(distinct case when diff >= 0 then user_id end), 2) as "3 (%)"
+	, round(count(distinct case when diff >= 7 then user_id end) * 100.0 / count(distinct case when diff >= 0 then user_id end), 2) as "7 (%)"
+	, round(count(distinct case when diff >= 14 then user_id end) * 100.0 / count(distinct case when diff >= 0 then user_id end), 2) as "14 (%)"
+	, round(count(distinct case when diff >= 30 then user_id end) * 100.0 / count(distinct case when diff >= 0 then user_id end), 2) as "30 (%)"
+	, round(count(distinct case when diff >= 60 then user_id end) * 100.0 / count(distinct case when diff >= 0 then user_id end), 2) as "60 (%)"
+	, round(count(distinct case when diff >= 90 then user_id end) * 100.0 / count(distinct case when diff >= 0 then user_id end), 2) as "90 (%)"
+from
+	diff_table
+group by
+	cohort;
+
+
 
 
 --                               mau MAU
