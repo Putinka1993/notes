@@ -541,6 +541,38 @@ group by product1, product2
 order by 3 desc;
 
 
+-- CROSS JOIN
+
+-- table sales, таблица продаж 
+
+with agg as (
+	select
+		s.dr_apt as apt
+		, s.dr_ndrugs as drug
+		, round(sum(dr_kol)::numeric, 2) as cnt
+	from
+		sales s
+	group by
+		s.dr_apt
+		, s.dr_ndrugs
+),
+cross_table as (
+	select
+		a.dr_apt 
+		, b.dr_ndrugs 
+	from (
+        select distinct dr_apt from sales
+    ) a
+    cross join (
+        select distinct dr_ndrugs from sales
+    ) b
+)
+select 
+	distinct ct.dr_apt as apt
+	, ct.dr_ndrugs as drug
+	, ag.cnt 
+from 
+	cross_table ct left join agg ag on ct.dr_apt = ag.apt and ct.dr_ndrugs = ag.drug 
 
 
 --                                                   LTV КОГОРТНЫЙ АНАЛИЗ АНАЛОГ
