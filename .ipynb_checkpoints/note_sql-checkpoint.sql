@@ -112,6 +112,70 @@ from
 
 -- ABC_XYZ amount and revenue
 
+-- example with simulate task , for xyz on week 
+
+with agg_abc as (
+select
+	dr_ndrugs
+	, sum(dr_kol) as amount
+	, sum(dr_kol * (dr_croz - dr_czak) - dr_sdisc) as profit
+	, sum(dr_kol * dr_croz - dr_sdisc) as revenue
+from
+	sales
+group by 
+		dr_ndrugs
+),
+agg_xyz as (
+	select
+		dr_ndrugs as product
+		, to_char(dr_dat, 'YYYY-WW') as yw
+		, sum(dr_kol) as cnt_sales
+	from
+		sales
+	group by
+		dr_ndrugs
+		, to_char(dr_dat, 'YYYY-WW')
+),
+xyz_table as (
+	select
+		product
+		, case
+			when stddev_samp(cnt_sales )/avg(cnt_sales) > 0.25 then 'Z'
+	        when stddev_samp(cnt_sales)/avg(cnt_sales) > 0.1 then 'Y'
+	        else 'X'
+		end xyz_sales
+	from
+		agg_xyz
+	group by
+		product
+	having 
+		count(distinct yw) >= 4
+)
+select
+	dr_ndrugs as product
+	, case
+		when sum(amount) over(order by amount desc) / sum(amount) over() * 100.0 <= 80 then 'A'
+		when sum(amount) over(order by amount desc) / sum(amount) over() * 100.0 <= 95 then 'B'
+		else 'C'
+	end as amount_abc
+	, case
+		when sum(profit) over(order by profit desc) / sum(profit) over() * 100.0 <= 80 then 'A'
+		when sum(profit) over(order by profit desc) / sum(profit) over() * 100.0 <= 95 then 'B'
+		else 'C'
+	end as profit_abc 
+	, case
+		when sum(revenue) over(order by revenue desc) / sum(revenue) over() * 100.0 <= 80 then 'A' 
+		when sum(revenue) over(order by revenue desc) / sum(revenue) over() * 100.0 <= 95 then 'B'
+		else 'C'
+	end as revenue_abc
+	, xt.xyz_sales 
+	from
+		agg_abc aa left join xyz_table xt on aa.dr_ndrugs = xt.product 
+	order by
+		product;
+
+
+-- next
 --Описание групп ABC-XYZ анализа
 --AX — большая доля объема продаж/выручки, стабильный спрос.
 --AY — большая доля объема продаж/выручки, колеблющийся спрос.
