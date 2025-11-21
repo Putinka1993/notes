@@ -486,6 +486,62 @@ from
 
 
 
+--                      таблица сочетаемости
+
+    
+-- chat GPT
+select
+    a.dr_ndrugs as product1,
+    b.dr_ndrugs as product2,
+    count(distinct a.dr_nchk) as cnt
+from (
+    select distinct dr_apt, dr_nchk, dr_dat, dr_ndrugs
+    from sales
+) a
+join (
+    select distinct dr_apt, dr_nchk, dr_dat, dr_ndrugs
+    from sales
+) b
+    on a.dr_apt = b.dr_apt
+    and a.dr_nchk = b.dr_nchk
+    and a.dr_dat = b.dr_dat
+    and a.dr_ndrugs < b.dr_ndrugs
+group by a.dr_ndrugs, b.dr_ndrugs
+order by cnt desc;
+
+-- simulative
+
+with a0 as (
+    select
+        dr_apt,
+        dr_nchk,
+        dr_dat,
+        dr_ndrugs
+    from sales
+    group by dr_apt, dr_nchk, dr_dat, dr_ndrugs
+),
+a as (
+    select
+        s.dr_ndrugs as product1,
+        s2.dr_ndrugs as product2,
+        s.dr_dat || ' ' || s.dr_nchk || ' ' || s.dr_apt as cheque
+    from a0 s
+    join a0 s2
+    on s.dr_ndrugs < s2.dr_ndrugs
+    and s.dr_nchk = s2.dr_nchk
+    and s.dr_dat = s2.dr_dat
+    and s.dr_apt = s2.dr_apt
+)
+select
+    product1,
+    product2,
+    count(distinct cheque) as cnt
+from a
+group by product1, product2
+order by 3 desc;
+
+
+
 
 --                                                   LTV КОГОРТНЫЙ АНАЛИЗ АНАЛОГ
 --Берём номер карты и дату покупки.
