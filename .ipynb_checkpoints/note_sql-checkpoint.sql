@@ -575,6 +575,36 @@ from
 	cross_table ct left join agg ag on ct.dr_apt = ag.apt and ct.dr_ndrugs = ag.drug 
 
 
+--       пиковое значение в моменте и на период до текущей даты
+
+with time_line as (
+	select date_trunc('day', gen_dt)::date as dt
+	from generate_series(
+	        '2022-01-01'::timestamp,
+	        '2022-01-01'::timestamp + interval '110 days',
+	        '1 day'
+	     ) as gen_dt
+),
+join_table_agg as (
+		select
+			dt::timestamp
+			, count(u.id) as cnt
+		from 
+			time_line tl left join users u on tl.dt = u.date_joined::date
+		group by
+			dt
+)
+select 
+	dt
+	, cnt
+	, max(cnt) over(order by dt ASC) as max_cnt
+	, cnt - max(cnt) over(order by dt ASC) as diff
+from
+	join_table_agg
+order by 
+	dt;
+
+
 --                                                   LTV КОГОРТНЫЙ АНАЛИЗ АНАЛОГ
 --Берём номер карты и дату покупки.
 --Для каждой карты находим её первый месяц покупки — это и есть когорта клиента.
@@ -732,6 +762,31 @@ from
 	cnt_task_table ctat
 full outer join
 	cnt_test_table ctet on ctat.dt = ctet.dt ;
+
+
+--                        cnt_ perfect example
+with share_of_purchases as ( 	
+	select
+		distinct t.user_id 
+		, count(t.id ) over(partition by t.user_id) as cnt_pay_task
+	from
+		transaction t join transactiontype tt on t.type_id = tt.type 
+	where true
+		and t.type_id in (1, 23, 24, 25, 26, 27, 28)
+	order by
+		cnt_pay_task  DESC
+)
+select
+	case 
+		when sop.cnt_pay_task > 1  then 'is_repeat_purchase'
+							   else 'is_first_purchase'
+	end as type_user
+	, count(*) as cnt_users
+from
+	share_of_purchases sop
+group by
+	1
+
 
 
 --                        percentile , union
